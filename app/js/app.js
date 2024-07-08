@@ -24,7 +24,7 @@ createAnnounceSlider();
 const createPartnersSlider = () => {
   let slider = new Swiper(".partners-slider", {
     // slidesPerView: 3,
-    slidesPerView: 6,
+    // slidesPerView: 6,
     // rewind: true,
     spaceBetween: 8,
     // pagination: {
@@ -38,6 +38,20 @@ const createPartnersSlider = () => {
     navigation: {
       nextEl: ".partners-slider-next",
       prevEl: ".partners-slider-prev",
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 5,
+      },
+      1200: {
+        slidesPerView: 6,
+      },
     },
   });
 };

@@ -320,13 +320,17 @@ img
 	&__info-top
 		display: flex
 		justify-content: center
-		gap: 36px
+		gap: 10px
 		margin-bottom: 5px
+		+media-breakpoint-up(xl)
+			gap: 36px
 
 	/* .header__right */
 	&__right
 		display: flex
-		gap: 33px
+		gap: 12px
+		+media-breakpoint-up(xl)
+			gap: 33px
 
 	/* .header__menu */
 	&__menu
@@ -339,6 +343,9 @@ img
 		margin-bottom: 19px
 	/* .logo__img */
 	&__img
+		max-width: 120px
+		+media-breakpoint-up(xl)
+			max-width: initial
 	&__img_footer
 		width: 176px
 
@@ -363,10 +370,12 @@ img
 .address
 	font-family: "Casper", sans-serif
 	font-weight: 400
-	font-size: 18px
+	font-size: 14px
 	text-align: center
 	color: #fff
 	letter-spacing: 1px
+	+media-breakpoint-up(xl)
+		font-size: 18px
 	&_footer
 		text-align: left
 		font-size: 16px
@@ -460,9 +469,13 @@ img
 		.btn__text
 			height: 50px
 			font-weight: 500
-			font-size: 14px
-			line-height: 14px
+			font-size: 12px
+			line-height: 12px
 			left: -1px
+			+media-breakpoint-up(xl)
+				font-size: 14px
+				line-height: 14px
+
 		.btn__border
 			height: 50px
 			width: 14px
@@ -480,19 +493,23 @@ img
 		transition: fill .35s ease-out
 	&__text
 		padding: 18px
+		white-space: nowrap
 		background-color: $accent
 		font-family: "Unbounded", sans-serif
 		box-shadow: 0px 0px 20px 15px rgba(240,35,35,.2)
 		transition: background-color .35s ease-out, color .35s ease-out, box-shadow .35s ease-out
 		font-weight: 700
-		font-size: 16px
-		line-height: 16px
+		font-size: 14px
+		line-height: 14px
 		color: #fff
 		height: 60px
 		display: flex
 		align-items: center
 		position: relative
 		justify-content: center
+		+media-breakpoint-up(xl)
+			font-size: 16px
+			line-height: 16px
 	&__border
 		fill: $accent
 		height: 60px
@@ -545,9 +562,11 @@ img
 	&__link
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 20px
+		font-size: 18px
 		color: #fff
 		transition: color .35s ease-out
+		+media-breakpoint-up(xl)
+			font-size: 20px
 		&:hover
 			color: $accent
 			text-decoration: none
@@ -578,7 +597,7 @@ img
 		max-height: 0
 		overflow: hidden
 		transition: max-height .35s ease-out, padding .35s ease-out
-		+media-breakpoint-up(xl)
+		+media-breakpoint-up(lg)
 			max-height: initial
 			overflow: initial
 			display: none
@@ -611,7 +630,9 @@ img
 		// height: 100vh
 		display: flex
 		align-items: center
-		height: 953px
+		height: 693px
+		+media-breakpoint-up(xl)
+			height: 923px
 		@media screen and ( min-height: 800px )
 			height: 100vh
 
@@ -631,28 +652,38 @@ img
 	&__title
 		font-family: "Unbounded", sans-serif
 		font-weight: 400
-		font-size: 64px
+		font-size: 44px
 		line-height: 1.21
 		color: #fff
 		margin-bottom: 30px
+		+media-breakpoint-up(xl)
+			font-size: 54px
+		+media-breakpoint-up(wxp)
+			font-size: 64px
 	/* .hero__text */
 	&__text
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 24px
+		font-size: 20px
 		line-height: 142%
 		color: #fff
 		margin-bottom: 46px
+		+media-breakpoint-up(xl)
+			font-size: 22px
+		+media-breakpoint-up(wxp)
+			font-size: 24px
 
 .hero-slider
 	/* .hero-slider__pagination */
-	&__pagination
+	&__paginatio7n
 		padding-bottom: 29px
 	/* .hero-slider__slide */
 	&__slide
-		height: 953px
-		@media screen and ( min-height: 800px )
-			height: 100vh
+		height: 693px
+		+media-breakpoint-up(xl)
+			height: 923px
+			@media screen and ( min-height: 800px )
+				height: 100vh
 
 .service
 	background-image: url('../images/dest/service-bg.png')
@@ -665,7 +696,10 @@ img
 		display: flex
 		flex-wrap: wrap
 		margin: 0 -8px
-		row-gap: 95px
+		row-gap: 75px
+		+media-breakpoint-up(xl)
+			row-gap: 95px
+
 	/* .service__col */
 	&__col
 		flex: 0 0 33.3333%
@@ -674,16 +708,23 @@ img
 .title
 	font-family: "Unbounded", sans-serif
 	font-weight: 400
-	font-size: 55px
+	font-size: 38px
 	line-height: 126%
 	color: #fff
-	margin-bottom: 67px
+	margin-bottom: 30px
+	+media-breakpoint-up(xl)
+		margin-bottom: 47px
+		font-size: 45px
+	+media-breakpoint-up(wxp)
+		font-size: 55px
+		margin-bottom: 67px
 	&_mb0
 		margin-bottom: 0
 	&_tac
 		text-align: center
 	&_reviews
-		margin-bottom: 54px
+		+media-breakpoint-up(xl)
+			margin-bottom: 54px
 	&_form
 		margin-bottom: 35px
 
@@ -692,39 +733,51 @@ img
 	align-items: center
 	justify-content: space-between
 	&_partners
-		margin-bottom: 49px
+		margin-bottom: 30px
+		+media-breakpoint-up(xl)
+			margin-bottom: 49px
 
 .service-item
 	/* .service-item__title */
 	&__title
 		font-family: "Casper", sans-serif
 		font-weight: 700
-		font-size: 32px
-		line-height: 142%
+		font-size: 28px
+		line-height: 1.1
 		color: #fff
+		+media-breakpoint-up(xl)
+			font-size: 32px
+			line-height: 142%
 
 	/* .service-item__title-en */
 	&__title-en
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 24px
+		font-size: 18px
 		line-height: 142%
 		color: #fff
 		opacity: 0.8
 		margin-bottom: 10px
+		+media-breakpoint-up(xl)
+			font-size: 24px
 
 	/* .service-item__text */
 	&__text
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 22px
+		font-size: 18px
 		line-height: 135%
 		color: #fff
+		+media-breakpoint-up(xl)
+			font-size: 22px
 	/* .service-item__img-block */
 	&__img-block
 		position: relative
-		min-height: 372px
+		min-height: 300px
 		margin-bottom: 20px
+		+media-breakpoint-up(xl)
+			min-height: 372px
+
 	/* .service-item__img */
 	&__img
 		position: absolute
@@ -750,6 +803,8 @@ img
 		display: flex
 		align-items: center
 		padding: 20px 100px
+		background-position: center
+		background-repeat: no-repeat
 	/* .announce__slider-text-block */
 	&__slider-text-block
 		max-width: 752px
@@ -757,18 +812,23 @@ img
 	&__slider-title
 		font-family: "Unbounded", sans-serif
 		font-weight: 400
-		font-size: 40px
+		font-size: 32px
 		color: #fff
-		margin-bottom: 25px
+		margin-bottom: 15px
+		+media-breakpoint-up(xl)
+			margin-bottom: 25px
+			font-size: 40px
 	/* .announce__slider-text */
 	&__slider-text
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 24px
+		font-size: 20px
 		line-height: 142%
 		color: #fff
 		max-width: 600px
 		margin-bottom: 40px
+		+media-breakpoint-up(xl)
+			font-size: 24px
 
 .swiper-pagination-bullet
 	width: 44px
@@ -782,111 +842,184 @@ img
 
 .about
 	padding-bottom: 68px
+	/* .about__img */
+	&__img
+		max-width: 670px
+		+media-breakpoint-up(xl)
+			max-width: initial
 	/* .about__row */
 	&__row
-		margin-top: 160px
+		margin-top: 60px
 		display: flex
 		justify-content: center
 		position: relative
+		+media-breakpoint-up(xl)
+			margin-top: 160px
 	/* .about__left */
 	&__left
 		position: absolute
 		left: 0
 		top: 0
 		width: 475px
-		height: 960px
+		height: 720px
+		+media-breakpoint-up(xl)
+			height: 960px
+
 	/* .about__right */
 	&__right
 		position: absolute
 		right: 0
 		width: 475px
-		height: 960px
+		height: 720px
+		+media-breakpoint-up(xl)
+			height: 960px
 	/* .about__item */
 	&__item
-		max-width: 295px
+		max-width: 215px
+		max-height: 215px
 		position: relative
 		display: flex
 		align-items: center
 		justify-content: center
 		position: absolute
+		+media-breakpoint-up(xl)
+			max-width: 295px
+			max-height: 295px
+
 	&__item_left_1
 	&__item_left_2
-		top: 165px
-		left: 177px
+		top: 125px
+		left: 124px
+		+media-breakpoint-up(xl)
+			top: 165px
+			left: 177px
 	&__item_left_3
-		top: 330px
+		top: 250px
 		left: 0px
+		+media-breakpoint-up(xl)
+			top: 330px
 	&__item_left_4
-		top: 495px
-		left: 177px
+		top: 375px
+		left: 125px
+		+media-breakpoint-up(xl)
+			top: 495px
+			left: 177px
 	&__item_left_5
-		top: 660px
+		top: 500px
 		left: 0px
+		+media-breakpoint-up(xl)
+			top: 660px
 	&__item_right_1
 		right: 0
 	&__item_right_2
-		top: 165px
+		top: 125px
+		right: 130px
+		+media-breakpoint-up(xl)
+			top: 165px
+			right: initial
 	&__item_right_3
-		top: 330px
+		top: 250px
 		right: 0
+		+media-breakpoint-up(xl)
+			top: 330px
 	&__item_right_4
-		top: 495px
+		top: 375px
+		right: 130px
+		+media-breakpoint-up(xl)
+			top: 495px
+			right: initial
 	&__item_right_5
-		top: 660px
+		top: 500px
 		right: 0
+		+media-breakpoint-up(xl)
+			top: 660px
 	/* .about__item-svg */
 	&__item-svg
+		width: 215px
+		height: 215px
+		+media-breakpoint-up(xl)
+			width: 295px
+			height: 295px
 	/* .about__line-1 */
 	&__line-1
 		position: absolute
-		right: -22px
-		top: -34px
+		right: 111px
+		top: -29px
+		max-width: 244px
+		+media-breakpoint-up(xl)
+			max-width: initial
+			right: -22px
+			top: -34px
+
 	/* .about__line-2 */
 	&__line-2
 		position: absolute
-		right: -22px
-		bottom: -20px
+		right: 111px
+		bottom: -24px
 		transform: rotate(-90deg)
+		max-width: 244px
+		+media-breakpoint-up(xl)
+			max-width: initial
+			right: -22px
+			bottom: -20px
 	/* .about__line-3 */
 	&__line-3
 		position: absolute
-		left: -30px
-		top: -35px
+		left: 111px
+		top: -29px
 		transform: rotate(90deg)
+		max-width: 244px
+		+media-breakpoint-up(xl)
+			max-width: initial
+			left: -30px
+			top: -35px
 	/* .about__line-4 */
 	&__line-4
 		position: absolute
-		left: -29px
-		bottom: -19px
+		left: 111px
+		bottom: -24px
 		transform: rotate(-180deg)
+		max-width: 244px
+		+media-breakpoint-up(xl)
+			max-width: initial
+			left: -29px
+			bottom: -19px
 
 	/* .about__item-text */
 	&__item-text
 		font-family: "Casper", sans-serif
 		font-weight: 700
-		font-size: 22px
-		line-height: 142%
+		font-size: 16px
+		line-height: 122%
 		text-align: center
 		color: #fff
-		max-width: 234px
+		max-width: 180px
 		margin-left: auto
 		margin-right: auto
 		position: absolute
+		+media-breakpoint-up(xl)
+			font-size: 22px
+			line-height: 142%
+			max-width: 234px
 		// top: calc(50% - 30px)
 		// left: calc(50% - 110px)
 
 .education
-	padding-top: 178px
+	padding-top: 70px
 	padding-bottom: 70px
 	background-image: url('../images/dest/partners-bg.png')
 	background-repeat: no-repeat
 	background-position: center
 	background-size: cover
+	+media-breakpoint-up(xl)
+		padding-top: 178px
 
 .education-row
 	display: flex
 	gap: 18px
-	margin-bottom: 140px
+	margin-bottom: 70px
+	+media-breakpoint-up(xl)
+		margin-bottom: 140px
 	/* .education-row__item */
 	&__item
 		position: relative
@@ -954,7 +1087,10 @@ img
 
 .reviews
 	padding-top: 50px
-	padding-bottom: 120px
+	padding-bottom: 70px
+	+media-breakpoint-up(xl)
+		padding-bottom: 120px
+
 	/* .reviews__top */
 	&__top
 		display: flex
@@ -969,7 +1105,7 @@ img
 	&__btn
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 24px
+		font-size: 20px
 		line-height: 142%
 		color: #fff
 		padding: 13px 32px
@@ -978,6 +1114,8 @@ img
 		background-color: #271e2a
 		cursor: pointer
 		transition: color .35s ease-out,border-color .35s ease-out
+		+media-breakpoint-up(xl)
+			font-size: 24px
 		&:hover
 			color: #d05050
 			border-color: #D05050
@@ -1001,14 +1139,18 @@ img
 	&__img
 
 .contacts
-	padding-top: 118px
-	padding-bottom: 125px
+	padding-top: 70px
+	padding-bottom: 70px
 	background-image: url('../images/dest/contacts.png')
 	background-repeat: no-repeat
 	background-position: 102% center
+	+media-breakpoint-up(xl)
+		padding-top: 118px
+		padding-bottom: 125px
 	/* .contacts__row */
 	&__row
 		display: flex
+		gap: 12px
 		justify-content: space-between
 	/* .contacts__left */
 	&__left
@@ -1079,7 +1221,12 @@ img
 	&__row
 		display: flex
 		justify-content: space-between
-		gap: 126px
+		gap: 12px
+		+media-breakpoint-up(xl)
+			gap: 46px
+		+media-breakpoint-up(wxp)
+			gap: 126px
+
 	/* .footer__left */
 	&__left
 		flex: 0 0 176px
@@ -1116,7 +1263,9 @@ img
 			text-decoration: none
 	/* .footer__right */
 	&__right
-		flex: 0 0 308px
+		flex: 0 0 248px
+		+media-breakpoint-up(xl)
+			flex: 0 0 308px
 	/* .footer__btn */
 	&__btn
 		margin-bottom: 10px
