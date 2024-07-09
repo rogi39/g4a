@@ -40,6 +40,9 @@ const createPartnersSlider = () => {
       prevEl: ".partners-slider-prev",
     },
     breakpoints: {
+      0: {
+        slidesPerView: 2.5,
+      },
       576: {
         slidesPerView: 3,
       },
@@ -60,11 +63,18 @@ createPartnersSlider();
 
 const createReviewsSlider = () => {
   let config = {
-    slidesPerView: 2,
     spaceBetween: 18,
     navigation: {
       nextEl: ".reviews-slider-next",
       prevEl: ".reviews-slider-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      576: {
+        slidesPerView: 2,
+      },
     },
   };
   let slider = new Swiper(".reviews-slider", config);

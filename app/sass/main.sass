@@ -299,8 +299,9 @@ img
 	z-index: 5
 	/* .header__top */
 	&__top
-		padding: 22px 0
-
+		padding: 12px 0
+		+media-breakpoint-up(md)
+			padding: 22px 0
 	/* .header__row */
 	&__row
 		display: flex
@@ -312,6 +313,9 @@ img
 
 	/* .header__center */
 	&__center
+		display: none
+		+media-breakpoint-up(md)
+			display: block
 
 	/* .header__info */
 	&__info
@@ -327,8 +331,10 @@ img
 
 	/* .header__right */
 	&__right
-		display: flex
-		gap: 12px
+		display: none
+		+media-breakpoint-up(lg)
+			display: flex
+			gap: 12px
 		+media-breakpoint-up(xl)
 			gap: 33px
 
@@ -336,6 +342,54 @@ img
 	&__menu
 		border-bottom: 1px solid rgba(255, 255, 255, .1)
 		border-top: 1px solid rgba(255, 255, 255, .1)
+	&__toggle-menu
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		padding: 10px 0
+		position: relative
+		z-index: 1
+		color: #D9D9D9
+		&:hover
+			text-decoration: none
+			color: #D9D9D9
+		+media-breakpoint-up(lg)
+			display: none
+		&.on .header__toggle-line
+			background-color: transparent
+		&.on .header__toggle-line::before
+			transform: rotate(45deg) translate(2px, 5px)
+			background-color: #D9D9D9
+			left: 3px
+		&.on .header__toggle-line::after
+			transform: rotate(-45deg) translate(2px, -5px)
+			background-color: #D9D9D9
+			left: 3px
+	&__toggle-text
+		font-family: "Casper", sans-serif
+		font-weight: 400
+		font-size: 18px
+		color: #fff
+		margin-right: 8px
+	&__toggle-line
+		width: 35px
+		height: 1px
+		background-color: #D9D9D9
+		display: block
+		position: relative
+		transition: all 0.3s
+		&:after, &:before
+			content: ''
+			width: 35px
+			height: 1px
+			background-color: #D9D9D9
+			position: absolute
+			transition: all 0.3s
+			left: 0
+		&:after
+			top: 5px
+		&:before
+			bottom: 5px
 
 .logo
 	display: inline-block
@@ -343,7 +397,9 @@ img
 		margin-bottom: 19px
 	/* .logo__img */
 	&__img
-		max-width: 120px
+		max-width: 102px
+		+media-breakpoint-up(md)
+			max-width: 120px
 		+media-breakpoint-up(xl)
 			max-width: initial
 	&__img_footer
@@ -484,6 +540,10 @@ img
 	&_w220
 		.btn__text
 			width: 220px
+	&__master
+		// display: none
+		// +media-breakpoint-up(lg)
+		// 	display: block
 	&__transparent
 		position: absolute
 		left: 0
@@ -535,14 +595,41 @@ img
 	// 	background-position-x: -1px
 
 .menu
+	width: 100%
+	padding: 16px 12px 16px 15px
+	position: fixed
+	overflow-y: auto
+	height: 100vh
+	left: 0
+	top: 73px
+	bottom: 0
+	z-index: 23
+	// padding: 10px 15px 30px 15px
+	transform: translateX(-100%)
+	transition: transform .35s ease
+	background-color: $text
+	+media-breakpoint-up(sm)
+		// width: 498px
+		padding: 16px 15px 30px 15px
+	+media-breakpoint-up(lg)
+		width: auto
+		padding: 0
+		position: initial
+		transform: none
+		overflow-y: inherit
+		height: auto
+		background-color: transparent
+	&.on
+		transform: translateX(0%)
 	/* .menu__list */
 	&__list
 		list-style-type: none
 		margin: 0
 		padding: 0
-		display: flex
-		align-items: center
-		justify-content: space-between
+		+media-breakpoint-up(lg)
+			display: flex
+			align-items: center
+			justify-content: space-between
 
 	/* .menu__item */
 	&__item
@@ -629,8 +716,11 @@ img
 	&__wrap
 		// height: 100vh
 		display: flex
-		align-items: center
-		height: 693px
+		align-items: flex-end
+		height: 563px
+		+media-breakpoint-up(md)
+			align-items: center
+			height: 693px
 		+media-breakpoint-up(xl)
 			height: 923px
 		@media screen and ( min-height: 800px )
@@ -639,6 +729,9 @@ img
 	/* .hero__img */
 	&__img
 		position: absolute
+		top: 70px
+		+media-breakpoint-up(md)
+			top: initial
 		// top: 0
 		// left: 0
 	/* .hero__block */
@@ -646,16 +739,21 @@ img
 		position: relative
 		z-index: 1
 		max-width: 653px
-		margin-bottom: -113px
-		z-index: 	1
+		+media-breakpoint-up(md)
+			margin-bottom: -113px
 	/* .hero__title */
 	&__title
 		font-family: "Unbounded", sans-serif
 		font-weight: 400
-		font-size: 44px
+		font-size: 30px
 		line-height: 1.21
 		color: #fff
-		margin-bottom: 30px
+		margin-bottom: 13px
+		+media-breakpoint-up(md)
+			margin-bottom: 30px
+			font-size: 38px
+		+media-breakpoint-up(lg)
+			font-size: 44px
 		+media-breakpoint-up(xl)
 			font-size: 54px
 		+media-breakpoint-up(wxp)
@@ -667,7 +765,9 @@ img
 		font-size: 20px
 		line-height: 142%
 		color: #fff
-		margin-bottom: 46px
+		margin-bottom: 26px
+		+media-breakpoint-up(md)
+			margin-bottom: 46px
 		+media-breakpoint-up(xl)
 			font-size: 22px
 		+media-breakpoint-up(wxp)
@@ -679,7 +779,9 @@ img
 		padding-bottom: 29px
 	/* .hero-slider__slide */
 	&__slide
-		height: 693px
+		height: 563px
+		+media-breakpoint-up(md)
+			height: 693px
 		+media-breakpoint-up(xl)
 			height: 923px
 			@media screen and ( min-height: 800px )
@@ -689,8 +791,11 @@ img
 	background-image: url('../images/dest/service-bg.png')
 	background-repeat: no-repeat
 	background-position: center -268px
-	padding-bottom: 125px
+	padding-bottom: 75px
 	padding-top: 66px
+	+media-breakpoint-up(lg)
+		padding-bottom: 125px
+
 	/* .service__row */
 	&__row
 		display: flex
@@ -702,16 +807,20 @@ img
 
 	/* .service__col */
 	&__col
-		flex: 0 0 33.3333%
+		flex: 0 0 50%
 		padding: 0 8px
+		+media-breakpoint-up(lg)
+			flex: 0 0 33.3333%
 
 .title
 	font-family: "Unbounded", sans-serif
 	font-weight: 400
-	font-size: 38px
+	font-size: 32px
 	line-height: 126%
 	color: #fff
 	margin-bottom: 30px
+	+media-breakpoint-up(lg)
+		font-size: 38px
 	+media-breakpoint-up(xl)
 		margin-bottom: 47px
 		font-size: 45px
@@ -773,7 +882,8 @@ img
 	/* .service-item__img-block */
 	&__img-block
 		position: relative
-		min-height: 300px
+		// min-height: 300px
+		min-height: 372px
 		margin-bottom: 20px
 		+media-breakpoint-up(xl)
 			min-height: 372px
@@ -784,8 +894,11 @@ img
 		bottom: 0
 
 .announce
-	margin-bottom: 168px
+	margin-bottom: 100px
 	position: relative
+	+media-breakpoint-up(lg)
+		margin-bottom: 168px
+
 	.swiper-pagination
 		bottom: -40px
 	/* .announce__slider */
@@ -802,9 +915,12 @@ img
 		min-height: 423px
 		display: flex
 		align-items: center
-		padding: 20px 100px
+		padding: 20px 40px
 		background-position: center
 		background-repeat: no-repeat
+		+media-breakpoint-up(lg)
+			padding: 20px 100px
+
 	/* .announce__slider-text-block */
 	&__slider-text-block
 		max-width: 752px
@@ -1005,12 +1121,16 @@ img
 		// left: calc(50% - 110px)
 
 .education
-	padding-top: 70px
-	padding-bottom: 70px
+	padding-top: 50px
+	padding-bottom: 50px
 	background-image: url('../images/dest/partners-bg.png')
 	background-repeat: no-repeat
 	background-position: center
 	background-size: cover
+	+media-breakpoint-up(lg)
+		padding-top: 70px
+		padding-bottom: 70px
+
 	+media-breakpoint-up(xl)
 		padding-top: 178px
 
@@ -1034,20 +1154,24 @@ img
 		position: absolute
 		bottom: 0
 		left: 0
-		padding: 0 40px 40px 40px
+		padding: 0 20px 20px 20px
 		width: 100%
 		background: linear-gradient(180deg, rgba(25, 18, 28, 0) 53.86%, #19121c 100%)
 		transition: all .35s ease-out
 		height: 100%
 		display: flex
 		align-items: flex-end
+		+media-breakpoint-up(lg)
+			padding: 0 40px 40px 40px
 	/* .education-row__item-title */
 	&__item-title
 		font-family: "Unbounded", sans-serif
 		font-weight: 400
-		font-size: 28px
+		font-size: 22px
 		color: #fff
 		transition: color .35s ease-out
+		+media-breakpoint-up(lg)
+			font-size: 28px
 
 .partners
 
@@ -1066,8 +1190,10 @@ img
 	&__slide-img
 
 .slider-btn
-	display: flex
-	align-items: center
+	display: none
+	+media-breakpoint-up(sm)
+		display: flex
+		align-items: center
 	/* .slider-btn__item */
 	&__item
 
@@ -1079,15 +1205,20 @@ img
 
 	/* .slider-btn__svg */
 	&__svg
-		width: 69px
-		height: 60px
+		width: 59px
+		height: 50px
 		transition: fill .35s ease-out
 		&:hover
 			fill: $accent
+		+media-breakpoint-up(lg)
+			width: 69px
+		height: 60px
 
 .reviews
 	padding-top: 50px
-	padding-bottom: 70px
+	padding-bottom: 50px
+	+media-breakpoint-up(lg)
+		padding-bottom: 70px
 	+media-breakpoint-up(xl)
 		padding-bottom: 120px
 
@@ -1105,15 +1236,18 @@ img
 	&__btn
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 20px
+		font-size: 16px
 		line-height: 142%
 		color: #fff
-		padding: 13px 32px
+		padding: 13px 20px
 		border: 3px solid #423447
 		border-radius: 55px
 		background-color: #271e2a
 		cursor: pointer
 		transition: color .35s ease-out,border-color .35s ease-out
+		+media-breakpoint-up(lg)
+			font-size: 20px
+			padding: 13px 32px
 		+media-breakpoint-up(xl)
 			font-size: 24px
 		&:hover
@@ -1149,19 +1283,25 @@ img
 		padding-bottom: 125px
 	/* .contacts__row */
 	&__row
-		display: flex
-		gap: 12px
-		justify-content: space-between
+		+media-breakpoint-up(lg)
+			display: flex
+			gap: 12px
+			justify-content: space-between
 	/* .contacts__left */
 	&__left
-		flex: 0 0 420px
+		margin-bottom: 24px
+		+media-breakpoint-up(lg)
+			margin-bottom: 0
+			flex: 0 0 420px
 	/* .contacts__text */
 	&__text
 		font-family: "Casper", sans-serif
 		font-weight: 400
-		font-size: 22px
+		font-size: 20px
 		line-height: 135%
 		color: #c6c6c6
+		+media-breakpoint-up(lg)
+			font-size: 22px
 	/* .contacts__right */
 	&__right
 		flex: 1
@@ -1215,13 +1355,15 @@ img
 	border-top: 1px solid #222
 	/* .footer__top */
 	&__top
-		padding: 60px 0
-
+		padding: 30px 0
+		+media-breakpoint-up(lg)
+			padding: 60px 0
 	/* .footer__row */
 	&__row
 		display: flex
 		justify-content: space-between
 		gap: 12px
+		flex-wrap: wrap
 		+media-breakpoint-up(xl)
 			gap: 46px
 		+media-breakpoint-up(wxp)
@@ -1232,10 +1374,13 @@ img
 		flex: 0 0 176px
 	/* .footer__center */
 	&__center
-		flex: 1
+		flex: 1 0 520px
+		+media-breakpoint-up(lg)
+			flex: 1
 	/* .footer__menu-row */
 	&__menu-row
 		display: flex
+		gap: 8px
 		justify-content: space-between
 	/* .footer__menu-col */
 	&__menu-col
@@ -1296,8 +1441,11 @@ img
 		font-size: 13px
 		line-height: 135%
 		color: #676767
-		margin-right: 179px
 		letter-spacing: 1px
+		+media-breakpoint-up(lg)
+			margin-right: 119px
+		+media-breakpoint-up(xl)
+			margin-right: 179px
 	/* .footer__bottom-row */
 	&__bottom-row
 		display: flex
