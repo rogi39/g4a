@@ -70,7 +70,7 @@ const createReviewsSlider = () => {
     },
     breakpoints: {
       0: {
-        slidesPerView: 1,
+        slidesPerView: 1.1,
       },
       576: {
         slidesPerView: 2,
@@ -138,6 +138,49 @@ const createHeroSlider = () => {
 };
 
 createHeroSlider();
+
+let initwhat = false;
+let swiperwhat;
+
+function createWhatSlider() {
+  if (!document.querySelector(".service-slider")) return false;
+  let mobile = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
+  let desktop = window.matchMedia("(min-width: 768px)");
+
+  if (mobile.matches) {
+    if (!initwhat) {
+      initwhat = true;
+      swiperwhat = new Swiper(".service-slider", {
+        // slidesPerView: 1,
+        slidesPerView: "auto",
+
+        spaceBetween: 14,
+        pagination: {
+          el: ".service-slider__pagination",
+          clickable: true,
+          // dynamicBullets: true,
+        },
+        // navigation: {
+        // 	nextEl: '.slider-btn__item_next',
+        // 	prevEl: '.slider-btn__item_prev',
+        // },
+      });
+    }
+  } else if (desktop.matches) {
+    if (swiperwhat) {
+      swiperwhat.destroy();
+      initwhat = false;
+    }
+  }
+}
+
+window.addEventListener("load", function () {
+  createWhatSlider();
+});
+
+window.addEventListener("resize", function () {
+  createWhatSlider();
+});
 
 const header = document.querySelector(".header");
 const togglemenu = document.querySelector("#toggle-menu");
