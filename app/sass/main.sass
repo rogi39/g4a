@@ -297,6 +297,20 @@ img
 	left: 0
 	width: 100%
 	z-index: 5
+	/* .header__overlay */
+	&__overlay
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		backdrop-filter: blur(15px)
+		background: rgba(28, 21, 31, 0.4)
+		z-index: 4
+		display: none
+		animation: fade .35s ease
+		&.active
+			display: block
 	/* .header__top */
 	&__top
 		padding: 12px 0
@@ -438,6 +452,10 @@ img
 	letter-spacing: 1px
 	+media-breakpoint-up(xl)
 		font-size: 18px
+	&_menu
+		font-size: 18px
+		line-height: 142%
+		text-align: left
 	&_footer
 		text-align: left
 		font-size: 16px
@@ -607,21 +625,19 @@ img
 
 .menu
 	width: 330px
-	padding: 16px 12px 16px 15px
+	padding: 58px 30px 16px 30px
 	position: fixed
 	overflow-y: auto
-	height: 100vh
+	height: 100%
 	right: 0
-	top: 73px
+	top: 0
 	bottom: 0
 	z-index: 23
 	// padding: 10px 15px 30px 15px
 	transform: translateX(100%)
 	transition: transform .35s ease
-	background-color: $text
+	background-color: #1B131F
 	+media-breakpoint-up(sm)
-		// width: 498px
-		padding: 16px 15px 30px 15px
 	+media-breakpoint-up(lg)
 		width: auto
 		padding: 0
@@ -637,15 +653,39 @@ img
 		list-style-type: none
 		margin: 0
 		padding: 0
+		padding-bottom: 42px
+		margin-bottom: 42px
+		position: relative
+		&:after
+			content: ''
+			width: calc(100% + 60px)
+			height: 1px
+			background-color: rgba(255,255,255,.1)
+			display: block
+			position: absolute
+			bottom: 0
+			left: -30px
 		+media-breakpoint-up(lg)
+			padding-bottom: 0
+			margin-bottom: 0
 			display: flex
 			align-items: center
 			justify-content: space-between
+			&:after
+				display: none
 
 	/* .menu__item */
 	&__item
 		position: relative
-		padding: 20px 0
+		&:not(:last-child)
+			margin-bottom: 35px
+		&.open
+			.menu__item-svg
+				transform: rotate(180deg)
+		+media-breakpoint-up(lg)
+			padding: 20px 0
+			&:not(:last-child)
+				margin-bottom: 0
 		+media-breakpoint-up(xl)
 			&:hover
 				.menu__item-svg
@@ -672,7 +712,12 @@ img
 	&__item-svg-block
 		position: relative
 		bottom: 2px
-		left: 2px
+		left: 10px
+		display: inline-block
+		width: 30px
+		+media-breakpoint-up(lg)
+			left: 2px
+			width: auto
 	/* .menu__item-svg */
 	&__item-svg
 		fill: #fff
@@ -682,12 +727,11 @@ img
 	&__sub
 		list-style-type: none
 		padding: 0
+		padding-left: 20px
 		margin: 0
 		min-width: 206px
 		z-index: 3
 		background-color: #1c151f
-		padding: 15px
-		border: 1px solid rgba(255, 255, 255, 0.1)
 		left: -15px
 		top: 70px
 		// white-space: nowrap
@@ -696,6 +740,8 @@ img
 		overflow: hidden
 		transition: max-height .35s ease-out, padding .35s ease-out
 		+media-breakpoint-up(lg)
+			border: 1px solid rgba(255, 255, 255, 0.1)
+			padding: 15px
 			max-height: initial
 			overflow: initial
 			display: none
@@ -703,8 +749,29 @@ img
 	/* .menu__sub-item */
 	&__sub-item
 		&:not(:last-child)
-			margin-bottom: 10px
-
+			margin-bottom: 2px
+		+media-breakpoint-up(lg)
+			&:not(:last-child)
+				margin-bottom: 10px
+	/* .menu__address */
+	&__address
+		padding-bottom: 42px
+		margin-bottom: 42px
+		position: relative
+		&:after
+			content: ''
+			width: calc(100% + 60px)
+			height: 1px
+			background-color: rgba(255,255,255,.1)
+			display: block
+			position: absolute
+			bottom: 0
+			left: -30px
+		+media-breakpoint-up(lg)
+			display: none
+	/* .menu__address-item */
+	&__address-item
+		margin-bottom: 27px
 	/* .menu__sub-link */
 	&__sub-link
 		font-family: "Casper", sans-serif
@@ -717,6 +784,28 @@ img
 		&:hover
 			color: $accent
 			text-decoration: none
+	/* .menu__close */
+	&__close
+		position: absolute
+		top: 20px
+		right: 20px
+		height: 32px
+		width: 32px
+		display: flex
+		align-items: center
+		justify-content: center
+		+media-breakpoint-up(lg)
+			display: none
+	/* .menu__close-svg */
+	&__close-svg
+		fill: #D9D9D9
+		width: 18px
+		height: 18px
+		flex: 0 0 18px
+	/* .menu__btn */
+	&__btn
+		+media-breakpoint-up(lg)
+			display: none
 
 .hero
 	position: relative
@@ -1483,18 +1572,70 @@ img
 		max-width: 704px
 
 .form
+	/* .form__title */
+	&__title
+		font-family: "Unbounded", sans-serif
+		font-weight: 400
+		font-size: 28px
+		color: #fff
+		margin-bottom: 15px
+		+media-breakpoint-up(sm)
+			font-size: 32px
+		+media-breakpoint-up(md)
+			font-size: 40px
+	/* .form__subtitle */
+	&__subtitle
+		font-family: "Casper", sans-serif
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		margin-bottom: 35px
 	/* .form__row */
 	&__row
 		+media-breakpoint-up(sm)
 			display: flex
 			gap: 60px
 			margin-bottom: 47px
+	&__row_modal
+		display: block
+		+media-breakpoint-up(md)
+			display: flex
+	&__row_column
+		flex-direction: column
+		flex-wrap: wrap
+		max-height: 285px
+		align-content: start
+		.form__col
+			width: 322px
 	/* .form__col */
 	&__col
 		margin-bottom: 15px
 		+media-breakpoint-up(sm)
 			margin-bottom: 0
 			flex: 1
+	/* .form__col-left */
+	&__col-left
+		display: flex
+		flex-direction: column
+		gap: 30px
+		justify-content: space-between
+		flex: 0 0 322px
+		margin-bottom: 30px
+		+media-breakpoint-up(md)
+			margin-bottom: 0
+			gap: 60px
+	/* .form__col-right */
+	&__col-right
+		display: flex
+		flex-direction: column
+		gap: 30px
+		justify-content: space-between
+		flex: 1
+		.form__textarea
+			min-height: 159px
+		+media-breakpoint-up(md)
+			gap: 60
 	/* .form__input */
 	&__input
 		background-color: transparent
@@ -1509,6 +1650,11 @@ img
 		color: #fff
 		&::placeholder
 			color: #fff
+		&:focus
+			outline: 0
+	/* .form__select */
+	&__select
+		background-color: #1c151f
 	/* .form__textarea */
 	&__textarea
 		min-height: 166px
@@ -1522,6 +1668,9 @@ img
 		+media-breakpoint-up(sm)
 			gap: 40px
 			margin-top: 58px
+	&__bottom_modal
+		+media-breakpoint-up(md)
+			flex-wrap: nowrap
 	/* .form__btn */
 	&__btn
 
@@ -1688,6 +1837,50 @@ img
 			text-align: center
 			color: #949494
 			transition: color .35s ease-out
+
+.modal
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	backdrop-filter: blur(15px)
+	background: rgba(28, 21, 31, 0.4)
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	overflow-y: scroll
+	display: none
+	+media-breakpoint-up(lg)
+		@media screen and ( min-height: 600px )
+			align-items: center
+
+	/* .modal__block */
+	&__block
+		background-color: #1c151f
+		padding: 50px 16px
+		max-width: 959px
+		position: relative
+		+media-breakpoint-up(sm)
+			padding: 50px
+	/* .modal__close */
+	&__close
+		height: 32px
+		width: 32px
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		right: 20px
+		top: 20px
+		cursor: pointer
+	/* .modal__close-svg */
+	&__close-svg
+		height: 14px
+		width: 14px
+		fill: #E0E0E0
+
 @keyframes "fade"
 	from
 		opacity: 0

@@ -1,140 +1,140 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Custom JS
+	// Custom JS
 });
 
 const createAnnounceSlider = () => {
-  let slider = new Swiper(".announce__slider", {
-    // slidesPerView: 3,
-    slidesPerView: 1,
-    // rewind: true,
-    spaceBetween: 12,
-    pagination: {
-      el: ".announce__slider-pagination",
-      clickable: true,
-    },
-    navigation: {
-      // nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
-      // prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
-    },
-  });
+	let slider = new Swiper(".announce__slider", {
+		// slidesPerView: 3,
+		slidesPerView: 1,
+		// rewind: true,
+		spaceBetween: 12,
+		pagination: {
+			el: ".announce__slider-pagination",
+			clickable: true,
+		},
+		navigation: {
+			// nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
+			// prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
+		},
+	});
 };
 
 createAnnounceSlider();
 
 const createPartnersSlider = () => {
-  let slider = new Swiper(".partners-slider", {
-    // slidesPerView: 3,
-    // slidesPerView: 6,
-    // rewind: true,
-    spaceBetween: 8,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
-    navigation: {
-      // nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
-      // prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
-    },
-    navigation: {
-      nextEl: ".partners-slider-next",
-      prevEl: ".partners-slider-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 2.5,
-      },
-      576: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 4,
-      },
-      992: {
-        slidesPerView: 5,
-      },
-      1200: {
-        slidesPerView: 6,
-      },
-    },
-  });
+	let slider = new Swiper(".partners-slider", {
+		// slidesPerView: 3,
+		// slidesPerView: 6,
+		// rewind: true,
+		spaceBetween: 8,
+		// pagination: {
+		//   el: ".swiper-pagination",
+		//   clickable: true,
+		// },
+		navigation: {
+			// nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
+			// prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
+		},
+		navigation: {
+			nextEl: ".partners-slider-next",
+			prevEl: ".partners-slider-prev",
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 2.5,
+			},
+			576: {
+				slidesPerView: 3,
+			},
+			768: {
+				slidesPerView: 4,
+			},
+			992: {
+				slidesPerView: 5,
+			},
+			1200: {
+				slidesPerView: 6,
+			},
+		},
+	});
 };
 
 createPartnersSlider();
 
 const createReviewsSlider = () => {
-  let config = {
-    spaceBetween: 18,
-    navigation: {
-      nextEl: ".reviews-slider-next",
-      prevEl: ".reviews-slider-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.1,
-      },
-      576: {
-        slidesPerView: 2,
-      },
-    },
-  };
-  let slider = new Swiper(".reviews-slider", config);
+	let config = {
+		spaceBetween: 18,
+		navigation: {
+			nextEl: ".reviews-slider-next",
+			prevEl: ".reviews-slider-prev",
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.1,
+			},
+			576: {
+				slidesPerView: 2,
+			},
+		},
+	};
+	let slider = new Swiper(".reviews-slider", config);
 
-  let filter = document.querySelector(".filter");
-  let btns = filter.querySelectorAll(".filter__btn");
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      filter.querySelector(".filter__btn.active").classList.remove("active");
-      e.target.classList.add("active");
-      let type = e.target.dataset.type;
-      let filterItemsBlock = document.querySelector(".filter-items");
-      let itemsAll = filterItemsBlock.querySelectorAll(`div[data-filter-item]`);
-      if (type === "all") {
-        itemsAll.forEach((item) => {
-          item.classList.add("swiper-slide");
-          item.classList.remove("non-swiper-slide");
-        });
-      } else {
-        itemsAll.forEach((item) => {
-          item.classList.add("swiper-slide");
-          item.classList.remove("non-swiper-slide");
-        });
-        let itemsFilter = filterItemsBlock.querySelectorAll(
-          `div[data-filter-item]:not([data-filter-item=${type}])`
-        );
-        itemsFilter.forEach((item) => {
-          item.classList.remove("swiper-slide");
-          item.classList.add("non-swiper-slide");
-        });
-      }
+	let filter = document.querySelector(".filter");
+	let btns = filter.querySelectorAll(".filter__btn");
+	btns.forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			filter.querySelector(".filter__btn.active").classList.remove("active");
+			e.target.classList.add("active");
+			let type = e.target.dataset.type;
+			let filterItemsBlock = document.querySelector(".filter-items");
+			let itemsAll = filterItemsBlock.querySelectorAll(`div[data-filter-item]`);
+			if (type === "all") {
+				itemsAll.forEach((item) => {
+					item.classList.add("swiper-slide");
+					item.classList.remove("non-swiper-slide");
+				});
+			} else {
+				itemsAll.forEach((item) => {
+					item.classList.add("swiper-slide");
+					item.classList.remove("non-swiper-slide");
+				});
+				let itemsFilter = filterItemsBlock.querySelectorAll(
+					`div[data-filter-item]:not([data-filter-item=${type}])`
+				);
+				itemsFilter.forEach((item) => {
+					item.classList.remove("swiper-slide");
+					item.classList.add("non-swiper-slide");
+				});
+			}
 
-      slider.destroy();
-      slider = new Swiper(".reviews-slider", config);
-    });
-  });
+			slider.destroy();
+			slider = new Swiper(".reviews-slider", config);
+		});
+	});
 };
 
 createReviewsSlider();
 
 const createHeroSlider = () => {
-  let slider = new Swiper(".hero-slider", {
-    // slidesPerView: 3,
-    slidesPerView: 1,
-    // rewind: true,
-    spaceBetween: 12,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
-    navigation: {
-      // nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
-      // prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
-    },
-    pagination: {
-      el: ".hero-slider__pagination",
-      clickable: true,
-      // dynamicBullets: true,
-    },
-  });
+	let slider = new Swiper(".hero-slider", {
+		// slidesPerView: 3,
+		slidesPerView: 1,
+		// rewind: true,
+		spaceBetween: 12,
+		// pagination: {
+		//   el: ".swiper-pagination",
+		//   clickable: true,
+		// },
+		navigation: {
+			// nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
+			// prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
+		},
+		pagination: {
+			el: ".hero-slider__pagination",
+			clickable: true,
+			// dynamicBullets: true,
+		},
+	});
 };
 
 createHeroSlider();
@@ -143,342 +143,381 @@ let initwhat = false;
 let swiperwhat;
 
 function createWhatSlider() {
-  if (!document.querySelector(".service-slider")) return false;
-  let mobile = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
-  let desktop = window.matchMedia("(min-width: 768px)");
+	if (!document.querySelector(".service-slider")) return false;
+	let mobile = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
+	let desktop = window.matchMedia("(min-width: 768px)");
 
-  if (mobile.matches) {
-    if (!initwhat) {
-      initwhat = true;
-      swiperwhat = new Swiper(".service-slider", {
-        // slidesPerView: 1,
-        slidesPerView: "auto",
+	if (mobile.matches) {
+		if (!initwhat) {
+			initwhat = true;
+			swiperwhat = new Swiper(".service-slider", {
+				// slidesPerView: 1,
+				slidesPerView: "auto",
 
-        spaceBetween: 14,
-        pagination: {
-          el: ".service-slider__pagination",
-          clickable: true,
-          // dynamicBullets: true,
-        },
-        // navigation: {
-        // 	nextEl: '.slider-btn__item_next',
-        // 	prevEl: '.slider-btn__item_prev',
-        // },
-      });
-    }
-  } else if (desktop.matches) {
-    if (swiperwhat) {
-      swiperwhat.destroy();
-      initwhat = false;
-    }
-  }
+				spaceBetween: 14,
+				pagination: {
+					el: ".service-slider__pagination",
+					clickable: true,
+					// dynamicBullets: true,
+				},
+				// navigation: {
+				// 	nextEl: '.slider-btn__item_next',
+				// 	prevEl: '.slider-btn__item_prev',
+				// },
+			});
+		}
+	} else if (desktop.matches) {
+		if (swiperwhat) {
+			swiperwhat.destroy();
+			initwhat = false;
+		}
+	}
 }
 
 window.addEventListener("load", function () {
-  createWhatSlider();
+	createWhatSlider();
 });
 
 window.addEventListener("resize", function () {
-  createWhatSlider();
+	createWhatSlider();
 });
 
 const header = document.querySelector(".header");
 const togglemenu = document.querySelector("#toggle-menu");
 const menu = document.querySelector(".menu");
+const overlay = document.querySelector('.header__overlay');
+const menuClose = document.querySelector('.menu__close');
 var scrollPrev = 0;
 togglemenu.addEventListener("click", () => {
-  togglemenu.classList.toggle("on");
-  menu.classList.toggle("on");
-  document.body.classList.toggle("noscroll");
+	togglemenu.classList.add("on");
+	menu.classList.add("on");
+	overlay.classList.add("active");
+	document.body.classList.add("noscroll");
 });
+menuClose.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+function closeMenu (){
+	togglemenu.classList.remove("on");
+	menu.classList.remove("on");
+	overlay.classList.remove("active");
+	document.body.classList.remove("noscroll");
+}
 
 window.addEventListener("resize", () => {
-  if (window.outerWidth >= 992) {
-    togglemenu.classList.remove("on");
-    header.classList.remove("on");
-    menu.classList.remove("on");
-    document.body.classList.remove("noscroll");
-  }
+	if (window.outerWidth >= 992) {
+		closeMenu();
+	}
 });
 
 let menuSubBtns = document.querySelectorAll(".menu__item-svg-block");
 menuSubBtns.forEach((el) => {
-  el.addEventListener("click", openMenu);
+	el.addEventListener("click", openMenu);
 });
 
 function openMenu(e) {
-  if (e.currentTarget.classList.contains("menu__item-svg-block_level")) {
-    if (e.currentTarget.parentElement.classList.contains("open")) {
-      e.currentTarget.nextElementSibling.style.maxHeight = "0";
-      e.currentTarget.parentElement.classList.remove("open");
-    } else {
-      e.currentTarget.parentElement.parentElement.style.maxHeight =
-        8 +
-        e.currentTarget.parentElement.parentElement.scrollHeight +
-        e.currentTarget.nextElementSibling.scrollHeight +
-        "px";
-      e.currentTarget.nextElementSibling.style.maxHeight =
-        8 + e.currentTarget.nextElementSibling.scrollHeight + "px";
-      e.currentTarget.parentElement.classList.add("open");
-    }
-  } else {
-    if (e.currentTarget.parentElement.classList.contains("open")) {
-      e.currentTarget.nextElementSibling.style.maxHeight = "0";
-      e.currentTarget.parentElement.classList.remove("open");
-    } else {
-      e.currentTarget.nextElementSibling.style.maxHeight =
-        8 + e.currentTarget.nextElementSibling.scrollHeight + "px";
-      e.currentTarget.parentElement.classList.add("open");
-    }
-  }
+	if (e.currentTarget.classList.contains("menu__item-svg-block_level")) {
+		if (e.currentTarget.parentElement.classList.contains("open")) {
+			e.currentTarget.nextElementSibling.style.maxHeight = "0";
+			e.currentTarget.parentElement.classList.remove("open");
+		} else {
+			e.currentTarget.parentElement.parentElement.style.maxHeight =
+				8 +
+				e.currentTarget.parentElement.parentElement.scrollHeight +
+				e.currentTarget.nextElementSibling.scrollHeight +
+				"px";
+			e.currentTarget.nextElementSibling.style.maxHeight =
+				8 + e.currentTarget.nextElementSibling.scrollHeight + "px";
+			e.currentTarget.parentElement.classList.add("open");
+		}
+	} else {
+		if (e.currentTarget.parentElement.classList.contains("open")) {
+			e.currentTarget.nextElementSibling.style.maxHeight = "0";
+			e.currentTarget.parentElement.classList.remove("open");
+		} else {
+			e.currentTarget.nextElementSibling.style.maxHeight =
+				8 + e.currentTarget.nextElementSibling.scrollHeight + "px";
+			e.currentTarget.parentElement.classList.add("open");
+		}
+	}
 }
 
 let productTabs = document.querySelectorAll(".product-single__tab");
 if (productTabs) {
-  productTabs.forEach((el) => {
-    el.addEventListener("click", function (e) {
-      document
-        .querySelector(".product-single__tab.active")
-        .classList.remove("active");
-      document
-        .querySelector(".product-single__tab-content.active")
-        .classList.remove("active");
-      let trg = e.target;
-      trg.classList.add("active");
-      document
-        .querySelector(
-          `.product-single__tab-content[data-tab-content="${trg.dataset.tab}"]`
-        )
-        .classList.add("active");
-    });
-  });
+	productTabs.forEach((el) => {
+		el.addEventListener("click", function (e) {
+			document
+				.querySelector(".product-single__tab.active")
+				.classList.remove("active");
+			document
+				.querySelector(".product-single__tab-content.active")
+				.classList.remove("active");
+			let trg = e.target;
+			trg.classList.add("active");
+			document
+				.querySelector(
+					`.product-single__tab-content[data-tab-content="${trg.dataset.tab}"]`
+				)
+				.classList.add("active");
+		});
+	});
 }
 
 if (document.querySelector(".contacts-page__acc")) {
-  document
-    .querySelector(".contacts-page__acc")
-    .addEventListener("click", function (e) {
-      if (!e.target.closest(".contacts-page__acc-head")) return false;
-      let item = e.currentTarget;
-      if (item.classList.contains("open")) {
-        item.classList.remove("open");
-        item.querySelector(".contacts-page__acc-body").style.maxHeight = "0";
-      } else {
-        item.classList.add("open");
-        item.querySelector(".contacts-page__acc-body").style.maxHeight =
-          item.querySelector(".contacts-page__acc-body").scrollHeight +
-          20 +
-          "px";
-      }
-    });
+	document
+		.querySelector(".contacts-page__acc")
+		.addEventListener("click", function (e) {
+			if (!e.target.closest(".contacts-page__acc-head")) return false;
+			let item = e.currentTarget;
+			if (item.classList.contains("open")) {
+				item.classList.remove("open");
+				item.querySelector(".contacts-page__acc-body").style.maxHeight = "0";
+			} else {
+				item.classList.add("open");
+				item.querySelector(".contacts-page__acc-body").style.maxHeight =
+					item.querySelector(".contacts-page__acc-body").scrollHeight +
+					20 +
+					"px";
+			}
+		});
 }
 
 let btnModals = document.querySelectorAll(".btn-modal");
 btnModals.forEach((el) => {
-  el.addEventListener("click", openModalNominaton);
+	el.addEventListener("click", openModalNominaton);
 });
 
-function openModalNominaton(event) {
-  event.preventDefault();
-  let modal = document.getElementById("modal-callback");
-  let close = modal.querySelector(".modal-content__close");
-  fadeIn(modal, 300, "flex");
-  close.onclick = function () {
-    fadeOut(modal, 300);
-  };
+function openModalNominaton(e) {
+	e.preventDefault();
+	let modal = document.getElementById("modal-callback");
+	let wsb = widthScrollBar();
+
+	window.addEventListener("click", function (e) {
+		if (e.target.classList.contains("modal") && modal.classList.contains("active") ||	e.target.closest(".modal__close")) {
+			fadeOut(modal, 300);
+			setTimeout(() => {
+				modal.classList.remove("active");
+				document.body.classList.remove("noscroll");
+				document.querySelector(".header").style.paddingRight = "0px";
+				document.querySelector(".footer").style.paddingRight = "0px";
+				document.querySelector(".main").style.paddingRight = "0px";
+			}, 300);
+		}
+	});
+	if (modal !== null && !modal.classList.contains("active")) {
+		fadeIn(modal, 300, "flex");
+		document.body.classList.add("noscroll");
+		document.querySelector(".header").style.paddingRight = wsb + "px";
+		document.querySelector(".footer").style.paddingRight = wsb + "px";
+		document.querySelector(".main").style.paddingRight = wsb + "px";
+		setTimeout(() => {
+			modal.classList.add("active");
+		}, 300);
+	}
 }
 
 const createExpertSlider = () => {
-  new Swiper(".first__slider", {
-    slidesPerView: "auto",
-    centeredSlides: true,
-    spaceBetween: 30,
-    watchSlidesVisibility: true,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-    },
-    // speed: 500,
-    navigation: {
-      nextEl: ".first-slider-next",
-      prevEl: ".first-slider-prev",
-    },
-    breakpoints: {},
-  });
+	new Swiper(".first__slider", {
+		slidesPerView: "auto",
+		centeredSlides: true,
+		spaceBetween: 30,
+		watchSlidesVisibility: true,
+		loop: true,
+		autoplay: {
+			delay: 2500,
+		},
+		// speed: 500,
+		navigation: {
+			nextEl: ".first-slider-next",
+			prevEl: ".first-slider-prev",
+		},
+		breakpoints: {},
+	});
 };
 
 createExpertSlider();
 
 const createProductSingleSlider = () => {
-  let thumb = new Swiper(".product-thumb-slider", {
-    spaceBetween: 16,
-    loop: true,
-    slidesPerView: 3,
-    // slidesPerView: 'auto',
-    freeMode: true,
-    watchSlidesProgress: true,
-  });
-  let big = new Swiper(".product-big-slider", {
-    spaceBetween: 16,
-    autoHeight: true,
-    loop: true,
-    navigation: {
-      nextEl: ".product-slider-next",
-      prevEl: ".product-slider-prev",
-    },
-    thumbs: {
-      swiper: thumb,
-    },
-  });
+	let thumb = new Swiper(".product-thumb-slider", {
+		spaceBetween: 16,
+		loop: true,
+		slidesPerView: 3,
+		// slidesPerView: 'auto',
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	let big = new Swiper(".product-big-slider", {
+		spaceBetween: 16,
+		autoHeight: true,
+		loop: true,
+		navigation: {
+			nextEl: ".product-slider-next",
+			prevEl: ".product-slider-prev",
+		},
+		thumbs: {
+			swiper: thumb,
+		},
+	});
 };
 
 createProductSingleSlider();
 
 var galleries = document.querySelectorAll(".lg");
 for (let i = 0; i < galleries.length; i++) {
-  lightGallery(galleries[i], {
-    thumbnail: false,
-    selector: ".lg-item",
-    download: false,
-  });
+	lightGallery(galleries[i], {
+		thumbnail: false,
+		selector: ".lg-item",
+		download: false,
+	});
 }
 
 var sliderProduct = document.getElementsByClassName("product-slider");
 
 if (sliderProduct) {
-  for (let i = 0; i < sliderProduct.length; i++) {
-    var slider = sliderProduct[i];
-    new Swiper(sliderProduct[i], {
-      // rewind: true,
-      spaceBetween: 24,
-      navigation: {
-        nextEl: slider
-          .closest(".section")
-          .querySelector(".product-slider-next"),
-        prevEl: slider
-          .closest(".section")
-          .querySelector(".product-slider-prev"),
-      },
-      slidesPerView: 1,
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        992: {
-          slidesPerView: 4,
-        },
-      },
-    });
+	for (let i = 0; i < sliderProduct.length; i++) {
+		var slider = sliderProduct[i];
+		new Swiper(sliderProduct[i], {
+			// rewind: true,
+			spaceBetween: 24,
+			navigation: {
+				nextEl: slider
+					.closest(".section")
+					.querySelector(".product-slider-next"),
+				prevEl: slider
+					.closest(".section")
+					.querySelector(".product-slider-prev"),
+			},
+			slidesPerView: 1,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+		});
 
-    // slider = tns({
-    // 	loop: false,
-    // 	rewind: true,
-    // 	container: slider,
-    // 	nav: false,
-    // 	gutter: 40,
-    // 	mouseDrag: true,
-    // 	controlsContainer: slider.nextElementSibling,
-    // 	responsive: {
-    // 		0: {
-    // 			gutter: 10,
-    // 			items: 1
-    // 		},
-    // 		576: {
-    // 			gutter: 20,
-    // 			items: 2
-    // 		},
-    // 		768: {
-    // 			gutter: 30,
-    // 			items: 3
-    // 		},
-    // 	}
-    // });
-  }
+		// slider = tns({
+		// 	loop: false,
+		// 	rewind: true,
+		// 	container: slider,
+		// 	nav: false,
+		// 	gutter: 40,
+		// 	mouseDrag: true,
+		// 	controlsContainer: slider.nextElementSibling,
+		// 	responsive: {
+		// 		0: {
+		// 			gutter: 10,
+		// 			items: 1
+		// 		},
+		// 		576: {
+		// 			gutter: 20,
+		// 			items: 2
+		// 		},
+		// 		768: {
+		// 			gutter: 30,
+		// 			items: 3
+		// 		},
+		// 	}
+		// });
+	}
+}
+
+function widthScrollBar() {
+	let div = document.createElement("div");
+	div.style.overflowY = "scroll";
+	div.style.width = "50px";
+	div.style.height = "50px";
+	document.body.append(div);
+	let scrollWidth = div.offsetWidth - div.clientWidth;
+	div.remove();
+	return scrollWidth;
 }
 
 function fadeIn(el, timeout, display) {
-  el.style.opacity = 0;
-  el.style.display = display || "block";
-  el.style.transition = `opacity ${timeout}ms`;
-  setTimeout(() => {
-    el.style.opacity = 1;
-  }, 10);
+	el.style.opacity = 0;
+	el.style.display = display || "block";
+	el.style.transition = `opacity ${timeout}ms`;
+	setTimeout(() => {
+		el.style.opacity = 1;
+	}, 10);
 }
 
 function fadeOut(el, timeout) {
-  el.style.opacity = 1;
-  el.style.transition = `opacity ${timeout}ms`;
-  el.style.opacity = 0;
+	el.style.opacity = 1;
+	el.style.transition = `opacity ${timeout}ms`;
+	el.style.opacity = 0;
 
-  setTimeout(() => {
-    el.style.display = "none";
-  }, timeout);
+	setTimeout(() => {
+		el.style.display = "none";
+	}, timeout);
 }
 
 function formSend(e) {
-  var act = e.getAttribute("action");
-  var url = "";
-  var btn = e.querySelector("button");
-  var btnText = btn.textContent;
-  btn.setAttribute("disabled", "disabled");
-  btn.textContent = "Загрузка...";
-  for (var i = e.elements.length - 1; i >= 0; i--) {
-    var name = e.elements[i].getAttribute("name");
-    if (e.elements[i].type == "checkbox") {
-      if (e.elements[i].checked) {
-        url += name + "=" + e.elements[i].value + "&";
-      }
-    } else if (name) {
-      url += name + "=" + e.elements[i].value + "&";
-    }
-  }
-  var request = new XMLHttpRequest();
+	var act = e.getAttribute("action");
+	var url = "";
+	var btn = e.querySelector("button");
+	var btnText = btn.textContent;
+	btn.setAttribute("disabled", "disabled");
+	btn.textContent = "Загрузка...";
+	for (var i = e.elements.length - 1; i >= 0; i--) {
+		var name = e.elements[i].getAttribute("name");
+		if (e.elements[i].type == "checkbox") {
+			if (e.elements[i].checked) {
+				url += name + "=" + e.elements[i].value + "&";
+			}
+		} else if (name) {
+			url += name + "=" + e.elements[i].value + "&";
+		}
+	}
+	var request = new XMLHttpRequest();
 
-  request.onreadystatechange = function () {
-    if (request.readyState === 4) {
-      if (request.status === 422) {
-        btn.textContent = btnText;
-        btn.removeAttribute("disabled");
-        e.nextElementSibling.innerHTML = request.response;
-        let inputs = e.querySelectorAll("input, select, textarea");
-        inputs.forEach((el) => {
-          el.addEventListener("input", () => {
-            el.removeAttribute("style");
-            el.classList.remove("error");
-          });
-        });
-        let errors = e.nextElementSibling.querySelectorAll("[data-error]");
-        errors.forEach((el) => {
-          let dataAt = el.getAttribute("data-error");
-          let input = e.querySelector(
-            "input[name=" +
-              dataAt +
-              "], select[name=" +
-              dataAt +
-              "], textarea[name=" +
-              dataAt +
-              "]"
-          );
-          input.style.borderColor = "#da4c4c";
-          input.classList.add("error");
-        });
-      } else {
-        btn.textContent = btnText;
-        btn.removeAttribute("disabled");
-        e.nextElementSibling.innerHTML = request.response;
-        e.reset();
-      }
-    }
-  };
+	request.onreadystatechange = function () {
+		if (request.readyState === 4) {
+			if (request.status === 422) {
+				btn.textContent = btnText;
+				btn.removeAttribute("disabled");
+				e.nextElementSibling.innerHTML = request.response;
+				let inputs = e.querySelectorAll("input, select, textarea");
+				inputs.forEach((el) => {
+					el.addEventListener("input", () => {
+						el.removeAttribute("style");
+						el.classList.remove("error");
+					});
+				});
+				let errors = e.nextElementSibling.querySelectorAll("[data-error]");
+				errors.forEach((el) => {
+					let dataAt = el.getAttribute("data-error");
+					let input = e.querySelector(
+						"input[name=" +
+						dataAt +
+						"], select[name=" +
+						dataAt +
+						"], textarea[name=" +
+						dataAt +
+						"]"
+					);
+					input.style.borderColor = "#da4c4c";
+					input.classList.add("error");
+				});
+			} else {
+				btn.textContent = btnText;
+				btn.removeAttribute("disabled");
+				e.nextElementSibling.innerHTML = request.response;
+				e.reset();
+			}
+		}
+	};
 
-  request.open("POST", act);
+	request.open("POST", act);
 
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-  request.send(url);
+	request.send(url);
 
-  return false;
+	return false;
 }
