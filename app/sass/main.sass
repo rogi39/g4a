@@ -2373,6 +2373,69 @@ img
 	&.active
 		display: block
 
+.intensive
+	/* .intensive__row */
+	&__row
+		display: flex
+		column-gap: 30px
+		row-gap: 50px
+		flex-wrap: wrap
+	/* .intensive__col */
+	&__col
+		flex: 0 0 100%
+		+media-breakpoint-up(sm)
+			flex: 0 0 calc(50% - 20px)
+		+media-breakpoint-up(lg)
+			flex: 0 0 calc(33.3333% - 20px)
+
+.intensive-item
+	/* .intensive-item__img */
+	&__img
+		margin-bottom: 26px
+
+	/* .intensive-item__title */
+	&__title
+		font-weight: 400
+		font-size: 24px
+		line-height: 142%
+		color: #fff
+		font-family: "Casper", sans-serif
+		margin-bottom: 10px
+	/* .intensive-item__list */
+	&__list
+		margin-bottom: 21px
+		padding-bottom: 10px
+		border-bottom: 1px solid rgba(255,255,255,.2)
+	/* .intensive-item__list-item */
+	&__list-item
+		display: flex
+		align-items: center
+		gap: 10px
+		margin-bottom: 10px
+	/* .intensive-item__list-item-svg */
+	&__list-item-svg
+		flex: 0 0 24px
+	/* .intensive-item__list-item-text */
+	&__list-item-text
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #f1f1f1
+		font-family: "Casper", sans-serif
+	/* .intensive-item__price-block */
+	&__price-block
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		gap: 10px
+	/* .intensive-item__price */
+	&__price
+		font-weight: 400
+		font-size: 24px
+		color: #fff
+		font-family: "Unbounded", sans-serif
+
 @keyframes "fade"
 	from
 		opacity: 0
