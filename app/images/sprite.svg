@@ -29,6 +29,18 @@
 	<symbol id="close" viewBox="0 0 15 15">
   <path d="M12.0377 13.9229C12.5584 14.4436 13.4026 14.4436 13.9233 13.9229C14.444 13.4022 14.444 12.5579 13.9233 12.0372L9.20938 7.32335L13.9234 2.60935C14.4441 2.08865 14.4441 1.24443 13.9234 0.723732C13.4027 0.203034 12.5585 0.203033 12.0378 0.723732L7.32376 5.43773L2.60956 0.723532C2.08886 0.202833 1.24464 0.202833 0.723944 0.723532C0.203245 1.24423 0.203245 2.08845 0.723944 2.60915L5.43814 7.32335L0.724052 12.0374C0.203353 12.5581 0.203353 13.4024 0.724052 13.9231C1.24475 14.4438 2.08897 14.4438 2.60967 13.9231L7.32376 9.20897L12.0377 13.9229Z"/>
 	</symbol>
+	<symbol id="time" viewBox="0 0 48 48">
+  	<path fill-rule="evenodd" clip-rule="evenodd" d="M14 42H34C38.418 42 42 38.418 42 34V14C42 9.582 38.418 6 34 6H14C9.582 6 6 9.582 6 14V34C6 38.418 9.582 42 14 42Z" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M11 24H12" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M37 24H36" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M15.5202 32.4801L14.8002 33.2001" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M32.4798 15.5199L33.1998 14.7999" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M24 36V37" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M24 11V12" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M32.4798 32.4801L33.1998 33.2001" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M14.8002 14.7999L15.5202 15.5199" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  	<path d="M28 28L24 24V18" stroke="#F02323" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+	</symbol>
 
 
 

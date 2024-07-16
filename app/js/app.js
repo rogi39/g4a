@@ -80,6 +80,7 @@ const createReviewsSlider = () => {
 	let slider = new Swiper(".reviews-slider", config);
 
 	let filter = document.querySelector(".filter");
+	if(!filter) return false;
 	let btns = filter.querySelectorAll(".filter__btn");
 	btns.forEach((btn) => {
 		btn.addEventListener("click", (e) => {
@@ -139,18 +140,19 @@ const createHeroSlider = () => {
 
 createHeroSlider();
 
-let initwhat = false;
-let swiperwhat;
 
-function createWhatSlider() {
+
+let initServiceSlider = false;
+let serviceSlider;
+const createServiceSlider = ()=>{ 
 	if (!document.querySelector(".service-slider")) return false;
 	let mobile = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
 	let desktop = window.matchMedia("(min-width: 768px)");
 
 	if (mobile.matches) {
-		if (!initwhat) {
-			initwhat = true;
-			swiperwhat = new Swiper(".service-slider", {
+		if (!initServiceSlider) {
+			initServiceSlider = true;
+			serviceSlider = new Swiper(".service-slider", {
 				// slidesPerView: 1,
 				slidesPerView: "auto",
 
@@ -167,20 +169,84 @@ function createWhatSlider() {
 			});
 		}
 	} else if (desktop.matches) {
-		if (swiperwhat) {
-			swiperwhat.destroy();
-			initwhat = false;
+		if (serviceSlider) {
+			serviceSlider.destroy();
+			initServiceSlider = false;
+		}
+	}
+}
+
+let initServiceGallerySlider = false;
+let serviceGallerySlider;
+const createServiceGallerySlider = ()=>{ 
+	if (!document.querySelector(".service-gallery-slider")) return false;
+	let mobile = window.matchMedia("(min-width: 0px) and (max-width: 575px)");
+	let desktop = window.matchMedia("(min-width: 576px)");
+
+	if (mobile.matches) {
+		if (!initServiceGallerySlider) {
+			initServiceGallerySlider = true;
+			serviceGallerySlider = new Swiper(".service-gallery-slider", {
+				slidesPerView: 1.1,
+				// slidesPerView: "auto",
+
+				spaceBetween: 20,
+				pagination: {
+					el: ".service-gallery-slider__pagination",
+					clickable: true,
+					// dynamicBullets: true,
+				},
+			});
+		}
+	} else if (desktop.matches) {
+		if (serviceGallerySlider) {
+			serviceGallerySlider.destroy();
+			initServiceGallerySlider = false;
 		}
 	}
 }
 
 window.addEventListener("load", function () {
-	createWhatSlider();
+	createServiceSlider();
+	createServiceGallerySlider();
 });
 
 window.addEventListener("resize", function () {
-	createWhatSlider();
+	createServiceSlider();
+	createServiceGallerySlider();
 });
+
+
+
+const createCertificateSlider = () => {
+	let slider = new Swiper(".certificate-slider", {
+		slidesPerView: 2,
+		pagination: {
+		  el: ".certificate__pagination",
+		  clickable: true,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.15,
+				spaceBetween: 20,
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			768: {
+				spaceBetween: 40,
+			},
+		},
+		navigation: {
+			// nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
+			// prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
+		},
+
+	});
+};
+
+createCertificateSlider();
 
 const header = document.querySelector(".header");
 const togglemenu = document.querySelector("#toggle-menu");
@@ -242,23 +308,15 @@ function openMenu(e) {
 	}
 }
 
-let productTabs = document.querySelectorAll(".product-single__tab");
+let productTabs = document.querySelectorAll(".shedule-btn");
 if (productTabs) {
 	productTabs.forEach((el) => {
 		el.addEventListener("click", function (e) {
-			document
-				.querySelector(".product-single__tab.active")
-				.classList.remove("active");
-			document
-				.querySelector(".product-single__tab-content.active")
-				.classList.remove("active");
+			document.querySelector(".shedule-btn.active").classList.remove("active");
+			document.querySelector(".shedule-content.active").classList.remove("active");
 			let trg = e.target;
 			trg.classList.add("active");
-			document
-				.querySelector(
-					`.product-single__tab-content[data-tab-content="${trg.dataset.tab}"]`
-				)
-				.classList.add("active");
+			document.querySelector(`.shedule-content[data-tab-content="${trg.dataset.tab}"]`).classList.add("active");
 		});
 	});
 }
@@ -316,51 +374,8 @@ function openModalNominaton(e) {
 	}
 }
 
-const createExpertSlider = () => {
-	new Swiper(".first__slider", {
-		slidesPerView: "auto",
-		centeredSlides: true,
-		spaceBetween: 30,
-		watchSlidesVisibility: true,
-		loop: true,
-		autoplay: {
-			delay: 2500,
-		},
-		// speed: 500,
-		navigation: {
-			nextEl: ".first-slider-next",
-			prevEl: ".first-slider-prev",
-		},
-		breakpoints: {},
-	});
-};
 
-createExpertSlider();
 
-const createProductSingleSlider = () => {
-	let thumb = new Swiper(".product-thumb-slider", {
-		spaceBetween: 16,
-		loop: true,
-		slidesPerView: 3,
-		// slidesPerView: 'auto',
-		freeMode: true,
-		watchSlidesProgress: true,
-	});
-	let big = new Swiper(".product-big-slider", {
-		spaceBetween: 16,
-		autoHeight: true,
-		loop: true,
-		navigation: {
-			nextEl: ".product-slider-next",
-			prevEl: ".product-slider-prev",
-		},
-		thumbs: {
-			swiper: thumb,
-		},
-	});
-};
-
-createProductSingleSlider();
 
 var galleries = document.querySelectorAll(".lg");
 for (let i = 0; i < galleries.length; i++) {
@@ -371,61 +386,7 @@ for (let i = 0; i < galleries.length; i++) {
 	});
 }
 
-var sliderProduct = document.getElementsByClassName("product-slider");
 
-if (sliderProduct) {
-	for (let i = 0; i < sliderProduct.length; i++) {
-		var slider = sliderProduct[i];
-		new Swiper(sliderProduct[i], {
-			// rewind: true,
-			spaceBetween: 24,
-			navigation: {
-				nextEl: slider
-					.closest(".section")
-					.querySelector(".product-slider-next"),
-				prevEl: slider
-					.closest(".section")
-					.querySelector(".product-slider-prev"),
-			},
-			slidesPerView: 1,
-			breakpoints: {
-				576: {
-					slidesPerView: 2,
-				},
-				768: {
-					slidesPerView: 3,
-				},
-				992: {
-					slidesPerView: 4,
-				},
-			},
-		});
-
-		// slider = tns({
-		// 	loop: false,
-		// 	rewind: true,
-		// 	container: slider,
-		// 	nav: false,
-		// 	gutter: 40,
-		// 	mouseDrag: true,
-		// 	controlsContainer: slider.nextElementSibling,
-		// 	responsive: {
-		// 		0: {
-		// 			gutter: 10,
-		// 			items: 1
-		// 		},
-		// 		576: {
-		// 			gutter: 20,
-		// 			items: 2
-		// 		},
-		// 		768: {
-		// 			gutter: 30,
-		// 			items: 3
-		// 		},
-		// 	}
-		// });
-	}
-}
 
 function widthScrollBar() {
 	let div = document.createElement("div");
