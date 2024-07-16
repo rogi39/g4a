@@ -1066,7 +1066,12 @@ img
 		margin-bottom: 100px
 	+media-breakpoint-up(lg)
 		margin-bottom: 168px
-
+	&_pt
+		padding-top: 30px
+		+media-breakpoint-up(md)
+			padding-top: 60px
+		+media-breakpoint-up(xl)
+			padding-top: 120px
 	.swiper-pagination
 		bottom: -50px
 		+media-breakpoint-up(sm)
@@ -1609,12 +1614,12 @@ img
 	&__title
 		font-family: "Unbounded", sans-serif
 		font-weight: 400
-		font-size: 28px
+		font-size: 25px
 		color: #fff
 		margin-bottom: 15px
-		+media-breakpoint-up(sm)
-			font-size: 32px
 		+media-breakpoint-up(md)
+			font-size: 34px
+		+media-breakpoint-up(lg)
 			font-size: 40px
 	/* .form__subtitle */
 	&__subtitle
@@ -1658,6 +1663,8 @@ img
 		+media-breakpoint-up(md)
 			margin-bottom: 0
 			gap: 60px
+	&__col-left_single
+		flex: 0 0 calc(50% - 30px)
 	/* .form__col-right */
 	&__col-right
 		display: flex
@@ -1669,6 +1676,8 @@ img
 			min-height: 159px
 		+media-breakpoint-up(md)
 			gap: 60
+	&__col-right_single
+		flex: 0 0 calc(50% - 30px)
 	/* .form__input */
 	&__input
 		background-color: transparent
@@ -1679,15 +1688,19 @@ img
 		width: 100%
 		font-family: "Unbounded", sans-serif
 		font-weight: 400
-		font-size: 18px
+		font-size: 16px
 		color: #fff
 		&::placeholder
 			color: #fff
 		&:focus
 			outline: 0
+		+media-breakpoint-up(sm)
+			font-size: 18px
 	/* .form__select */
 	&__select
 		background-color: #1c151f
+	&__select_single
+		background-color: #19111c
 	/* .form__textarea */
 	&__textarea
 		min-height: 166px
@@ -1714,6 +1727,8 @@ img
 		font-size: 14px
 		line-height: 135%
 		color: #a3a3a3
+	&__policy_single
+		max-width: 595px
 
 .footer
 	background-color: #0E0C14
@@ -2037,7 +2052,6 @@ img
 		color: #fff
 		font-family: "Unbounded", sans-serif
 		margin-bottom: 20px
-		+media-breakpoint-up(sm)
 		+media-breakpoint-up(md)
 			font-size: 34px
 			margin-bottom: 30px
@@ -2348,6 +2362,37 @@ img
 		order: 5
 		+media-breakpoint-up(md)
 			order: 5
+	&__col_mounth-single
+		background-color: #271e2a
+		border-bottom: none
+		+media-breakpoint-up(md)
+			background-color: initial
+			flex: 0 0 100px
+		+media-breakpoint-up(lg)
+			flex: 1
+	&__col_days-single
+		+media-breakpoint-up(md)
+			flex: 0 0 100px
+		+media-breakpoint-up(lg)
+			flex: 1
+	&__col_dates-single
+		+media-breakpoint-up(md)
+			flex: 1 0 100px
+	&__col_time-single
+		+media-breakpoint-up(md)
+			flex: 1 0 100px
+		+media-breakpoint-up(lg)
+			flex: 1
+	&__col_teacher-single
+		+media-breakpoint-up(md)
+			flex: 0 0 150px
+		+media-breakpoint-up(lg)
+			flex: 1
+	&__col_details-single
+		+media-breakpoint-up(md)
+			flex: 0 0 100px
+		+media-breakpoint-up(lg)
+			flex: 1
 	/* .table__col-key */
 	&__col-key
 		font-weight: 400
@@ -2392,7 +2437,7 @@ img
 	/* .intensive-item__img */
 	&__img
 		margin-bottom: 26px
-
+		width: 100%
 	/* .intensive-item__title */
 	&__title
 		font-weight: 400
@@ -2401,40 +2446,117 @@ img
 		color: #fff
 		font-family: "Casper", sans-serif
 		margin-bottom: 10px
-	/* .intensive-item__list */
-	&__list
-		margin-bottom: 21px
-		padding-bottom: 10px
-		border-bottom: 1px solid rgba(255,255,255,.2)
-	/* .intensive-item__list-item */
-	&__list-item
+
+.intensive-price-block
+	display: flex
+	align-items: center
+	justify-content: space-between
+	flex-wrap: wrap
+	gap: 10px
+	/* .intensive-price-block__price */
+	&__price
+		font-weight: 400
+		font-size: 22px
+		color: #fff
+		font-family: "Unbounded", sans-serif
+		+media-breakpoint-up(sm)
+			font-size: 24px
+
+.intensive-list
+	margin-bottom: 21px
+	padding-bottom: 10px
+	border-bottom: 1px solid rgba(255,255,255,.2)
+	&_single
+		border-bottom: none
+		padding-bottom: 0
+		margin-bottom: 30px
+		+media-breakpoint-up(sm)
+			.intensive-list__item-text
+				font-size: 22px
+		+media-breakpoint-up(lg)
+			margin-bottom: 51px
+	/* .intensive-list__item */
+	&__item
 		display: flex
 		align-items: center
 		gap: 10px
 		margin-bottom: 10px
-	/* .intensive-item__list-item-svg */
-	&__list-item-svg
+	/* .intensive-list__item-svg */
+	&__item-svg
 		flex: 0 0 24px
-	/* .intensive-item__list-item-text */
-	&__list-item-text
+	/* .intensive-list__item-text */
+	&__item-text
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
 		color: #f1f1f1
 		font-family: "Casper", sans-serif
-	/* .intensive-item__price-block */
-	&__price-block
+
+.intensive-single-hero
+	margin-bottom: 60px
+	+media-breakpoint-up(md)
+		margin-bottom: 80px
+	/* .intensive-single-hero__row */
+	&__row
 		display: flex
-		align-items: center
-		justify-content: space-between
+		gap: 30px
 		flex-wrap: wrap
-		gap: 10px
-	/* .intensive-item__price */
-	&__price
+		+media-breakpoint-up(lg)
+			flex-wrap: nowrap
+		+media-breakpoint-up(xl)
+			gap: 69px
+	/* .intensive-single-hero__left */
+	&__left
+
+	/* .intensive-single-hero__img */
+	&__img
+
+	/* .intensive-single-hero__right */
+	&__right
+		max-width: 438px
+
+.schedule-single
+	margin-bottom: 60px
+	+media-breakpoint-up(md)
+		margin-bottom: 120px
+	/* .schedule-single__title */
+	&__title
 		font-weight: 400
-		font-size: 24px
+		font-size: 25px
 		color: #fff
 		font-family: "Unbounded", sans-serif
+		margin-bottom: 20px
+		+media-breakpoint-up(md)
+			font-size: 34px
+			margin-bottom: 30px
+		+media-breakpoint-up(lg)
+			margin-bottom: 42px
+			font-size: 40px
+
+.intensive-single-form
+	background-color: #19111c
+	+media-breakpoint-up(sm)
+		padding: 46px 30px 62px 30px
+	+media-breakpoint-up(md)
+		padding: 60px 60px 80px 60px
+	+media-breakpoint-up(xl)
+		padding: 86px 120px 102px 120px
+
+.popoular-intensive
+	padding: 30px 0
+	border-top: 1px solid rgba(255,255,255,.2)
+	border-bottom: 1px solid rgba(255,255,255,.2)
+	+media-breakpoint-up(md)
+		padding: 60px 0
+	+media-breakpoint-up(xl)
+		padding: 120px 0
+
+.intensive-single-section
+	padding-bottom: 30px
+	+media-breakpoint-up(md)
+		padding-bottom: 60px
+	+media-breakpoint-up(xl)
+		padding-bottom: 120px
 
 @keyframes "fade"
 	from
