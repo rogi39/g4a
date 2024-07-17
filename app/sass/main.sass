@@ -135,42 +135,44 @@ img
 	list-style-type: none
 	padding: 0
 	display: flex
+	justify-content: center
 	margin: 0
 	margin-top: 30px
 	&__item
 		margin-right: 8px
-		flex: 0 0 33px
-		width: 33px
-		height: 33px
+		flex: 0 0 40px
+		width: 40px
+		height: 40px
 		+media-breakpoint-up(sm)
-			flex: 0 0 40px
-			width: 40px
-			height: 40px
+			flex: 0 0 64px
+			width: 64px
+			height: 64px
 	&__item_active .pagination__link
-		border-color: $accent
-		background-color: $accent
-		color: #fff
+		border-color: #2a232d
+		color: $accent
+		background-color: #2a232d
 	&__link
-		background-color: transparent
 		font-size: 16px
-		line-height: 25px
+		font-family: "Casper", sans-serif
+		line-height: 135%
+		background-color: transparent
 		height: 100%
 		width: 100%
-		color: #000
+		color: #fff
 		display: flex
 		align-items: center
 		justify-content: center
 		text-decoration: none
-		border-radius: 50%
+		border-radius: 1px
 		transition: border-color .25s ease, color .25s ease, background-color .25s ease
-		border-color: #000
-		border: 1px solid $accent
-		color: #000
+		border: 1px solid rgba(255,255,255,.2)
 		&:hover
 			text-decoration: none
-			border-color: $accent
-			color: #fff
-			background-color: $accent
+			border-color: #2a232d
+			color: $accent
+			background-color: #2a232d
+		+media-breakpoint-up(sm)
+			font-size: 18px
 
 .content
 	margin-bottom: 30px
@@ -180,24 +182,27 @@ img
 		width: 100%
 		margin: 0 auto !important
 	p
-		font-size: 16px
+		font-size: 18px
 		font-weight: 400
 		line-height: 150%
 		color: $text
 		margin: 0
 		&:not(:last-child)
-			margin-bottom: 10px
+			margin-bottom: 15px
 		+media-breakpoint-up(sm)
-			&:not(:last-child)
-				margin-bottom: 20px
+			font-size: 20px
+		+media-breakpoint-up(md)
+			font-size: 22px
 	b, strong
 		font-weight: 700
 		font-size: 18px
 		line-height: 24px
-		margin-bottom: 10px
+		margin-bottom: 15px
 		display: inline-block
 		+media-breakpoint-up(sm)
-			margin-bottom: 20px
+			font-size: 20px
+		+media-breakpoint-up(md)
+			font-size: 22px
 	a
 		color: $accent
 		text-decoration: underline
@@ -232,33 +237,35 @@ img
 			color: $accent
 			font-weight: 700
 	ul
-		list-style-type: none
-		margin-left: 10px
+		// list-style-type: none
+		margin-left: 25px
 		padding: 0
 		margin-bottom: 15px
-		+media-breakpoint-up(sm)
-			margin-bottom: 25px
 		li
-			font-size: 16px
-			line-height: 24px
+			font-size: 18px
+			line-height: 150%
 			font-weight: 300
-			margin-bottom: 10px
+			margin-bottom: 5px
 			// display: flex
 			position: relative
-			padding-left: 25px
-			&:before
-				content: ''
-				position: absolute
-				left: 0
-				height: 8px
-				width: 8px
-				flex: 0 0 8px
-				border-radius: 50%
-				background-color: $accent
-				box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25)
-				display: inline-block
-				margin-right: 15px
-				margin-top: 7px
+			// padding-left: 25px
+			// &:before
+			// 	content: ''
+			// 	position: absolute
+			// 	left: 0
+			// 	height: 8px
+			// 	width: 8px
+			// 	flex: 0 0 8px
+			// 	border-radius: 50%
+			// 	background-color: $accent
+			// 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25)
+			// 	display: inline-block
+			// 	margin-right: 15px
+			// 	margin-top: 7px
+			+media-breakpoint-up(sm)
+				font-size: 20px
+			+media-breakpoint-up(md)
+				font-size: 22px
 	blockquote
 		border-left: 2px solid $accent
 		padding-left: 24px
@@ -1518,7 +1525,10 @@ img
 		flex-wrap: wrap
 		padding-bottom: 0
 		overflow-x: hidden
-
+	&_mb
+		margin-bottom: 30px
+		+media-breakpoint-up(sm)
+			margin-bottom: 60px
 	/* .tabs__btn */
 	&__btn
 		flex: 0 0 auto
@@ -1544,6 +1554,7 @@ img
 		&:hover
 			color: #d05050
 			border-color: #D05050
+			text-decoration: none
 		&.active
 			border-color: #ff3030
 			background-color: transparent
@@ -1557,16 +1568,43 @@ img
 	&__slide
 		&.non-swiper-slide
 			display: none
-	/* .reviews-slider__img-block */
-	&__img-block
-		height: 242px
-		+media-breakpoint-up(sm)
-			height: initial
 
-	/* .reviews-slider__img */
+.video-item
+	height: 242px
+	position: relative
+	+media-breakpoint-up(sm)
+		height: initial
+	/* .video-item__icon */
+	&__icon
+		position: absolute
+		height: 56px
+		width: 56px
+		top: calc( 50% - 28px )
+		left: calc( 50% - 28px )
+		+media-breakpoint-up(lg)
+			width: auto
+			height: auto
+			top: calc( 50% - 37px )
+			left: calc( 50% - 37px )
+	/* .video-item__img */
 	&__img
 		height: 100%
 		object-fit: cover
+
+.video-archive
+	.video-item__img
+		width: 100%
+	/* .video-archive__row */
+	&__row
+		display: flex
+		column-gap: 40px
+		row-gap: 50px
+		flex-wrap: wrap
+	/* .video-archive__col */
+	&__col
+		flex: 0 0 100%
+		+media-breakpoint-up(md)
+			flex: 0 0 calc(50% - 20px)
 
 .contacts
 	padding-top: 70px
@@ -2466,6 +2504,14 @@ img
 		color: #fff
 		font-family: "Casper", sans-serif
 		margin-bottom: 10px
+	/* .intensive-item__teacher */
+	&__teacher
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c1c1c1
+		font-family: "Casper", sans-serif
+		margin-bottom: 15px
 
 .intensive-price-block
 	display: flex
@@ -2486,6 +2532,15 @@ img
 	margin-bottom: 21px
 	padding-bottom: 10px
 	border-bottom: 1px solid rgba(255,255,255,.2)
+	&_open-lesson
+		padding-bottom: 20px
+		margin-bottom: 20px
+		+media-breakpoint-up(md)
+			padding-bottom: 45px
+			margin-bottom: 45px
+	&_noborder
+		border-bottom: none
+		padding-bottom: 0
 	&_single
 		border-bottom: none
 		padding-bottom: 0
@@ -2534,6 +2589,10 @@ img
 	/* .intensive-single-hero__right */
 	&__right
 		max-width: 438px
+	&__right_w100
+		max-width: initial
+		min-width: 483px
+		flex: 1
 
 .schedule-single
 	margin-bottom: 60px
