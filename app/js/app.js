@@ -387,6 +387,8 @@ for (let i = 0; i < galleries.length; i++) {
 		thumbnail: false,
 		selector: ".lg-item",
 		download: false,
+		enableDrag: true,
+		enableTouch: true,
 	});
 }
 

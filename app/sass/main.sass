@@ -991,6 +991,8 @@ img
 			font-size: 40px
 	&_teacher
 		margin-bottom: 25px
+	&_contacts
+		max-width: 700px
 
 .title-row
 	display: flex
@@ -2935,6 +2937,135 @@ img
 			padding: 10px 25px
 		+media-breakpoint-up(sm)
 			margin-bottom: 60px
+			font-size: 24px
+
+.contacts-page
+	/* .contacts-page__row */
+	&__row
+		display: flex
+		gap: 30px
+		flex-wrap: wrap
+		+media-breakpoint-up(lg)
+			flex-wrap: nowrap
+		+media-breakpoint-up(xl)
+			gap: 69px
+
+	/* .contacts-page__left */
+	&__left
+		flex: 0 1 623px
+	/* .contacts-page__right */
+	&__right
+		max-width: initial
+		flex: 1
+		+media-breakpoint-up(sm)
+			min-width: 483px
+	/* .contacts-page__map */
+	&__map
+		filter: grayscale(1)
+	/* .contacts-page__address */
+	&__address
+		font-weight: 400
+		font-size: 22px
+		line-height: 142%
+		color: #fff
+		font-family: "Casper", sans-serif
+		margin-bottom: 15px
+		+media-breakpoint-up(sm)
+			font-size: 24px
+		+media-breakpoint-up(md)
+			font-size: 28px
+	/* .contacts-page__text */
+	&__text
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		margin-bottom: 35px
+		+media-breakpoint-up(sm)
+			font-size: 20px
+		+media-breakpoint-up(md)
+			font-size: 22px
+	/* .contacts-page__mail */
+	&__mail
+		display: inline-block
+		font-weight: 400
+		font-size: 24px
+		line-height: 142%
+		text-decoration: underline
+		text-decoration-skip-ink: none
+		color: #f24e4e
+		font-family: "Casper", sans-serif
+		margin-bottom: 35px
+		text-decoration: none
+		&:hover
+			color: #f24e4e
+			text-decoration: none
+	&__mail_mb15
+		margin-bottom: 15px
+	/* .contacts-page__phone */
+	&__phone
+		font-weight: 400
+		font-size: 24px
+		line-height: 142%
+		color: #fff
+		display: inline-block
+		text-decoration: none
+		margin-bottom: 10px
+		&:hover
+			text-decoration: none
+			color: #fff
+	/* .contacts-page__worktime */
+	&__worktime
+		font-weight: 400
+		font-size: 16px
+		line-height: 135%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+	/* .contacts-page__item */
+	&__item
+		margin-bottom: 15px
+	/* .contacts-page__item-link */
+	&__item-link
+		font-weight: 400
+		font-size: 22px
+		line-height: 135%
+		text-decoration: underline
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		&:hover
+			color: #c6c6c6
+			text-decoration: none
+	/* .contacts-page__details */
+	&__details
+		background-color: #271e2a
+		padding: 25px
+	/* .contacts-page__details-title */
+	&__details-title
+		font-weight: 700
+		font-size: 24px
+		line-height: 142%
+		color: #fff
+		font-family: "Casper", sans-serif
+		margin-bottom: 25px
+	/* .contacts-page__details-address */
+	&__details-address
+		font-weight: 400
+		font-size: 22px
+		line-height: 142%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		margin-bottom: 15px
+		+media-breakpoint-up(sm)
+			font-size: 24px
+	/* .contacts-page__details-org */
+	&__details-org
+		font-weight: 400
+		font-size: 22px
+		line-height: 142%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		+media-breakpoint-up(sm)
 			font-size: 24px
 
 @keyframes "fade"
