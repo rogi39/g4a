@@ -138,6 +138,10 @@ img
 	justify-content: center
 	margin: 0
 	margin-top: 30px
+	+media-breakpoint-up(sm)
+		margin-top: 50px
+	+media-breakpoint-up(md)
+		margin-top: 80px
 	&__item
 		margin-right: 8px
 		flex: 0 0 40px
@@ -2679,6 +2683,100 @@ img
 		ul
 			margin-bottom: 0
 			padding-left: 25px
+
+.gallery
+	margin-bottom: 16px
+	/* .gallery__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -5px
+		+media-breakpoint-up(md)
+			margin: 0 -10px
+	/* .gallery__col */
+	&__col
+		flex: 0 0 50%
+		padding: 0 5px
+		margin-bottom: 10px
+		+media-breakpoint-up(md)
+			margin-bottom: 20px
+			padding: 0 10px
+			flex: 0 0 33.333%
+	&__col_50
+		flex: 0 0 50%
+
+.gallery-item
+	position: relative
+	cursor: pointer
+	border-radius: 5px
+	overflow: hidden
+	&:hover
+		.gallery-item__hover
+			display: flex
+	/* .gallery-item__img */
+	&__img
+		width: 100%
+		object-fit: cover
+	/* .gallery-item__hover */
+	&__hover
+		animation: fade .35s ease-out
+		display: none
+		position: absolute
+		align-items: center
+		justify-content: center
+		background-color: rgba(0,0,0, .2)
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+	/* .gallery-item__svg */
+	&__svg
+		fill: #fff
+		height: 24px
+		width: 24px
+		flex: 0 0 24px
+
+.process-learning
+	&:not(:last-child)
+		margin-bottom: 80px
+	+media-breakpoint-up(sm)
+		&:not(:last-child)
+			margin-bottom: 120px
+	+media-breakpoint-up(md)
+		&:not(:last-child)
+			margin-bottom: 140px
+	+media-breakpoint-up(lg)
+		&:not(:last-child)
+			margin-bottom: 160px
+	/* .process-learning__title */
+	&__title
+		font-weight: 400
+		font-size: 25px
+		color: #fff
+		font-family: "Unbounded", sans-serif
+		margin-bottom: 20px
+		max-width: 700px
+		+media-breakpoint-up(md)
+			font-size: 34px
+			margin-bottom: 30px
+		+media-breakpoint-up(lg)
+			margin-bottom: 42px
+			font-size: 40px
+	/* .process-learning__text */
+	&__text
+		font-family: "Casper", sans-serif
+		font-weight: 400
+		font-size: 20px
+		line-height: 142%
+		color: #fff
+		margin-bottom: 26px
+		max-width: 700px
+		+media-breakpoint-up(md)
+			margin-bottom: 46px
+		+media-breakpoint-up(xl)
+			font-size: 22px
+		+media-breakpoint-up(wxp)
+			font-size: 24px
 
 @keyframes "fade"
 	from
