@@ -1909,6 +1909,7 @@ img
 		background-color: #1c151f
 		padding: 50px 16px
 		max-width: 959px
+		width: 100%
 		position: relative
 		+media-breakpoint-up(sm)
 			padding: 50px
@@ -1928,6 +1929,25 @@ img
 		height: 14px
 		width: 14px
 		fill: #E0E0E0
+	/* .modal__title */
+	&__title
+		font-family: "Unbounded", sans-serif
+		font-weight: 400
+		font-size: 25px
+		color: #fff
+		margin-bottom: 15px
+		+media-breakpoint-up(md)
+			font-size: 34px
+		+media-breakpoint-up(lg)
+			font-size: 40px
+	/* .modal__subtitle */
+	&__subtitle
+		font-family: "Casper", sans-serif
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		margin-bottom: 35px
 
 .certificate
 	padding-bottom: 70px
@@ -2557,6 +2577,49 @@ img
 		padding-bottom: 60px
 	+media-breakpoint-up(xl)
 		padding-bottom: 120px
+
+.simplebar-track.simplebar-vertical
+	background-color: rgba(240,35,35,.2)
+	width: 8px
+	border-radius: 22px
+
+.simplebar-scrollbar
+	background-color: #f02323
+	border-radius: 22px
+.simplebar-mouse-entered
+	.simplebar-scrollbar
+		background-color: #f02323
+
+.modal-program
+	padding-bottom: 35px
+	margin-bottom: 50px
+	border-bottom: 1px solid rgba(255,255,255,.2)
+	/* .modal-program__items */
+	&__items
+		max-height: 500px
+		overflow: auto
+	/* .modal-program__item */
+	&__item
+		&:not(:last-child)
+			margin-bottom: 35px
+	/* .modal-program__title */
+	&__title
+		font-weight: 400
+		font-size: 24px
+		line-height: 135%
+		color: #fff
+		font-family: "Casper", sans-serif
+		margin-bottom: 10px
+	/* .modal-program__text */
+	&__text
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		ul
+			margin-bottom: 0
+			padding-left: 25px
 
 @keyframes "fade"
 	from

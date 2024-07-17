@@ -347,7 +347,7 @@ btnModals.forEach((el) => {
 
 function openModalNominaton(e) {
 	e.preventDefault();
-	let modal = document.getElementById("modal-callback");
+	let modal = e.currentTarget.dataset.idModal ? document.getElementById(e.currentTarget.dataset.idModal) : document.getElementById("modal-callback");
 	let wsb = widthScrollBar();
 
 	window.addEventListener("click", function (e) {
@@ -375,7 +375,11 @@ function openModalNominaton(e) {
 }
 
 
-
+Array.prototype.forEach.call(
+  document.querySelectorAll('.simple-bar'),
+  (el) => new SimpleBar(el), {
+		autohide: false,
+	});
 
 var galleries = document.querySelectorAll(".lg");
 for (let i = 0; i < galleries.length; i++) {
