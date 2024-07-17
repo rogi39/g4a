@@ -239,8 +239,8 @@ const createCertificateSlider = () => {
 			},
 		},
 		navigation: {
-			// nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
-			// prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
+			nextEl: ".certificate-slider-next",
+			prevEl: ".certificate-slider-prev",
 		},
 
 	});
