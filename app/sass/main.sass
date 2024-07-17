@@ -989,6 +989,8 @@ img
 			font-size: 32px
 		+media-breakpoint-up(lg)
 			font-size: 40px
+	&_teacher
+		margin-bottom: 25px
 
 .title-row
 	display: flex
@@ -2644,8 +2646,9 @@ img
 		max-width: 438px
 	&__right_w100
 		max-width: initial
-		min-width: 483px
 		flex: 1
+		+media-breakpoint-up(sm)
+			min-width: 483px
 
 .schedule-single
 	margin-bottom: 60px
@@ -2832,6 +2835,106 @@ img
 		+media-breakpoint-up(xl)
 			font-size: 22px
 		+media-breakpoint-up(wxp)
+			font-size: 24px
+
+.teachers
+	/* .teachers__row */
+	&__row
+		+media-breakpoint-up(sm)
+			display: flex
+			flex-wrap: wrap
+			margin: 0 -10px
+			row-gap: 50px
+		+media-breakpoint-up(md)
+			margin: 0 -15px
+			row-gap: 70px
+		+media-breakpoint-up(xl)
+			margin: 0 -19px
+	/* .teachers__col */
+	&__col
+		margin-bottom: 30px
+		+media-breakpoint-up(sm)
+			margin-bottom: 0
+			flex: 0 0 50%
+			padding: 0 10px
+		+media-breakpoint-up(md)
+			padding: 0 15px
+			flex: 0 0 33.3333%
+		+media-breakpoint-up(xl)
+			flex: 0 0 25%
+			padding: 0 19px
+
+.teachers-item
+	/* .teachers-item__img */
+	&__img
+		margin-bottom: 20px
+
+	/* .teachers-item__name */
+	&__name
+		font-weight: 400
+		font-size: 20px
+		line-height: 142%
+		color: #fff
+		font-family: "Casper", sans-serif
+		margin-bottom: 10px
+		+media-breakpoint-up(sm)
+			min-height: 56px
+		+media-breakpoint-up(xl)
+			min-height: 68px
+			font-size: 24px
+	/* .teachers-item__text */
+	&__text
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		+media-breakpoint-up(sm)
+			max-height: 145px
+			overflow: hidden
+		+media-breakpoint-up(xl)
+			font-size: 22px
+			max-height: 180px
+
+.teacher-pos
+	font-weight: 700
+	font-size: 18px
+	line-height: 135%
+	color: #fff
+	font-family: "Casper", sans-serif
+	margin-bottom: 35px
+	+media-breakpoint-up(md)
+		font-size: 22px
+
+.teacher-works
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 100%
+		height: 1px
+		left: 0
+		top: 14px
+		background-color: #606060
+		+media-breakpoint-up(sm)
+			top: 17px
+	/* .teacher-works__title */
+	&__title
+		position: relative
+		z-index: 1
+		text-align: center
+		font-weight: 400
+		font-size: 20px
+		line-height: 135%
+		text-align: center
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		margin-bottom: 30px
+		span
+			background-color: #19121C
+			padding: 10px 25px
+		+media-breakpoint-up(sm)
+			margin-bottom: 60px
 			font-size: 24px
 
 @keyframes "fade"
