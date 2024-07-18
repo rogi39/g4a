@@ -72,6 +72,10 @@ img
 	height: 0
 	overflow: hidden
 	margin-bottom: 30px
+	&_internship
+		margin-bottom: 0
+		padding-bottom: 55.1%
+
 	iframe, video
 		position: absolute
 		top: 0
@@ -993,6 +997,12 @@ img
 		margin-bottom: 25px
 	&_contacts
 		max-width: 700px
+	&_intership
+		margin-bottom: 30px
+		+media-breakpoint-up(xl)
+			margin-bottom: 57px
+		+media-breakpoint-up(wxp)
+			margin-bottom: 77px
 
 .title-row
 	display: flex
@@ -3067,6 +3077,240 @@ img
 		font-family: "Casper", sans-serif
 		+media-breakpoint-up(sm)
 			font-size: 24px
+
+.intership-page
+	padding-bottom: 21px
+	+media-breakpoint-up(sm)
+		background: url('../images/intership/intership-bg-1.png') 104% 1.36% no-repeat,
+		url('../images/intership/intership-bg-2.png') 102% 15.4% no-repeat,
+		url('../images/intership/intership-bg-3.png') -2% 25.22% no-repeat,
+		url('../images/intership/intership-bg-4.png') 90.2% 42.5% no-repeat,
+		url('../images/intership/intership-bg-5.png') 101.2% 61.2% no-repeat,
+		url('../images/intership/intership-bg-6.png') -1% 74.587% no-repeat,
+		url('../images/intership/intership-bg-8.png') -3% 97.955% no-repeat,
+		url('../images/intership/intership-bg-7.png') 46% 85.23% no-repeat,
+		url('../images/intership/intership-bg-9.png') 101.5% 103.84% no-repeat
+
+		// background: url('../images/intership/intership-bg-1.png') 252px 175px no-repeat,
+		// url('../images/intership/intership-bg-2.png') 410px 2093px no-repeat,
+		// url('../images/intership/intership-bg-3.png') -8px 3440px no-repeat,
+		// url('../images/intership/intership-bg-4.png') 1103px 5759px no-repeat,
+		// url('../images/intership/intership-bg-5.png') 752px 8588px no-repeat,
+		// url('../images/intership/intership-bg-6.png') -8px 10035px no-repeat,
+		// url('../images/intership/intership-bg-8.png') -8px 12428px no-repeat,
+		// url('../images/intership/intership-bg-7.png') -8px 11228px no-repeat,
+		// url('../images/intership/intership-bg-9.png') 625px 13896px no-repeat
+
+		background-size: contain,contain,contain,60%,contain,contain,contain,contain,contain
+	+media-breakpoint-up(xl)
+		background-size: contain,contain,contain,auto,contain,contain,contain,contain,contain
+	+media-breakpoint-up(wxp)
+		background-size: auto
+
+.intership-header
+	font-weight: 400
+	font-size: 18px
+	line-height: 135%
+	color: #c6c6c6
+	font-family: "Casper", sans-serif
+	margin-bottom: 40px
+	p
+		margin-bottom: 20px
+	+media-breakpoint-up(sm)
+		margin-bottom: 78px
+	+media-breakpoint-up(md)
+		font-size: 20px
+	+media-breakpoint-up(xl)
+		font-size: 22px
+	+media-breakpoint-up(wxp)
+		max-width: 622px
+		column-gap: 79px
+		max-height: 454px
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
+
+.intership-item
+	margin-bottom: 60px
+	+media-breakpoint-up(md)
+		margin-bottom: 80px
+	+media-breakpoint-up(xl)
+		margin-bottom: 100px
+	&_mb115
+		margin-bottom: 75px
+		+media-breakpoint-up(md)
+			margin-bottom: 95px
+		+media-breakpoint-up(xl)
+			margin-bottom: 115px
+
+.intership-title
+	font-family: "Unbounded", sans-serif
+	font-weight: 400
+	font-size: 22px
+	line-height: 128%
+	color: #fff
+	margin-bottom: 20px
+	max-width: 635px
+	+media-breakpoint-up(sm)
+		margin-bottom: 35px
+	+media-breakpoint-up(lg)
+		font-size: 32px
+	+media-breakpoint-up(xl)
+		margin-bottom: 68px
+		font-size: 40px
+
+.intership-video-row
+	display: flex
+	gap: 15px
+	margin-bottom: 40px
+	flex-direction: column
+	+media-breakpoint-up(sm)
+		flex-direction: row
+	+media-breakpoint-up(md)
+		gap: 30px
+		margin-bottom: 70px
+	+media-breakpoint-up(wxp)
+		gap: 64px
+	&_reverse
+		flex-direction: column-reverse
+		+media-breakpoint-up(sm)
+			flex-direction: row
+	&_mb0
+		margin-bottom: 0
+	&_mb80
+		margin-bottom: 40px
+		+media-breakpoint-up(md)
+			margin-bottom: 80px
+	/* .intership-video-row__left */
+	&__left
+		flex: 0 0 calc(50% - 8px)
+		+media-breakpoint-up(md)
+			flex: 0 0 calc(50% - 15px)
+		+media-breakpoint-up(lg)
+			flex: 0 0 460px
+	/* .intership-video-row__text */
+	&__text
+		font-weight: 400
+		font-size: 18px
+		line-height: 142%
+		color: #fff
+		font-family: "Casper", sans-serif
+		+media-breakpoint-up(md)
+			font-size: 20px
+		+media-breakpoint-up(lg)
+			font-size: 22px
+		+media-breakpoint-up(xl)
+			font-size: 24px
+
+	/* .intership-video-row__right */
+	&__right
+		flex: 1
+
+.person
+	margin-bottom: 40px
+	+media-breakpoint-up(md)
+		margin-bottom: 59px
+	+media-breakpoint-up(xl)
+		margin-bottom: 79px
+
+	/* .person__name */
+	&__name
+		font-weight: 400
+		font-size: 20px
+		color: #fff
+		font-family: "Unbounded", sans-serif
+		margin-bottom: 11px
+		+media-breakpoint-up(md)
+			font-size: 24px
+		+media-breakpoint-up(xl)
+			font-size: 28px
+
+	/* .person__position */
+	&__position
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		margin-bottom: 18px
+		+media-breakpoint-up(md)
+			font-size: 20px
+			margin-bottom: 38px
+		+media-breakpoint-up(xl)
+			font-size: 22px
+
+	/* .person__row */
+	&__row
+		display: flex
+		justify-content: space-between
+		gap: 15px
+		flex-direction: column
+		+media-breakpoint-up(sm)
+			flex-direction: row
+		+media-breakpoint-up(md)
+			gap: 30px
+	/* .person__col */
+	&__col
+		flex: 0 0 calc( 50% - 8px )
+		max-width: 664px
+		+media-breakpoint-up(md)
+			flex: 0 0 calc( 50% - 15px )
+
+	/* .person__img */
+	&__img
+
+.person-solo-row
+	display: flex
+	flex-wrap: wrap
+	column-gap: 15px
+	row-gap: 30px
+	flex-direction: column
+	.person-solo
+		flex: 0 0 calc(50% - 8px)
+	+media-breakpoint-up(sm)
+		row-gap: 50px
+		flex-direction: row
+	+media-breakpoint-up(md)
+		column-gap: 30px
+		.person-solo
+			flex: 0 0 calc(50% - 15px)
+	+media-breakpoint-up(lg)
+		.person-solo
+			flex: 0 0 calc(33.333% - 20px)
+	+media-breakpoint-up(xl)
+		row-gap: 80px
+	+media-breakpoint-up(wxp)
+		column-gap: 74px
+		.person-solo
+			flex: 0 0 auto
+
+.person-solo
+	/* .person-solo__img */
+	&__img
+		margin-bottom: 19px
+	/* .person-solo__name */
+	&__name
+		font-weight: 400
+		font-size: 20px
+		color: #fff
+		font-family: "Unbounded", sans-serif
+		margin-bottom: 4px
+		+media-breakpoint-up(md)
+			font-size: 24px
+		+media-breakpoint-up(xl)
+			font-size: 28px
+
+	/* .person-solo__position */
+	&__position
+		font-weight: 400
+		font-size: 18px
+		line-height: 135%
+		color: #c6c6c6
+		font-family: "Casper", sans-serif
+		+media-breakpoint-up(md)
+			font-size: 20px
+		+media-breakpoint-up(xl)
+			font-size: 22px
 
 @keyframes "fade"
 	from

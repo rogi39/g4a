@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>OptimizedHTML 5</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dest/preview.jpg">
+	<link rel="stylesheet" href="css/app.min.css">
+
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header__overlay"></div>
+		<div class="container">
+			<div class="header__top">
+				<div class="header__row">
+					<div class="header__left">
+						<a href="#" class="logo">
+							<img src="images/logo.svg" alt="logo" class="logo__img">
+						</a>
+					</div>
+					<div class="header__center">
+						<div class="header__info">
+							<div class="header__info-top">
+								<a href="#" class="phone">+7 495 172 29 61</a>
+								<a href="#" class="email">game4art@mail.ru</a>
+							</div>
+							<div class="address">г. Москва, ул. Коровий Вал, 1А, строение 1</div>
+						</div>
+					</div>
+					<div class="header__right">
+						<a href="#" class="btn btn_h50 btn_transparent btn__master">
+							<svg class="btn__transparent">
+								<use xlink:href="images/sprite.svg#btnTransparent"></use>
+							</svg>
+							<div class="btn__text">Записаться на мастер-класс</div>
+						</a>
+						<a href="#" class="btn btn_h50 btn-modal">
+							<svg class="btn__border btn__border_left">
+								<use xlink:href="images/sprite.svg#btnBorder"></use>
+							</svg>
+							<div class="btn__text">Записаться на курс</div>
+							<svg class="btn__border btn__border_right">
+								<use xlink:href="images/sprite.svg#btnBorder"></use>
+							</svg>
+						</a>
+					</div>
+					<span class="header__toggle-menu" id="toggle-menu">
+						<span class="header__toggle-text">Меню</span>
+						<span class="header__toggle-line"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="header__menu">
+			<div class="container">
+				<nav class="menu">
+					<div class="menu__close">
+						<svg class="menu__close-svg">
+							<use xlink:href="images/sprite.svg#close"></use>
+						</svg>
+					</div>
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link">О школе</a>
+							<span class="menu__item-svg-block">
+								<svg class="menu__item-svg">
+									<use xlink:href="images/sprite.svg#arrow"></use>
+								</svg>
+							</span>
+							<ul class="menu__sub">
+								<li class="menu__sub-item"><a href="#" class="menu__sub-link">Преподаватели</a></li>
+								<li class="menu__sub-item"><a href="#" class="menu__sub-link">Процесс обучения</a></li>
+								<li class="menu__sub-item"><a href="#" class="menu__sub-link">Сведение об образовательной организации</a></li>
+							</ul>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">Обучение</a>
+							<span class="menu__item-svg-block">
+								<svg class="menu__item-svg">
+									<use xlink:href="images/sprite.svg#arrow"></use>
+								</svg>
+							</span>
+							<ul class="menu__sub">
+								<li class="menu__sub-item"><a href="#" class="menu__sub-link">Учебные программы</a></li>
+								<li class="menu__sub-item"><a href="#" class="menu__sub-link">Открытые уроки</a></li>
+								<li class="menu__sub-item"><a href="#" class="menu__sub-link">Стажировка</a></li>
+							</ul>
+						</li>
+						<li class="menu__item"><a href="#" class="menu__link">Обучение школьников</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">Летние интенсивы</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">Расписание занятий</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+					</ul>
+					<div class="menu__address">
+						<div class="menu__address-item">
+							<a href="#" class="phone">+7 495 172 29 61</a>
+						</div>
+						<div class="menu__address-item">
+							<a href="#" class="email">game4art@mail.ru</a>
+						</div>
+						<div class="address address_menu">г. Москва, ул. Коровий Вал, 1А, строение 1</div>
+					</div>
+					<div class="menu__btn">
+						<a href="#" class="btn btn_h50 btn-modal">
+							<svg class="btn__border btn__border_left">
+								<use xlink:href="images/sprite.svg#btnBorder"></use>
+							</svg>
+							<div class="btn__text">Записаться на курс</div>
+							<svg class="btn__border btn__border_right">
+								<use xlink:href="images/sprite.svg#btnBorder"></use>
+							</svg>
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+	</header>
+
+	<main class="main">
+		<section class="intership-page">
+			<div class="container">
+				<div class="breadcrumb-block">
+					<ul class="breadcrumb">
+						<li class="breadcrumb__item">
+							<a href="#" class="breadcrumb__link">Главная</a>
+						</li>
+						<li class="breadcrumb__item">
+							<a href="#" class="breadcrumb__link">Обучение</a>
+						</li>
+						<li class="breadcrumb__item breadcrumb__item_active">Открытые уроки</li>
+					</ul>
+				</div>
+
+				<h1 class="title title_intership">Стажировка</h1>
+				<div class="intership-header">
+					<p>Главная особенность школы компьютерной графики Game4Art — сотрудничество с крупнейшими студиями из индустрии игр, кино и анимации, которые работают над проектами мирового уровня. Мы не просто обучаем людей, а готовим профессиональные кадры, пополняя ряды наших коллег.</p>
+					<p>Обучение на всех программах построено таким образом, чтобы провести студентов от учебного класса до рабочего места студии и сделать так, чтобы вы получили оффер.</p>
+					<p>За два года вы подготовите качественное портфолио и поработаете над реальными заданиями от наших партнёров, по результатам которых вы сможете попасть к ним на стажировку, не дожидаясь окончания обучения.</p>
+					<p>Просмотры от студий во взрослых и детских группах проводятся каждые три месяца. К вам будут приходить опытные представители CG индустрии, заинтересованные в новых кадрах — возможность пройти стажировку параллельно с обучением и остаться работать в команде студии мечты есть у каждого.</p>
+				</div>
+				<div class="intership-item">
+					<div class="intership-title">Новый партнер школы Студия Corbax</div>
+					<div class="intership-video-row">
+						<div class="intership-video-row__left">
+							<div class="intership-video-row__text">Основатели и руководители студии Сorbax обратились к слушателям на мастер-классе о геймдев индустрии</div>
+						</div>
+						<div class="intership-video-row__right">
+							<!-- <img src="images/dest/intership/video1.png" alt="video1" class="intership-video-row__img"> -->
+							<div class="video video_internship">
+								<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="intership-video-row intership-video-row_mb0">
+						<div class="intership-video-row__left">
+							<div class="intership-video-row__text">О проектах студии</div>
+						</div>
+						<div class="intership-video-row__right">
+							<!-- <img src="images/dest/intership/video2.png" alt="video2" class="intership-video-row__img"> -->
+							<div class="video video_internship">
+								<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="intership-item">
+					<div class="intership-title">Стажировка на студии Unit5VFX</div>
+					<div class="intership-video-row intership-video-row_mb80">
+						<div class="intership-video-row__left">
+							<div class="intership-video-row__text">Арт-директор Unit5VFX Анатолий Тур рассказывает о проектах и особенностях студии и сотрудничестве с Game4Art</div>
+						</div>
+						<div class="intership-video-row__right">
+							<!-- <img src="images/dest/intership/video3.png" alt="video1" class="intership-video-row__img"> -->
+							<div class="video video_internship">
+								<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="person">
+						<div class="person__name">Надя Цой</div>
+						<div class="person__position">2D художник по персонажам</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person1-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person1-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="person">
+						<div class="person__name">Демченко Анастасия</div>
+						<div class="person__position">3D художник по персонажам</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person2-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person2-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="person">
+						<div class="person__name">Ольга Ким</div>
+						<div class="person__position">Моушн дизайнер</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person3-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person3-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="person" style="margin-bottom: 81px;">
+						<div class="person__name">Татьяна Сумарокова</div>
+						<div class="person__position">3D художник по персонажам</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person4-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person4-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="person-solo-row">
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo1-1.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Алина Лушникова</div>
+							<div class="person-solo__position">Аниматор-риггер</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo1-2.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Ксения Соколова</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo1-3.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Оля Дубасова</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo1-4.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Вячеслав Волошин</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo1-5.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Екатерина Гусева</div>
+							<div class="person-solo__position">Моушн дизайнер</div>
+						</div>
+					</div>
+				</div>
+				<div class="intership-item">
+					<div class="intership-title">Стажировка на студии Magic Factory Animation</div>
+					<div class="intership-video-row intership-video-row_mb80">
+						<div class="intership-video-row__left">
+							<div class="intership-video-row__text">Директора Magic Factory Ярослав Кемниц и Сергей Демчев об уникальном пайплайне студии и современных технологиях создания анимации</div>
+						</div>
+						<div class="intership-video-row__right">
+							<!-- <img src="images/dest/intership/video4.jpg" alt="video1" class="intership-video-row__img"> -->
+							<div class="video video_internship">
+								<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="person">
+						<div class="person__name">Виталий Гомон</div>
+						<div class="person__position">3D художник по персонажам</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person5-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person5-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="person">
+						<div class="person__name">Кристина Пальцева</div>
+						<div class="person__position">2D художник по персонажам</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person6-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person6-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="person-solo-row">
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo2-1.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Елизавета Кудрявцева</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo2-2.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Александр Еремцов</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo2-3.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Егор Тренин</div>
+							<div class="person-solo__position">Аниматор-риггер</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo2-4.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Анастасия Иванова</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+					</div>
+				</div>
+				<div class="intership-item">
+					<div class="intership-title">Стажировка на студии 123 VFX</div>
+					<div class="intership-video-row intership-video-row_mb80">
+						<div class="intership-video-row__left">
+							<div class="intership-video-row__text">Руководитель 123 VFX Василиса Лебедева и главный супервайзер студии Александр Петров о стажировках в киноиндустрии для студентов Game4Art</div>
+						</div>
+						<div class="intership-video-row__right">
+							<!-- <img src="images/dest/intership/video5.jpg" alt="video1" class="intership-video-row__img"> -->
+							<div class="video video_internship">
+								<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="person-solo-row">
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo3-1.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Руслан Гасымов</div>
+							<div class="person-solo__position">3D художник по персонажам</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo3-2.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Александр Кутин</div>
+							<div class="person-solo__position">Моушн дизайнер</div>
+						</div>
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo3-3.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Горячева Анастасия</div>
+							<div class="person-solo__position">Моушн дизайнер</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="intership-item">
+					<div class="intership-title">Стажировка на студии Аэроплан</div>
+					<div class="intership-video-row intership-video-row_mb80">
+						<div class="intership-video-row__left">
+							<div class="intership-video-row__text">Руководитель студии Аэроплан Александр Миргородский приглашает учеников Game4Art на стажировку</div>
+						</div>
+						<div class="intership-video-row__right">
+							<!-- <img src="images/dest/intership/video6.jpg" alt="video1" class="intership-video-row__img"> -->
+							<div class="video video_internship">
+								<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+					<div class="person">
+						<div class="person__name">Мария Журба</div>
+						<div class="person__position">Аниматор-риггер</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person7-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<img src="images/dest/intership/person7-2.jpg" alt="person" class="person__img">
+							</div>
+						</div>
+					</div>
+					<div class="person-solo-row">
+						<div class="person-solo">
+							<img src="images/dest/intership/person-solo7-1.jpg" alt="person" class="person-solo__img">
+							<div class="person-solo__name">Полина Васильева</div>
+							<div class="person-solo__position">Аниматор-риггер</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="intership-item intership-item_mb115">
+					<div class="intership-title">Стажировка на студии Film Direction</div>
+					<div class="person">
+						<div class="person__name">Иван Лысяной</div>
+						<div class="person__position">Аниматор-риггер</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person8-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person8-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="intership-item">
+					<div class="intership-title">Стажировка на студии Enclave Interactive</div>
+					<div class="intership-video-row intership-video-row_reverse">
+						<div class="intership-video-row__left">
+							<div class="person__name">Александр Щиголь и Ксения Смирнова</div>
+							<div class="person__position">3D художники по персонажам</div>
+						</div>
+						<div class="intership-video-row__right">
+							<img src="images/dest/intership/video7-img.jpg" alt="video1" class="intership-video-row__img">
+						</div>
+					</div>
+					<div class="intership-video-row ">
+						<div class="intership-video-row__right">
+							<img src="images/dest/intership/video8-img.jpg" alt="video1" class="intership-video-row__img">
+						</div>
+						<div class="intership-video-row__left">
+							<div class="person__name">Елизавета Кудрявцева и Мария Родионцева</div>
+							<div class="person__position">3D художники по персонажам</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="intership-item">
+					<div class="intership-title">Стажировка на студии Sobaka</div>
+					<div class="person">
+						<div class="person__name">Ярахмедов Усман</div>
+						<div class="person__position">Лэвел дизайнер/художник окружения</div>
+						<div class="person__row">
+							<div class="person__col">
+								<img src="images/dest/intership/person9-1.jpg" alt="person" class="person__img">
+							</div>
+							<div class="person__col">
+								<!-- <img src="images/dest/intership/person9-2.jpg" alt="person" class="person__img"> -->
+								<div class="video video_internship">
+									<iframe src="https://www.youtube.com/embed/v49R04F8O_I?si=mZ0KECsc89gbU1fH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+		</section>
+		<div class="announce">
+			<div class="container">
+				<div class="swiper announce__slider">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide announce__slider-slide">
+							<div class="announce__slider-block" style="background-image: url('images/dest/announce1.png');">
+								<!-- <img src="images/dest/announce1.png" alt="asd" class="announce__slider-img"> -->
+								<div class="announce__slider-text-block">
+									<div class="announce__slider-title">Открыт набор на февраль 2024 учебного года!</div>
+									<div class="announce__slider-text">Обучение всех желающих без возрастных ограничений. Детские и взрослые группы</div>
+									<a href="#" class="btn btn_w220">
+										<svg class="btn__border btn__border_left">
+											<use xlink:href="images/sprite.svg#btnBorder"></use>
+										</svg>
+										<div class="btn__text">Смотреть все</div>
+										<svg class="btn__border btn__border_right">
+											<use xlink:href="images/sprite.svg#btnBorder"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide announce__slider-slide">
+							<div class="announce__slider-block" style="background-image: url('images/dest/announce1.png');">
+								<!-- <img src="images/dest/announce1.png" alt="asd" class="announce__slider-img"> -->
+								<div class="announce__slider-text-block">
+									<div class="announce__slider-title">Открыт набор на февраль</div>
+									<div class="announce__slider-text">Обучение всех желающих без возрастных огрпы</div>
+									<a href="#" class="btn btn_w220">
+										<svg class="btn__border btn__border_left">
+											<use xlink:href="images/sprite.svg#btnBorder"></use>
+										</svg>
+										<div class="btn__text">Смотреть все</div>
+										<svg class="btn__border btn__border_right">
+											<use xlink:href="images/sprite.svg#btnBorder"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination announce__slider-pagination"></div>
+			</div>
+		</div>
+
+		<section class="contacts">
+			<div class="container">
+				<div class="contacts__row">
+					<div class="contacts__left">
+						<h2 class="title title_form">Записаться на пробное занятие</h2>
+						<div class="contacts__text">Заполните форму и мы перезвоним вам и подберем удобное время для личной консультации</div>
+					</div>
+					<div class="contacts__right">
+						<form class="form">
+							<div class="form__row">
+								<div class="form__col">
+									<input type="text" class="form__input" placeholder="Имя">
+								</div>
+								<div class="form__col">
+									<input type="text" class="form__input" placeholder="Телефон">
+								</div>
+							</div>
+							<textarea class="form__input form__textarea" placeholder="Ваш вопрос"></textarea>
+							<div class="form__bottom">
+								<button href="#" class="form__btn btn btn_w220">
+									<svg class="btn__border btn__border_left">
+										<use xlink:href="images/sprite.svg#btnBorder"></use>
+									</svg>
+									<div class="btn__text">Отправить</div>
+									<svg class="btn__border btn__border_right">
+										<use xlink:href="images/sprite.svg#btnBorder"></use>
+									</svg>
+								</button>
+								<div class="form__policy">Нажимая кнопку «Отправить» вы принимаете политику конфендициальности и соглашаетесь с обработкой ваших персональных данных</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__top">
+				<div class="footer__row">
+					<div class="footer__left">
+						<a href="#" class="logo logo_footer">
+							<img src="images/logo.svg" alt="logo" class="logo__img logo__img_footer">
+						</a>
+						<div class="social">
+							<a href="#" class="social__item">
+								<svg class="social__item-svg">
+									<use xlink:href="images/sprite.svg#youtube"></use>
+								</svg>
+								<div class="social__item-text">Наш канал на Youtube</div>
+							</a>
+							<a href="#" class="social__item">
+								<svg class="social__item-svg">
+									<use xlink:href="images/sprite.svg#vk"></use>
+								</svg>
+								<div class="social__item-text">Мы Вконтакте</div>
+							</a>
+							<a href="#" class="social__item">
+								<svg class="social__item-svg">
+									<use xlink:href="images/sprite.svg#telegram"></use>
+								</svg>
+								<div class="social__item-text">Мы в Телеграмм</div>
+							</a>
+						</div>
+					</div>
+					<div class="footer__center">
+						<div class="footer__menu-row">
+							<div class="footer__menu-col">
+								<ul class="footer__menu-list">
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Преподаватели</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Процесс обучения</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Сведение об образовательной организации</a></li>
+								</ul>
+							</div>
+							<div class="footer__menu-col">
+								<ul class="footer__menu-list">
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Учебные программы</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Открытые уроки</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Стажировка</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Яндекс. Отзывы</a></li>
+								</ul>
+							</div>
+							<div class="footer__menu-col">
+								<ul class="footer__menu-list">
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Обучение школьников</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Летние интенсивы</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Расписание занятий</a></li>
+									<li class="footer__menu-item"><a href="#" class="footer__menu-link">Контакты</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__right">
+						<div class="footer__btn">
+							<a href="#" class="btn btn_h50 btn_w220 btn-modal">
+								<svg class="btn__border btn__border_left">
+									<use xlink:href="images/sprite.svg#btnBorder"></use>
+								</svg>
+								<div class="btn__text">Записаться</div>
+								<svg class="btn__border btn__border_right">
+									<use xlink:href="images/sprite.svg#btnBorder"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__mail">
+							<a href="#" class="email">game4art@mail.ru</a>
+						</div>
+						<div class="footer__phone">
+							<a href="#" class="phone">+7 495 172 29 61</a>
+						</div>
+
+						<div class="address address_footer">г. Москва, ул. Коровий Вал, 1А, строение 1</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<div class="container">
+				<div class="footer__bottom-row">
+					<a href="#" class="footer__policy">Политика конфендициальности</a>
+					<div class="footer__copy">All rigths reserved 2024</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal" id="modal-callback">
+		<div class="modal__block">
+			<div class="modal__close">
+				<svg class="modal__close-svg">
+					<use xlink:href="images/sprite.svg#close"></use>
+				</svg>
+			</div>
+
+			<form class="form">
+				<div class="form__title">Записаться на обучение</div>
+				<div class="form__subtitle">Заполните форму обратной связи и мы вам перезвоним, ответим на все вопросы</div>
+				<div class="form__row form__row_modal">
+					<div class="form__col-left">
+
+						<input type="text" class="form__input" placeholder="Имя">
+
+						<input type="text" class="form__input" placeholder="Телефон">
+
+						<input type="text" class="form__input" placeholder="E-mail">
+
+					</div>
+					<div class="form__col-right">
+						<select class="form__input form__select">
+							<option>Курс 1</option>
+							<option>Курс 2</option>
+							<option>Курс 3</option>
+							<option>Курс 4</option>
+							<option>Курс 5</option>
+						</select>
+						<textarea class="form__input form__textarea" placeholder="Ваш вопрос"></textarea>
+					</div>
+
+
+				</div>
+				<div class="form__bottom form__bottom_modal">
+					<button class="form__btn btn btn_w220">
+						<svg class="btn__border btn__border_left">
+							<use xlink:href="images/sprite.svg#btnBorder"></use>
+						</svg>
+						<div class="btn__text">Отправить</div>
+						<svg class="btn__border btn__border_right">
+							<use xlink:href="images/sprite.svg#btnBorder"></use>
+						</svg>
+					</button>
+					<div class="form__policy">Нажимая кнопку «Отправить» вы принимаете политику конфендициальности и соглашаетесь с обработкой ваших персональных данных</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+	<script src="js/app.min.js"></script>
+
+</body>
+
+</html>

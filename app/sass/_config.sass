@@ -77,4 +77,13 @@ body
 	overflow-x: hidden
 	color: $text
 	background-color: #19121C
-	// background: url('../images/noise2.png') #19121C
+	&:after
+		content: ''
+		background: url('../images/noise2.png') #19121C
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		opacity: .3
+		z-index: -1
