@@ -857,13 +857,23 @@ img
 
 	/* .hero__img */
 	&__img
+		display: none
 		position: absolute
 		top: 70px
 		max-width: 100%
+		+media-breakpoint-up(sm)
+			display: block
 		+media-breakpoint-up(md)
 			top: initial
 		// top: 0
 		// left: 0
+	&__img_video
+		display: block
+	&__img_mobile
+		display: block
+		width: 100%
+		+media-breakpoint-up(sm)
+			display: none
 	/* .hero__block */
 	&__block
 		position: relative
