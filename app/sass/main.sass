@@ -740,12 +740,12 @@ img
 	/* .menu__item-svg-block */
 	&__item-svg-block
 		position: relative
-		bottom: 2px
+		bottom: 0px
 		left: 10px
 		display: inline-block
 		width: 30px
 		+media-breakpoint-up(lg)
-			left: 2px
+			left: 4px
 			width: auto
 	/* .menu__item-svg */
 	&__item-svg
@@ -859,6 +859,7 @@ img
 	&__img
 		position: absolute
 		top: 70px
+		max-width: 100%
 		+media-breakpoint-up(md)
 			top: initial
 		// top: 0
@@ -1061,8 +1062,8 @@ img
 	/* .service-item__img-block */
 	&__img-block
 		position: relative
-		// min-height: 297px
-		min-height: 252px
+		min-height: 297px
+		// min-height: 252px
 		margin-bottom: 20px
 		+media-breakpoint-up(sm)
 			min-height: 422px
@@ -1120,6 +1121,7 @@ img
 		background-size: contain
 		background-position: top
 		padding-top: 173px
+		background-color: #0C0A12
 		+media-breakpoint-up(sm)
 			background-size: cover
 			background-position: center
@@ -2877,6 +2879,9 @@ img
 			padding: 0 19px
 
 .teachers-item
+	text-decoration: none
+	&:hover
+		text-decoration: none
 	/* .teachers-item__img */
 	&__img
 		margin-bottom: 20px
@@ -3081,25 +3086,25 @@ img
 .intership-page
 	padding-bottom: 21px
 	+media-breakpoint-up(sm)
-		background: url('../images/intership/intership-bg-1.png') 104% 1.36% no-repeat,
-		url('../images/intership/intership-bg-2.png') 102% 15.4% no-repeat,
-		url('../images/intership/intership-bg-3.png') -2% 25.22% no-repeat,
-		url('../images/intership/intership-bg-4.png') 90.2% 42.5% no-repeat,
-		url('../images/intership/intership-bg-5.png') 101.2% 61.2% no-repeat,
-		url('../images/intership/intership-bg-6.png') -1% 74.587% no-repeat,
-		url('../images/intership/intership-bg-8.png') -3% 97.955% no-repeat,
-		url('../images/intership/intership-bg-7.png') 46% 85.23% no-repeat,
-		url('../images/intership/intership-bg-9.png') 101.5% 103.84% no-repeat
+		background: url('../images/dest/intership/intership-bg-1.png') 104% 1.36% no-repeat,
+		url('../images/dest/intership/intership-bg-2.png') 102% 15.4% no-repeat,
+		url('../images/dest/intership/intership-bg-3.png') -2% 25.22% no-repeat,
+		url('../images/dest/intership/intership-bg-4.png') 90.2% 42.5% no-repeat,
+		url('../images/dest/intership/intership-bg-5.png') 101.2% 61.2% no-repeat,
+		url('../images/dest/intership/intership-bg-6.png') -1% 74.587% no-repeat,
+		url('../images/dest/intership/intership-bg-8.png') -3% 97.955% no-repeat,
+		url('../images/dest/intership/intership-bg-7.png') 46% 85.23% no-repeat,
+		url('../images/dest/intership/intership-bg-9.png') 101.5% 103.84% no-repeat
 
-		// background: url('../images/intership/intership-bg-1.png') 252px 175px no-repeat,
-		// url('../images/intership/intership-bg-2.png') 410px 2093px no-repeat,
-		// url('../images/intership/intership-bg-3.png') -8px 3440px no-repeat,
-		// url('../images/intership/intership-bg-4.png') 1103px 5759px no-repeat,
-		// url('../images/intership/intership-bg-5.png') 752px 8588px no-repeat,
-		// url('../images/intership/intership-bg-6.png') -8px 10035px no-repeat,
-		// url('../images/intership/intership-bg-8.png') -8px 12428px no-repeat,
-		// url('../images/intership/intership-bg-7.png') -8px 11228px no-repeat,
-		// url('../images/intership/intership-bg-9.png') 625px 13896px no-repeat
+		// background: url('../images/dest/intership/intership-bg-1.png') 252px 175px no-repeat,
+		// url('../images/dest/intership/intership-bg-2.png') 410px 2093px no-repeat,
+		// url('../images/dest/intership/intership-bg-3.png') -8px 3440px no-repeat,
+		// url('../images/dest/intership/intership-bg-4.png') 1103px 5759px no-repeat,
+		// url('../images/dest/intership/intership-bg-5.png') 752px 8588px no-repeat,
+		// url('../images/dest/intership/intership-bg-6.png') -8px 10035px no-repeat,
+		// url('../images/dest/intership/intership-bg-8.png') -8px 12428px no-repeat,
+		// url('../images/dest/intership/intership-bg-7.png') -8px 11228px no-repeat,
+		// url('../images/dest/intership/intership-bg-9.png') 625px 13896px no-repeat
 
 		background-size: contain,contain,contain,60%,contain,contain,contain,contain,contain
 	+media-breakpoint-up(xl)
@@ -3317,3 +3322,52 @@ img
 		opacity: 0
 	to
 		opacity: 1
+
+.animated
+	animation-duration: 1s
+	animation-fill-mode: both
+
+.animated.hinge
+	animation-duration: 2s
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+.fadeIn
+	animation-name: fadeIn
+
+@keyframes fadeInLeft
+	0%
+		opacity: 0
+		transform: translateX(-20px)
+	100%
+		opacity: 1
+		transform: translateX(0)
+
+.fadeInLeft
+	animation-name: fadeInLeft
+
+@keyframes fadeInRight
+	0%
+		opacity: 0
+		transform: translateX(20px)
+	100%
+		opacity: 1
+		transform: translateX(0)
+
+.fadeInRight
+	animation-name: fadeInRight
+
+@keyframes fadeInUp
+	0%
+		opacity: 0
+		transform: translateY(20px)
+	100%
+		opacity: 1
+		transform: translateY(0)
+
+.fadeInUp
+	animation-name: fadeInUp

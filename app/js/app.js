@@ -118,23 +118,22 @@ createReviewsSlider();
 
 const createHeroSlider = () => {
 	let slider = new Swiper(".hero-slider", {
-		// slidesPerView: 3,
 		slidesPerView: 1,
-		// rewind: true,
 		spaceBetween: 12,
-		// pagination: {
-		//   el: ".swiper-pagination",
-		//   clickable: true,
-		// },
-		navigation: {
-			// nextEl: slider.el.closest('.section').querySelector('.product-slider-next'),
-			// prevEl: slider.el.closest('.section').querySelector('.product-slider-prev'),
-		},
 		pagination: {
 			el: ".hero-slider__pagination",
 			clickable: true,
-			// dynamicBullets: true,
 		},
+	});
+	slider.on("slideChange", function (e) {
+		let prevSlide = slider.slides[slider.previousIndex];
+		if(prevSlide.querySelector('video')){
+			prevSlide.querySelector('video').pause();
+		}
+		let slide = slider.slides[slider.activeIndex];
+		if(slide.querySelector('video')){
+			slide.querySelector('video').play();
+		}
 	});
 };
 
@@ -391,6 +390,15 @@ for (let i = 0; i < galleries.length; i++) {
 		enableTouch: true,
 	});
 }
+
+wow = new WOW({
+	boxClass:     'wow',
+	animateClass: 'animated',
+	offset:       0,
+	mobile:       true,
+	live:         true
+})
+wow.init();
 
 
 
