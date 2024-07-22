@@ -931,7 +931,7 @@ img
 .service
 	background-image: url('../images/dest/service-bg.png')
 	background-repeat: no-repeat
-	background-position: center -268px
+	background-position: center -95px
 	padding-bottom: 55px
 	padding-top: 49px
 	+media-breakpoint-up(sm)
@@ -1032,6 +1032,9 @@ img
 			margin-bottom: 54px
 
 .service-item
+	text-decoration: none
+	&:hover
+		text-decoration: none
 	/* .service-item__title */
 	&__title
 		font-family: "Casper", sans-serif
@@ -2591,6 +2594,10 @@ img
 		color: #c1c1c1
 		font-family: "Casper", sans-serif
 		margin-bottom: 15px
+		+media-breakpoint-up(sm)
+			min-height: 49px
+			max-height: 49px
+			overflow: hidden
 
 .intensive-price-block
 	display: flex
@@ -2632,7 +2639,7 @@ img
 	/* .intensive-list__item */
 	&__item
 		display: flex
-		align-items: center
+		align-items: flex-start
 		gap: 10px
 		margin-bottom: 10px
 	/* .intensive-list__item-svg */
@@ -2645,6 +2652,11 @@ img
 		line-height: 135%
 		color: #f1f1f1
 		font-family: "Casper", sans-serif
+		a
+			color: #f1f1f1
+			text-decoration: underline
+			&:hover
+				text-decoration: none
 
 .intensive-single-hero
 	margin-bottom: 60px
@@ -2664,7 +2676,8 @@ img
 
 	/* .intensive-single-hero__img */
 	&__img
-
+		max-width: 624px
+		width: 100%
 	/* .intensive-single-hero__right */
 	&__right
 		max-width: 438px
