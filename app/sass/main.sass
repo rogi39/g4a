@@ -326,6 +326,9 @@ img
 	left: 0
 	width: 100%
 	z-index: 5
+	transition: background-color .35s ease-out
+	&:hover
+		background-color: #1b131f
 	/* .header__overlay */
 	&__overlay
 		position: fixed
@@ -732,6 +735,7 @@ img
 		font-size: 18px
 		color: #fff
 		transition: color .35s ease-out
+		cursor: pointer
 		+media-breakpoint-up(xl)
 			font-size: 20px
 		&:hover
@@ -752,6 +756,7 @@ img
 		fill: #fff
 		height: 12px
 		width: 12px
+		transition: fill .35s ease-out
 	/* .menu__sub */
 	&__sub
 		list-style-type: none
@@ -931,12 +936,13 @@ img
 .service
 	background-image: url('../images/dest/service-bg.png')
 	background-repeat: no-repeat
-	background-position: center -95px
+	background-position: center -245px
 	padding-bottom: 55px
 	padding-top: 49px
 	+media-breakpoint-up(sm)
 		padding-bottom: 75px
 		padding-top: 66px
+		background-position: center -95px
 	+media-breakpoint-up(lg)
 		padding-bottom: 125px
 	&_page
@@ -1204,7 +1210,7 @@ img
 			max-width: initial
 	/* .about__row */
 	&__row
-		margin-top: 60px
+		margin-top: 100px
 		position: relative
 		+media-breakpoint-up(md)
 			justify-content: center
@@ -1603,7 +1609,7 @@ img
 			display: none
 
 .video-item
-	height: 242px
+	// height: 242px
 	position: relative
 	+media-breakpoint-up(sm)
 		height: initial
@@ -1652,7 +1658,8 @@ img
 	padding-bottom: 41px
 	background-image: url('../images/dest/contacts.png')
 	background-repeat: no-repeat
-	background-position: 102% center
+	background-position: 102% bottom
+	background-size: cover
 	+media-breakpoint-up(sm)
 		padding-bottom: 70px
 	+media-breakpoint-up(xl)
@@ -2508,8 +2515,6 @@ img
 		+media-breakpoint-up(md)
 			background-color: initial
 			flex: 0 0 100px
-		+media-breakpoint-up(lg)
-			flex: 1
 	&__col_days-single
 		+media-breakpoint-up(md)
 			flex: 0 0 100px
@@ -2519,15 +2524,12 @@ img
 		+media-breakpoint-up(md)
 			flex: 1 0 100px
 	&__col_time-single
-		+media-breakpoint-up(md)
-			flex: 1 0 100px
-		+media-breakpoint-up(lg)
-			flex: 1
+		flex: 1
 	&__col_teacher-single
 		+media-breakpoint-up(md)
-			flex: 0 0 150px
+			flex: 0 0 220px
 		+media-breakpoint-up(lg)
-			flex: 1
+			flex: 0 0 400px
 	&__col_details-single
 		+media-breakpoint-up(md)
 			flex: 0 0 100px
@@ -2547,6 +2549,13 @@ img
 	/* .table__col-value */
 	&__col-value
 		text-align: right
+		&.btn-modal
+			cursor: pointer
+			text-decoration: underline
+		a
+			color: #fff
+			&:hover
+				color: #fff
 		+media-breakpoint-up(md)
 			text-align: left
 
@@ -2642,6 +2651,10 @@ img
 		align-items: flex-start
 		gap: 10px
 		margin-bottom: 10px
+		max-height: 25px
+		overflow: hidden
+	&__item_full
+		max-height: none
 	/* .intensive-list__item-svg */
 	&__item-svg
 		flex: 0 0 24px
@@ -2999,7 +3012,6 @@ img
 			min-width: 483px
 	/* .contacts-page__map */
 	&__map
-		filter: grayscale(1)
 	/* .contacts-page__address */
 	&__address
 		font-weight: 400

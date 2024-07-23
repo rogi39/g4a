@@ -401,6 +401,64 @@ wow = new WOW({
 wow.init();
 
 
+let videos = document.querySelectorAll('.video-youtube');
+
+videos.forEach(el=>{
+	el.addEventListener("click", openYoutubethumb);
+});
+function openYoutubethumb(e){
+	let target = e.currentTarget;
+	let modalVideo = document.querySelector('#modal-video');
+	let wsb = widthScrollBar();
+	let src = target.dataset.src;
+	let iframeSrc = `https://www.youtube.com/embed/${youtube_parser(src)}`;
+
+	window.addEventListener("click", function (e) {
+		if (e.target.classList.contains("modal") && modalVideo.classList.contains("active") ||	e.target.closest(".modal__close")) {
+			modalVideo.querySelector('iframe').src = '';
+			fadeOut(modalVideo, 300);
+			setTimeout(() => {
+				modalVideo.classList.remove("active");
+				document.body.classList.remove("noscroll");
+				document.querySelector(".header").style.paddingRight = "0px";
+				document.querySelector(".footer").style.paddingRight = "0px";
+				document.querySelector(".main").style.paddingRight = "0px";
+			}, 300);
+		}
+	});
+
+	if (modalVideo !== null && !modalVideo.classList.contains("active")) {
+		modalVideo.querySelector('iframe').src = iframeSrc;
+		fadeIn(modalVideo, 300, "flex");
+		document.body.classList.add("noscroll");
+		document.querySelector(".header").style.paddingRight = wsb + "px";
+		document.querySelector(".footer").style.paddingRight = wsb + "px";
+		document.querySelector(".main").style.paddingRight = wsb + "px";
+		setTimeout(() => {
+			modalVideo.classList.add("active");
+		}, 300);
+	}
+
+}
+
+
+document.addEventListener("DOMContentLoaded", loadYoutubethumb);
+
+function loadYoutubethumb(){
+	videos.forEach(el=>{
+		let src = el.dataset.src;
+		el.querySelector('.video-item__img').src = `https://img.youtube.com/vi/${youtube_parser(src)}/maxresdefault.jpg`;
+	});
+}
+
+
+
+function youtube_parser(url){
+	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+	var match = url.match(regExp);
+	return (match&&match[7].length==11)? match[7] : false;
+}
+
 
 function widthScrollBar() {
 	let div = document.createElement("div");
