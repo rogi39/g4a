@@ -3378,10 +3378,18 @@ img
 @keyframes fadeInLeft
 	0%
 		opacity: 0
-		transform: translateX(-20px)
+		transform: translateY(20px)
 	100%
 		opacity: 1
-		transform: translateX(0)
+		transform: translateY(0)
++media-breakpoint-up(md)
+	@keyframes fadeInLeft
+		0%
+			opacity: 0
+			transform: translateX(-20px)
+		100%
+			opacity: 1
+			transform: translateX(0)
 
 .fadeInLeft
 	animation-name: fadeInLeft
@@ -3389,10 +3397,18 @@ img
 @keyframes fadeInRight
 	0%
 		opacity: 0
-		transform: translateX(20px)
+		transform: translateY(20px)
 	100%
 		opacity: 1
-		transform: translateX(0)
+		transform: translateY(0)
++media-breakpoint-up(md)
+	@keyframes fadeInRight
+		0%
+			opacity: 0
+			transform: translateX(20px)
+		100%
+			opacity: 1
+			transform: translateX(0)
 
 .fadeInRight
 	animation-name: fadeInRight
