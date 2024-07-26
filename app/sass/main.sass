@@ -1814,6 +1814,12 @@ img
 		font-size: 14px
 		line-height: 135%
 		color: #a3a3a3
+		a
+			color: #a3a3a3
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+				color: #a3a3a3
 	&__policy_single
 		max-width: 595px
 
@@ -1990,6 +1996,8 @@ img
 	+media-breakpoint-up(lg)
 		@media screen and ( min-height: 600px )
 			align-items: center
+	&_video
+		align-items: center
 
 	/* .modal__block */
 	&__block
