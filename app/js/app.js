@@ -80,7 +80,7 @@ const createReviewsSlider = () => {
 	let slider = new Swiper(".reviews-slider", config);
 
 	let filter = document.querySelector(".filter");
-	if(!filter) return false;
+	if (!filter) return false;
 	let btns = filter.querySelectorAll(".filter__btn");
 	btns.forEach((btn) => {
 		btn.addEventListener("click", (e) => {
@@ -127,11 +127,11 @@ const createHeroSlider = () => {
 	});
 	slider.on("slideChange", function (e) {
 		let prevSlide = slider.slides[slider.previousIndex];
-		if(prevSlide.querySelector('video')){
+		if (prevSlide.querySelector('video')) {
 			prevSlide.querySelector('video').pause();
 		}
 		let slide = slider.slides[slider.activeIndex];
-		if(slide.querySelector('video')){
+		if (slide.querySelector('video')) {
 			slide.querySelector('video').play();
 		}
 	});
@@ -143,7 +143,7 @@ createHeroSlider();
 
 let initServiceSlider = false;
 let serviceSlider;
-const createServiceSlider = ()=>{ 
+const createServiceSlider = () => {
 	if (!document.querySelector(".service-slider")) return false;
 	let mobile = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
 	let desktop = window.matchMedia("(min-width: 768px)");
@@ -177,7 +177,7 @@ const createServiceSlider = ()=>{
 
 let initServiceGallerySlider = false;
 let serviceGallerySlider;
-const createServiceGallerySlider = ()=>{ 
+const createServiceGallerySlider = () => {
 	if (!document.querySelector(".service-gallery-slider")) return false;
 	let mobile = window.matchMedia("(min-width: 0px) and (max-width: 575px)");
 	let desktop = window.matchMedia("(min-width: 576px)");
@@ -221,8 +221,8 @@ const createCertificateSlider = () => {
 	let slider = new Swiper(".certificate-slider", {
 		slidesPerView: 2,
 		pagination: {
-		  el: ".certificate__pagination",
-		  clickable: true,
+			el: ".certificate__pagination",
+			clickable: true,
 		},
 		breakpoints: {
 			0: {
@@ -262,7 +262,7 @@ togglemenu.addEventListener("click", () => {
 menuClose.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-function closeMenu (){
+function closeMenu() {
 	togglemenu.classList.remove("on");
 	menu.classList.remove("on");
 	overlay.classList.remove("active");
@@ -341,26 +341,32 @@ if (document.querySelector(".contacts-page__acc")) {
 
 let btnModals = document.querySelectorAll(".btn-modal");
 btnModals.forEach((el) => {
-	el.addEventListener("click", openModalNominaton);
+	el.addEventListener("click", (e) => {
+		openModalNominaton(e);
+	});
 });
 
-function openModalNominaton(e) {
-	e.preventDefault();
-	let modal = e.currentTarget.dataset.idModal ? document.getElementById(e.currentTarget.dataset.idModal) : document.getElementById("modal-callback");
-	let wsb = widthScrollBar();
-
-	window.addEventListener("click", function (e) {
-		if (e.target.classList.contains("modal") && modal.classList.contains("active") ||	e.target.closest(".modal__close")) {
-			fadeOut(modal, 300);
+let modals = document.querySelectorAll('#modal-program, #modal-callback');
+modals.forEach(el => {
+	el.addEventListener('click', (e) => {
+		if (e.target.closest('.modal__close') || e.target.classList.contains('modal')) {
+			fadeOut(el, 300);
 			setTimeout(() => {
-				modal.classList.remove("active");
+				el.classList.remove("active");
 				document.body.classList.remove("noscroll");
 				document.querySelector(".header").style.paddingRight = "0px";
 				document.querySelector(".footer").style.paddingRight = "0px";
 				document.querySelector(".main").style.paddingRight = "0px";
 			}, 300);
 		}
-	});
+	})
+})
+
+
+function openModalNominaton(e) {
+	e.preventDefault();
+	let modal = e.currentTarget.dataset.idModal ? document.getElementById(e.currentTarget.dataset.idModal) : document.getElementById("modal-callback");
+	let wsb = widthScrollBar();
 	if (modal !== null && !modal.classList.contains("active")) {
 		fadeIn(modal, 300, "flex");
 		document.body.classList.add("noscroll");
@@ -375,8 +381,8 @@ function openModalNominaton(e) {
 
 
 Array.prototype.forEach.call(
-  document.querySelectorAll('.simple-bar'),
-  (el) => new SimpleBar(el), {
+	document.querySelectorAll('.simple-bar'),
+	(el) => new SimpleBar(el), {
 		autohide: false,
 	});
 
@@ -392,40 +398,27 @@ for (let i = 0; i < galleries.length; i++) {
 }
 
 wow = new WOW({
-	boxClass:     'wow',
+	boxClass: 'wow',
 	animateClass: 'animated',
-	offset:       0,
-	mobile:       true,
-	live:         true
+	offset: 0,
+	mobile: true,
+	live: true
 })
 wow.init();
 
 
+let modalVideo = document.querySelector('#modal-video');
 let videos = document.querySelectorAll('.video-youtube');
 
-videos.forEach(el=>{
+videos.forEach(el => {
 	el.addEventListener("click", openYoutubethumb);
 });
-function openYoutubethumb(e){
+
+function openYoutubethumb(e) {
 	let target = e.currentTarget;
-	let modalVideo = document.querySelector('#modal-video');
 	let wsb = widthScrollBar();
 	let src = target.dataset.src;
 	let iframeSrc = `https://www.youtube.com/embed/${youtube_parser(src)}`;
-
-	window.addEventListener("click", function (e) {
-		if (e.target.classList.contains("modal") && modalVideo.classList.contains("active") ||	e.target.closest(".modal__close")) {
-			modalVideo.querySelector('iframe').src = '';
-			fadeOut(modalVideo, 300);
-			setTimeout(() => {
-				modalVideo.classList.remove("active");
-				document.body.classList.remove("noscroll");
-				document.querySelector(".header").style.paddingRight = "0px";
-				document.querySelector(".footer").style.paddingRight = "0px";
-				document.querySelector(".main").style.paddingRight = "0px";
-			}, 300);
-		}
-	});
 
 	if (modalVideo !== null && !modalVideo.classList.contains("active")) {
 		modalVideo.querySelector('iframe').src = iframeSrc;
@@ -438,14 +431,28 @@ function openYoutubethumb(e){
 			modalVideo.classList.add("active");
 		}, 300);
 	}
-
 }
 
+if (modalVideo) modalVideo.addEventListener('click', closeYoutubethumb);
+
+function closeYoutubethumb(e) {
+	if (e.target.closest('.modal__close') || e.target.classList.contains('modal')) {
+		modalVideo.querySelector('iframe').src = '';
+		fadeOut(modalVideo, 300);
+		setTimeout(() => {
+			modalVideo.classList.remove("active");
+			document.body.classList.remove("noscroll");
+			document.querySelector(".header").style.paddingRight = "0px";
+			document.querySelector(".footer").style.paddingRight = "0px";
+			document.querySelector(".main").style.paddingRight = "0px";
+		}, 300);
+	}
+}
 
 document.addEventListener("DOMContentLoaded", loadYoutubethumb);
 
-function loadYoutubethumb(){
-	videos.forEach(el=>{
+function loadYoutubethumb() {
+	videos.forEach(el => {
 		let src = el.dataset.src;
 		el.querySelector('.video-item__img').src = `https://img.youtube.com/vi/${youtube_parser(src)}/maxresdefault.jpg`;
 	});
@@ -453,10 +460,10 @@ function loadYoutubethumb(){
 
 
 
-function youtube_parser(url){
+function youtube_parser(url) {
 	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
 	var match = url.match(regExp);
-	return (match&&match[7].length==11)? match[7] : false;
+	return (match && match[7].length == 11) ? match[7] : false;
 }
 
 
