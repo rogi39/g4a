@@ -75,7 +75,6 @@ img
 	&_internship
 		margin-bottom: 0
 		padding-bottom: 55.1%
-
 	iframe, video
 		position: absolute
 		top: 0
@@ -113,7 +112,7 @@ img
 	overflow-x: auto
 	padding-bottom: 10px
 	position: relative
-	font-family: "Casper", sans-serif
+
 	+media-breakpoint-up(sm)
 		overflow: hidden
 		flex-wrap: wrap
@@ -161,7 +160,7 @@ img
 		background-color: #2a232d
 	&__link
 		font-size: 16px
-		font-family: "Casper", sans-serif
+
 		line-height: 135%
 		background-color: transparent
 		height: 100%
@@ -254,22 +253,7 @@ img
 			line-height: 150%
 			font-weight: 300
 			margin-bottom: 5px
-			// display: flex
 			position: relative
-			// padding-left: 25px
-			// &:before
-			// 	content: ''
-			// 	position: absolute
-			// 	left: 0
-			// 	height: 8px
-			// 	width: 8px
-			// 	flex: 0 0 8px
-			// 	border-radius: 50%
-			// 	background-color: $accent
-			// 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25)
-			// 	display: inline-block
-			// 	margin-right: 15px
-			// 	margin-top: 7px
 			+media-breakpoint-up(sm)
 				font-size: 20px
 			+media-breakpoint-up(md)
@@ -290,11 +274,6 @@ img
 		padding-top: 0
 	&_pb0
 		padding-bottom: 0
-	&_stages
-		// background-image: url('/images/dest/stages.png')
-		background-repeat: no-repeat
-		background-position: center
-		background-size: cover
 
 .main
 	padding-top: 70px
@@ -353,7 +332,6 @@ img
 		display: flex
 		align-items: center
 		justify-content: space-between
-
 	/* .header__left */
 	&__left
 
@@ -362,7 +340,6 @@ img
 		display: none
 		+media-breakpoint-up(md)
 			display: block
-
 	/* .header__info */
 	&__info
 
@@ -374,7 +351,6 @@ img
 		margin-bottom: 5px
 		+media-breakpoint-up(xl)
 			gap: 36px
-
 	/* .header__right */
 	&__right
 		display: none
@@ -383,7 +359,6 @@ img
 			gap: 12px
 		+media-breakpoint-up(xl)
 			gap: 33px
-
 	/* .header__menu */
 	&__menu
 		border-bottom: 1px solid rgba(255, 255, 255, .1)
@@ -412,7 +387,6 @@ img
 			background-color: #D9D9D9
 			left: 3px
 	&__toggle-text
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		color: #fff
@@ -458,7 +432,6 @@ img
 			max-width: 120px
 
 .phone
-	font-family: "Casper", sans-serif
 	font-weight: 700
 	font-size: 18px
 	letter-spacing: -1px
@@ -467,7 +440,6 @@ img
 		color: #fff
 
 .email
-	font-family: "Casper", sans-serif
 	font-weight: 400
 	font-size: 18px
 	text-decoration: underline
@@ -476,7 +448,6 @@ img
 		color: #fff
 
 .address
-	font-family: "Casper", sans-serif
 	font-weight: 400
 	font-size: 14px
 	text-align: center
@@ -492,62 +463,6 @@ img
 		text-align: left
 		font-size: 16px
 		letter-spacing: 0
-
-// .btn
-// 	font-family: "Unbounded", sans-serif
-// 	font-weight: 700
-// 	font-size: 16px
-// 	line-height: 16px
-// 	color: #fff
-// 	background-color: $accent
-// 	padding: 18px
-// 	box-shadow: 0 -1px 16px 0 rgba(240, 35, 35, 0.45)
-// 	transition: background-color .35s ease-out, color .35s ease-out, box-shadow .35s ease-out
-// 	position: relative
-// 	display: inline-block
-// 	border-top: 1px solid transparent
-// 	border-bottom: 1px solid transparent
-// 	height: 60px
-// 	display: inline-flex
-// 	justify-content: center
-// 	align-items: center
-// 	&:hover
-// 		text-decoration: none
-// 		background-color: #FF0000
-// 		color: #fff
-// 		box-shadow: none
-// 	&:after
-// 		content: ''
-// 		position: absolute
-// 		right: -15px
-// 		top: -1px
-// 		width: 16px
-// 		height: 60px
-// 		background-image: url('../images/btnRight.svg')
-// 	&:before
-// 		content: ''
-// 		position: absolute
-// 		left: -15px
-// 		top: -1px
-// 		width: 16px
-// 		height: 60px
-// 		background-image: url('../images/btnRight.svg')
-// 		transform: rotate(180deg)
-// 	&_h50
-// 		height: 50px
-// 		font-weight: 500
-// 		font-size: 14px
-// 		line-height: 14px
-// 		&:after, &:before
-// 			height: 50px
-// 	&_transparent
-// 		background-color: transparent
-// 		box-shadow: none
-// 		border-color: $accent
-// 		&:hover
-// 			background-color: $accent
-		// &:after
-		// 	background-image: url('../images/btnRightTr.svg')
 
 .btn
 	position: relative
@@ -641,20 +556,6 @@ img
 		transform: rotate(180deg)
 	&__border_right
 
-	// &__left
-	// 	background-image: url('../images/btnRight.svg')
-	// 	width: 16px
-	// 	height: 50px
-	// 	transform: rotate(180deg)
-	// 	background-repeat: no-repeat
-	// 	background-position-x: -1px
-	// &__right
-	// 	background-image: url('../images/btnRight.svg')
-	// 	width: 16px
-	// 	height: 50px
-	// 	background-repeat: no-repeat
-	// 	background-position-x: -1px
-
 .menu
 	width: 330px
 	padding: 58px 30px 16px 30px
@@ -665,7 +566,6 @@ img
 	top: 0
 	bottom: 0
 	z-index: 23
-	// padding: 10px 15px 30px 15px
 	transform: translateX(100%)
 	transition: transform .35s ease
 	background-color: #1B131F
@@ -730,7 +630,6 @@ img
 					text-decoration: none
 	/* .menu__link */
 	&__link
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		color: #fff
@@ -808,7 +707,6 @@ img
 		margin-bottom: 27px
 	/* .menu__sub-link */
 	&__sub-link
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 15px
 		line-height: 135%
@@ -906,7 +804,6 @@ img
 			font-size: 64px
 	/* .hero__text */
 	&__text
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 20px
 		line-height: 142%
@@ -934,14 +831,14 @@ img
 				height: 100vh
 
 .service
-	background-image: url('../images/dest/service-bg.png')
-	background-repeat: no-repeat
-	background-position: center -245px
 	padding-bottom: 55px
 	padding-top: 49px
 	+media-breakpoint-up(sm)
 		padding-bottom: 75px
 		padding-top: 66px
+	+media-breakpoint-up(md)
+		background-image: url('../images/dest/service-bg.png')
+		background-repeat: no-repeat
 		background-position: center -95px
 	+media-breakpoint-up(lg)
 		padding-bottom: 125px
@@ -961,7 +858,6 @@ img
 			row-gap: 75px
 		+media-breakpoint-up(xl)
 			row-gap: 95px
-
 	/* .service__col */
 	&__col
 		+media-breakpoint-up(md)
@@ -1043,7 +939,6 @@ img
 		text-decoration: none
 	/* .service-item__title */
 	&__title
-		font-family: "Casper", sans-serif
 		font-weight: 700
 		font-size: 20px
 		line-height: 1.3
@@ -1057,7 +952,6 @@ img
 
 	/* .service-item__title-en */
 	&__title-en
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		line-height: 142%
@@ -1071,7 +965,6 @@ img
 
 	/* .service-item__text */
 	&__text
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
@@ -1167,7 +1060,6 @@ img
 			font-size: 40px
 	/* .announce__slider-text */
 	&__slider-text
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		line-height: 142%
@@ -1392,10 +1284,8 @@ img
 			max-width: initial
 			left: -29px
 			bottom: -19px
-
 	/* .about__item-text */
 	&__item-text
-		font-family: "Casper", sans-serif
 		font-weight: 700
 		font-size: 18px
 		line-height: 122%
@@ -1430,7 +1320,6 @@ img
 	+media-breakpoint-up(lg)
 		padding-top: 70px
 		padding-bottom: 70px
-
 	+media-breakpoint-up(xl)
 		padding-top: 178px
 
@@ -1571,7 +1460,6 @@ img
 	/* .tabs__btn */
 	&__btn
 		flex: 0 0 auto
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 16px
 		line-height: 142%
@@ -1609,10 +1497,8 @@ img
 			display: none
 
 .video-item
-	// height: 242px
 	position: relative
 	cursor: pointer
-	max-height: 388px
 	+media-breakpoint-up(sm)
 		height: initial
 	&_teaching-children
@@ -1682,7 +1568,6 @@ img
 			flex: 0 0 420px
 	/* .contacts__text */
 	&__text
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
@@ -1710,7 +1595,6 @@ img
 			font-size: 40px
 	/* .form__subtitle */
 	&__subtitle
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
@@ -1809,7 +1693,6 @@ img
 
 	/* .form__policy */
 	&__policy
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 14px
 		line-height: 135%
@@ -1884,7 +1767,6 @@ img
 		margin-bottom: 6px
 	/* .footer__menu-link */
 	&__menu-link
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 15px
 		line-height: 135%
@@ -1914,7 +1796,6 @@ img
 		padding: 20px 0
 	/* .footer__policy */
 	&__policy
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 13px
 		line-height: 135%
@@ -1924,7 +1805,6 @@ img
 			color: #8b8b8b
 	/* .footer__copy */
 	&__copy
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 13px
 		line-height: 135%
@@ -1972,7 +1852,6 @@ img
 		display: none
 		+media-breakpoint-up(sm)
 			display: block
-			font-family: "Casper", sans-serif
 			font-weight: 400
 			font-size: 14px
 			text-align: center
@@ -2038,7 +1917,6 @@ img
 			font-size: 40px
 	/* .modal__subtitle */
 	&__subtitle
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
@@ -2116,7 +1994,6 @@ img
 		margin-top: 0
 		.breadcrumb-block
 			position: initial
-
 	/* .service-single__title */
 	&__title
 		margin-bottom: 20px
@@ -2135,7 +2012,6 @@ img
 			font-size: 45px
 		+media-breakpoint-up(wxp)
 			font-size: 55px
-
 	/* .service-single__title-en */
 	&__title-en
 		font-weight: 400
@@ -2149,14 +2025,12 @@ img
 			font-size: 26px
 		+media-breakpoint-up(xl)
 			font-size: 30px
-
 	/* .service-single__text */
 	&__text
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		margin-bottom: 30px
 		max-width: 700px
 		p
@@ -2210,7 +2084,6 @@ img
 		font-size: 18px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 30px
 		+media-breakpoint-up(sm)
 			font-size: 22px
@@ -2267,19 +2140,16 @@ img
 		margin-bottom: 25px
 		+media-breakpoint-up(sm)
 			margin-bottom: 0
-
 	/* .service-single-description__time-text */
 	&__time-text
 		font-weight: 400
 		font-size: 18px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		+media-breakpoint-up(sm)
 			font-size: 20px
 		+media-breakpoint-up(md)
 			font-size: 24px
-
 	/* .service-single-description__programms */
 	&__programms
 		margin-bottom: 30px
@@ -2293,7 +2163,6 @@ img
 			padding: 45px 0
 	&__programm_first
 		border-top: 1px solid rgba(255,255,255,.2)
-
 	/* .service-single-description__programm-title */
 	&__programm-title
 		font-weight: 400
@@ -2322,7 +2191,6 @@ img
 		font-size: 18px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 30px
 		+media-breakpoint-up(sm)
 			font-size: 22px
@@ -2339,7 +2207,6 @@ img
 			display: flex
 			flex-wrap: wrap
 			gap: 10px
-
 	/* .service-single-gallery__item */
 	&__item
 		height: 280px
@@ -2466,7 +2333,6 @@ img
 				letter-spacing: 0.09em
 				text-transform: uppercase
 				color: #c6c6c6
-				font-family: "Casper", sans-serif
 	/* .table__col */
 	&__col
 		flex: 1
@@ -2551,7 +2417,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		+media-breakpoint-up(sm)
 			font-size: 20px
 		+media-breakpoint-up(md)
@@ -2603,7 +2468,6 @@ img
 		font-size: 24px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 10px
 	/* .intensive-item__teacher */
 	&__teacher
@@ -2611,7 +2475,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #c1c1c1
-		font-family: "Casper", sans-serif
 		margin-bottom: 15px
 		+media-breakpoint-up(sm)
 			min-height: 49px
@@ -2674,7 +2537,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #f1f1f1
-		font-family: "Casper", sans-serif
 		a
 			color: #f1f1f1
 			text-decoration: underline
@@ -2783,7 +2645,6 @@ img
 		font-size: 24px
 		line-height: 135%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 10px
 	/* .modal-program__text */
 	&__text
@@ -2791,7 +2652,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		ul
 			margin-bottom: 0
 			padding-left: 25px
@@ -2883,7 +2743,6 @@ img
 			font-size: 40px
 	/* .process-learning__text */
 	&__text
-		font-family: "Casper", sans-serif
 		font-weight: 400
 		font-size: 20px
 		line-height: 142%
@@ -2928,18 +2787,19 @@ img
 	text-decoration: none
 	&:hover
 		text-decoration: none
+		.teachers-item__name
+			color: $accent
 	/* .teachers-item__img */
 	&__img
 		margin-bottom: 20px
-
 	/* .teachers-item__name */
 	&__name
 		font-weight: 400
 		font-size: 20px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 10px
+		transition: color .35s ease-out
 		+media-breakpoint-up(sm)
 			min-height: 56px
 		+media-breakpoint-up(xl)
@@ -2951,7 +2811,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		+media-breakpoint-up(sm)
 			max-height: 145px
 			overflow: hidden
@@ -2964,7 +2823,6 @@ img
 	font-size: 18px
 	line-height: 135%
 	color: #fff
-	font-family: "Casper", sans-serif
 	margin-bottom: 35px
 	+media-breakpoint-up(md)
 		font-size: 22px
@@ -2991,7 +2849,6 @@ img
 		line-height: 135%
 		text-align: center
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		margin-bottom: 30px
 		span
 			background-color: #19121C
@@ -3010,7 +2867,6 @@ img
 			flex-wrap: nowrap
 		+media-breakpoint-up(xl)
 			gap: 69px
-
 	/* .contacts-page__left */
 	&__left
 		flex: 0 1 623px
@@ -3028,7 +2884,6 @@ img
 		font-size: 22px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 15px
 		+media-breakpoint-up(sm)
 			font-size: 24px
@@ -3040,7 +2895,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		margin-bottom: 35px
 		+media-breakpoint-up(sm)
 			font-size: 20px
@@ -3055,7 +2909,6 @@ img
 		text-decoration: underline
 		text-decoration-skip-ink: none
 		color: #f24e4e
-		font-family: "Casper", sans-serif
 		margin-bottom: 35px
 		text-decoration: none
 		&:hover
@@ -3081,7 +2934,6 @@ img
 		font-size: 16px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 	/* .contacts-page__item */
 	&__item
 		margin-bottom: 15px
@@ -3092,7 +2944,6 @@ img
 		line-height: 135%
 		text-decoration: underline
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		&:hover
 			color: #c6c6c6
 			text-decoration: none
@@ -3106,7 +2957,6 @@ img
 		font-size: 24px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		margin-bottom: 25px
 	/* .contacts-page__details-address */
 	&__details-address
@@ -3114,7 +2964,6 @@ img
 		font-size: 22px
 		line-height: 142%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		margin-bottom: 15px
 		+media-breakpoint-up(sm)
 			font-size: 24px
@@ -3124,7 +2973,6 @@ img
 		font-size: 22px
 		line-height: 142%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		+media-breakpoint-up(sm)
 			font-size: 24px
 
@@ -3162,7 +3010,6 @@ img
 	font-size: 18px
 	line-height: 135%
 	color: #c6c6c6
-	font-family: "Casper", sans-serif
 	margin-bottom: 40px
 	p
 		margin-bottom: 20px
@@ -3244,14 +3091,12 @@ img
 		font-size: 18px
 		line-height: 142%
 		color: #fff
-		font-family: "Casper", sans-serif
 		+media-breakpoint-up(md)
 			font-size: 20px
 		+media-breakpoint-up(lg)
 			font-size: 22px
 		+media-breakpoint-up(xl)
 			font-size: 24px
-
 	/* .intership-video-row__right */
 	&__right
 		flex: 1
@@ -3262,7 +3107,6 @@ img
 		margin-bottom: 59px
 	+media-breakpoint-up(xl)
 		margin-bottom: 79px
-
 	/* .person__name */
 	&__name
 		font-weight: 400
@@ -3274,21 +3118,18 @@ img
 			font-size: 24px
 		+media-breakpoint-up(xl)
 			font-size: 28px
-
 	/* .person__position */
 	&__position
 		font-weight: 400
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		margin-bottom: 18px
 		+media-breakpoint-up(md)
 			font-size: 20px
 			margin-bottom: 38px
 		+media-breakpoint-up(xl)
 			font-size: 22px
-
 	/* .person__row */
 	&__row
 		display: flex
@@ -3305,7 +3146,6 @@ img
 		max-width: 664px
 		+media-breakpoint-up(md)
 			flex: 0 0 calc( 50% - 15px )
-
 	/* .person__img */
 	&__img
 
@@ -3356,7 +3196,6 @@ img
 		font-size: 18px
 		line-height: 135%
 		color: #c6c6c6
-		font-family: "Casper", sans-serif
 		+media-breakpoint-up(md)
 			font-size: 20px
 		+media-breakpoint-up(xl)
