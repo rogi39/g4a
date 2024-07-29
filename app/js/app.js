@@ -406,67 +406,69 @@ const loadYoutubeThumb = () => {
 }
 document.addEventListener("DOMContentLoaded", loadYoutubeThumb);
 
-function formSend(e) {
-	var act = e.getAttribute("action");
-	var url = "";
-	var btn = e.querySelector("button");
-	var btnText = btn.textContent;
-	btn.setAttribute("disabled", "disabled");
-	btn.textContent = "Загрузка...";
-	for (var i = e.elements.length - 1; i >= 0; i--) {
-		var name = e.elements[i].getAttribute("name");
-		if (e.elements[i].type == "checkbox") {
-			if (e.elements[i].checked) {
-				url += name + "=" + e.elements[i].value + "&";
-			}
-		} else if (name) {
-			url += name + "=" + e.elements[i].value + "&";
-		}
-	}
-	var request = new XMLHttpRequest();
+const formMessageResponse = (check, msg = '') => {
+	if (document.querySelector('.form-message-response')) document.querySelector('.form-message-response').remove();
+	let div = document.createElement('div');
+	div.classList.add('form-message-response');
+	check === true ? div.classList.add('form-message-response__success') : div.classList.add('form-message-response__error');
+	div.textContent = msg ? msg : (check === true ? 'Сообщение успешно отправлено!' : 'Заполните обязательные поля!');
+	// div.textContent = 'Сообщение успешно отправлено!';
 
-	request.onreadystatechange = function () {
-		if (request.readyState === 4) {
-			if (request.status === 422) {
-				btn.textContent = btnText;
-				btn.removeAttribute("disabled");
-				e.nextElementSibling.innerHTML = request.response;
-				let inputs = e.querySelectorAll("input, select, textarea");
-				inputs.forEach((el) => {
-					el.addEventListener("input", () => {
+	document.querySelector('body').insertAdjacentElement('beforebegin', div);
+	setTimeout(() => {
+		div.classList.add('active');
+		setTimeout(() => {
+			div.classList.remove('active');
+			setTimeout(() => {
+				div.remove();
+			}, 500);
+		}, 3000);
+	}, 10);
+}
+
+const sendForm = (event) => {
+	event.preventDefault();
+	let form = event.target;
+	let action = form.getAttribute('action');
+	if (!action) return false;
+	let btn = form.querySelector('button');
+	let btnText = btn.querySelector('.btn__text').textContent;
+	btn.setAttribute('disabled', 'disabled');
+	btn.querySelector('.btn__text').textContent = 'Загрузка...';
+	let formData = new FormData(form);
+	formData.append("action", action);
+	fetch('/wp-admin/admin-ajax.php', {
+			method: "POST",
+			body: formData,
+		})
+		.then(response => response.json())
+		.then((data) => {
+			if (data.result === 'ok') {
+				formMessageResponse(true, data.message);
+				btn.querySelector('.btn__text').textContent = btnText;
+				btn.removeAttribute('disabled');
+				form.reset();
+			} else if (data.result === 'false') {
+				formMessageResponse(false, data.message);
+				btn.querySelector('.btn__text').textContent = btnText;
+				btn.removeAttribute('disabled');
+				let inputs = form.querySelectorAll('input');
+				inputs.forEach(el => {
+					el.addEventListener('input', () => {
 						el.removeAttribute("style");
 						el.classList.remove("error");
 					});
 				});
-				let errors = e.nextElementSibling.querySelectorAll("[data-error]");
-				errors.forEach((el) => {
-					let dataAt = el.getAttribute("data-error");
-					let input = e.querySelector(
-						"input[name=" +
-						dataAt +
-						"], select[name=" +
-						dataAt +
-						"], textarea[name=" +
-						dataAt +
-						"]"
-					);
-					input.style.borderColor = "#da4c4c";
-					input.classList.add("error");
-				});
-			} else {
-				btn.textContent = btnText;
-				btn.removeAttribute("disabled");
-				e.nextElementSibling.innerHTML = request.response;
-				e.reset();
+				if (data.errors) {
+					for (let el in data.errors) {
+						document.querySelector(`input[name=${el}]`).style.borderColor = "#CE2C2C";
+						document.querySelector(`input[name=${el}]`).classList.add('error');
+					}
+				}
 			}
-		}
-	};
-
-	request.open("POST", act);
-
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-	request.send(url);
-
-	return false;
+		});
 }
+
+document.querySelectorAll('.form').forEach(el => {
+	el.addEventListener('submit', sendForm);
+})
