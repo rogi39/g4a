@@ -3026,17 +3026,25 @@ img
 			font-size: 24px
 
 .intership-page
-	padding-bottom: 21px
 	+media-breakpoint-up(sm)
-		background: url('../images/dest/intership/intership-bg-1.png') 104% 1.36% no-repeat,
-		url('../images/dest/intership/intership-bg-2.png') 102% 15.4% no-repeat,
-		url('../images/dest/intership/intership-bg-3.png') -2% 25.22% no-repeat,
-		url('../images/dest/intership/intership-bg-4.png') 90.2% 42.5% no-repeat,
-		url('../images/dest/intership/intership-bg-5.png') 101.2% 61.2% no-repeat,
-		url('../images/dest/intership/intership-bg-6.png') -1% 74.587% no-repeat,
-		url('../images/dest/intership/intership-bg-8.png') -3% 97.955% no-repeat,
-		url('../images/dest/intership/intership-bg-7.png') 46% 85.23% no-repeat,
-		url('../images/dest/intership/intership-bg-9.png') 101.5% 103.84% no-repeat
+		// background: url('../images/dest/intership/intership-bg-2.png') 102% 15.4% no-repeat,
+		// url('../images/dest/intership/intership-bg-3.png') -2% 25.22% no-repeat,
+		// url('../images/dest/intership/intership-bg-4.png') 90.2% 42.5% no-repeat,
+		// url('../images/dest/intership/intership-bg-5.png') 101.2% 61.2% no-repeat,
+		// url('../images/dest/intership/intership-bg-6.png') -1% 74.587% no-repeat,
+		// url('../images/dest/intership/intership-bg-8.png') -3% 97.955% no-repeat,
+		// url('../images/dest/intership/intership-bg-7.png') 46% 85.23% no-repeat,
+		// url('../images/dest/intership/intership-bg-9.png') 101.5% 103.84% no-repeat
+
+		// background: url('../images/dest/intership/intership-bg-1.png') 104% 1.36% no-repeat,
+		// url('../images/dest/intership/intership-bg-2.png') 102% 15.4% no-repeat,
+		// url('../images/dest/intership/intership-bg-3.png') -2% 25.22% no-repeat,
+		// url('../images/dest/intership/intership-bg-4.png') 90.2% 42.5% no-repeat,
+		// url('../images/dest/intership/intership-bg-5.png') 101.2% 61.2% no-repeat,
+		// url('../images/dest/intership/intership-bg-6.png') -1% 74.587% no-repeat,
+		// url('../images/dest/intership/intership-bg-8.png') -3% 97.955% no-repeat,
+		// url('../images/dest/intership/intership-bg-7.png') 46% 85.23% no-repeat,
+		// url('../images/dest/intership/intership-bg-9.png') 101.5% 103.84% no-repeat
 
 		// background: url('../images/dest/intership/intership-bg-1.png') 252px 175px no-repeat,
 		// url('../images/dest/intership/intership-bg-2.png') 410px 2093px no-repeat,
@@ -3077,17 +3085,64 @@ img
 		flex-wrap: wrap
 
 .intership-item
-	margin-bottom: 60px
+	// padding-bottom: 60px
 	+media-breakpoint-up(md)
-		margin-bottom: 80px
+		// padding-bottom: 80px
 	+media-breakpoint-up(xl)
-		margin-bottom: 100px
+		padding-top: 150px
 	&_mb115
 		margin-bottom: 75px
 		+media-breakpoint-up(md)
 			margin-bottom: 95px
 		+media-breakpoint-up(xl)
 			margin-bottom: 115px
+	&_1
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-1-1.png') right top no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
+	&_2
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-2.png') right 7% no-repeat,
+			url('../images/dest/intership/intership-bg-3.png') left 56% no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
+	&_3
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-4.png') 90% 0% no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
+	&_4
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-5.png') right 0% no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
+	&_5
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-6.png') left 54% no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
+	&_6
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-7.png') right top no-repeat
+			background-size: contain
+	&_7
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-8.png') left 2% no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
+	&_8
+		+media-breakpoint-up(sm)
+			background: url('../images/dest/intership/intership-bg-9.png') right 0% no-repeat
+			background-size: contain
+		+media-breakpoint-up(xl)
+			background-size: auto
 
 .intership-title
 	font-family: "Unbounded", sans-serif
@@ -3151,11 +3206,12 @@ img
 		flex: 1
 
 .person
-	margin-bottom: 40px
-	+media-breakpoint-up(md)
-		margin-bottom: 59px
-	+media-breakpoint-up(xl)
-		margin-bottom: 79px
+	&:not(:last-child)
+		margin-bottom: 40px
+		+media-breakpoint-up(md)
+			margin-bottom: 59px
+		+media-breakpoint-up(xl)
+			margin-bottom: 79px
 	/* .person__name */
 	&__name
 		font-weight: 400
