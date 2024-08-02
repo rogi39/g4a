@@ -185,6 +185,8 @@ const createServiceGallerySlider = () => {
 				pagination: {
 					el: ".service-gallery-slider__pagination",
 					clickable: true,
+					dynamicBullets: true,
+					dynamicMainBullets: 6
 				},
 			});
 		}
@@ -212,6 +214,8 @@ const createCertificateSlider = () => {
 		pagination: {
 			el: ".certificate__pagination",
 			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 6
 		},
 		breakpoints: {
 			0: {
@@ -323,6 +327,18 @@ modals.forEach(el => {
 	el.addEventListener('click', closeModal);
 });
 
+const closeModalProgramAndScrollPage = (e) => {
+	let modal = e.currentTarget.closest('.modal');
+	fadeOut(modal, 300);
+	setTimeout(() => {
+		document.body.classList.remove("noscroll");
+		document.querySelector(".header").style.paddingRight = "0px";
+		document.querySelector(".footer").style.paddingRight = "0px";
+		document.querySelector(".main").style.paddingRight = "0px";
+	}, 300);
+}
+
+document.querySelector('.btn-modal-program') && document.querySelector('.btn-modal-program').addEventListener('click', closeModalProgramAndScrollPage);
 
 Array.prototype.forEach.call(
 	document.querySelectorAll('.simple-bar'),
@@ -471,4 +487,39 @@ const sendForm = (event) => {
 
 document.querySelectorAll('.form').forEach(el => {
 	el.addEventListener('submit', sendForm);
-})
+});
+
+const grid = document.querySelector('.grid');
+if (grid) {
+	imagesLoaded(grid, function () {
+		var msnry = new Masonry(grid, {
+			percentPosition: true,
+			gutter: '.grid__gutter',
+			itemSelector: '.grid__item',
+			// horizontalOrder: true
+		});
+	});
+}
+
+const wrapTagInDiv = (el, wrapClass = 'wrapclass') => {
+	let div = document.createElement("div");
+	div.classList.add(wrapClass);
+	el.parentNode.insertBefore(div, el);
+	div.appendChild(el);
+}
+
+const wrapVideoInContent = () => {
+	let contents = document.querySelectorAll('.content');
+	if (!contents) return false;
+	contents.forEach(el => {
+		let videos = el.querySelectorAll('iframe, video');
+		videos.forEach(video => {
+			wrapTagInDiv(video, 'video');
+		});
+		let tables = el.querySelectorAll('table');
+		tables.forEach(table => {
+			wrapTagInDiv(table, 'table-adaptive');
+		});
+	})
+}
+document.addEventListener("DOMContentLoaded", wrapVideoInContent);

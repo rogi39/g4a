@@ -68,6 +68,12 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, wxp: 144
 	background-color: $accent
 	color: #fff
 
+html
+	scroll-behavior: smooth
+	scroll-padding-top: 30px
+	+media-breakpoint-up(sm)
+		scroll-padding-top: 0
+
 body
 	font-family: "Casper", sans-serif
 	font-size: 22px

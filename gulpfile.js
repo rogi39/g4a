@@ -14,6 +14,8 @@ let paths = {
 			baseDir + '/libs/swiper/swiper-bundle.min.js',
 			baseDir + '/libs/lightgallery/js/lightgallery.min.js',
 			// baseDir + '/libs/lightgallery/js/lg-video.min.js',
+			baseDir + '/libs/masonry/masonry.pkgd.min.js',
+			baseDir + '/libs/masonry/imagesloaded.pkgd.min.js',
 			baseDir + '/libs/wow/wow.min.js',
 			baseDir + '/libs/mask_tel/mask_tel.js',
 			baseDir + '/libs/bar/simplebar.min.js',
