@@ -328,6 +328,7 @@ modals.forEach(el => {
 });
 
 const closeModalProgramAndScrollPage = (e) => {
+	e.preventDefault();
 	let modal = e.currentTarget.closest('.modal');
 	fadeOut(modal, 300);
 	setTimeout(() => {
@@ -335,6 +336,12 @@ const closeModalProgramAndScrollPage = (e) => {
 		document.querySelector(".header").style.paddingRight = "0px";
 		document.querySelector(".footer").style.paddingRight = "0px";
 		document.querySelector(".main").style.paddingRight = "0px";
+	}, 300);
+	setTimeout(() => {
+		window.scrollTo({
+			top: document.querySelector('#intensive_sign_form').getBoundingClientRect().top + window.pageYOffset,
+			behavior: 'smooth',
+		});
 	}, 300);
 }
 
