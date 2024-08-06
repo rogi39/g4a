@@ -280,16 +280,19 @@ menuSubBtns.forEach((el) => {
 	el.addEventListener("click", openMenu);
 });
 
+const openShedule = (e) => {
+	document.querySelector(".shedule-btn.active").classList.remove("active");
+	document.querySelector(".shedule-content.active").classList.remove("active");
+	let trg = e.target;
+	trg.classList.add("active");
+	document.querySelector(`.shedule-content[data-tab-content="${trg.dataset.tab}"]`).classList.add("active");
+}
+
 let sheduletTabs = document.querySelectorAll(".shedule-btn");
 if (sheduletTabs) {
+	document.querySelector('.shedule-btn.active') ? document.querySelector('.shedule-btn.active').closest('.tabs').scrollLeft = document.querySelector('.shedule-btn.active').getBoundingClientRect().left - 12 : '';
 	sheduletTabs.forEach((el) => {
-		el.addEventListener("click", function (e) {
-			document.querySelector(".shedule-btn.active").classList.remove("active");
-			document.querySelector(".shedule-content.active").classList.remove("active");
-			let trg = e.target;
-			trg.classList.add("active");
-			document.querySelector(`.shedule-content[data-tab-content="${trg.dataset.tab}"]`).classList.add("active");
-		});
+		el.addEventListener("click", openShedule);
 	});
 }
 
