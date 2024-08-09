@@ -1,5 +1,8 @@
 @import config
 
+.grecaptcha-badge
+	bottom: -76px!important
+
 .aligncenter,.alignleft,.alignright
 	display: block
 	padding: 0
@@ -687,7 +690,7 @@ img
 		margin: 0
 		min-width: 206px
 		z-index: 3
-		background-color: #1c151f
+		background-color: #1b131f
 		left: -15px
 		top: 70px
 		// white-space: nowrap
@@ -806,7 +809,7 @@ img
 	&__img_video
 		display: block
 		min-height: auto
-		object-fit: none
+		// object-fit: none
 	// &__img_mobile
 	// 	display: block
 	// 	width: 100%
@@ -2894,6 +2897,7 @@ img
 	/* .teachers-item__img */
 	&__img
 		margin-bottom: 20px
+		width: 100%
 	/* .teachers-item__name */
 	&__name
 		font-weight: 400
@@ -3140,6 +3144,7 @@ img
 		flex-wrap: wrap
 
 .intership-item
+	padding-top: 60px
 	// padding-bottom: 60px
 	+media-breakpoint-up(md)
 		// padding-bottom: 80px
