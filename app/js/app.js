@@ -384,6 +384,7 @@ const openYoutubeVideo = (e) => {
 	let src = target.dataset.src;
 	let iframeSrc = `https://www.youtube.com/embed/${youtube_parser(src)}`;
 	if (target.classList.contains('video-rutube')) iframeSrc = `https://rutube.ru/play/embed/${rutube_get_id(src)}/`;
+	if (target.classList.contains('video-local')) iframeSrc = src;
 
 	if (modalVideo !== null && !modalVideo.classList.contains("active")) {
 		modalVideo.querySelector('iframe').src = iframeSrc;
@@ -439,7 +440,6 @@ const loadYoutubeThumb = () => {
 		if (el.classList.contains('video-rutube')) {
 			let proxyUrl = 'https://api.allorigins.win/get?url=';
 			let targetUrl = `https://rutube.ru/api/video/${rutube_get_id(src)}/thumbnail/`;
-			console.log(targetUrl);
 			fetch(proxyUrl + encodeURIComponent(targetUrl))
 				.then(response => {
 					if (response.ok) return response.json()
@@ -449,13 +449,13 @@ const loadYoutubeThumb = () => {
 					el.querySelector('.video-item__img').src = JSON.parse(data.contents).url;
 				}).catch(err => {
 					console.error(err);
-				});;
-		} else {
+				});
+		} else if (el.classList.contains('video-local')) {} else {
 			el.querySelector('.video-item__img').src = `https://img.youtube.com/vi/${youtube_parser(src)}/maxresdefault.jpg`;
 		}
 	});
 }
-document.addEventListener("DOMContentLoaded", loadYoutubeThumb);
+// document.addEventListener("DOMContentLoaded", loadYoutubeThumb);
 
 const formMessageResponse = (check, msg = '') => {
 	if (document.querySelector('.form-message-response')) document.querySelector('.form-message-response').remove();

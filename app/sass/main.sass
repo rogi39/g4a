@@ -635,6 +635,7 @@ img
 	/* .menu__item */
 	&__item
 		position: relative
+		cursor: pointer
 		&:not(:last-child)
 			margin-bottom: 35px
 		&.open
@@ -661,6 +662,9 @@ img
 		color: #fff
 		transition: color .35s ease-out
 		cursor: pointer
+		margin-right: 10px
+		+media-breakpoint-up(lg)
+			// margin-right: 4px
 		+media-breakpoint-up(xl)
 			font-size: 20px
 		&:hover
@@ -670,11 +674,11 @@ img
 	&__item-svg-block
 		position: relative
 		bottom: 0px
-		left: 10px
+		// left: 10px
 		display: inline-block
 		width: 30px
 		+media-breakpoint-up(lg)
-			left: 4px
+			// left: 4px
 			width: auto
 	/* .menu__item-svg */
 	&__item-svg
@@ -1584,8 +1588,10 @@ img
 	&__row
 		display: flex
 		column-gap: 40px
-		row-gap: 50px
+		row-gap: 20px
 		flex-wrap: wrap
+		+media-breakpoint-up(md)
+			row-gap: 50px
 	/* .video-archive__col */
 	&__col
 		flex: 0 0 100%
@@ -2655,8 +2661,11 @@ img
 	/* .intensive-single-hero__row */
 	&__row
 		display: flex
+		flex-direction: column
 		gap: 30px
-		flex-wrap: wrap
+		+media-breakpoint-up(sm)
+			flex-direction: row
+			flex-wrap: wrap
 		+media-breakpoint-up(lg)
 			flex-wrap: nowrap
 		+media-breakpoint-up(xl)
