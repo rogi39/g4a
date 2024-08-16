@@ -385,9 +385,26 @@ const openYoutubeVideo = (e) => {
 	let iframeSrc = `https://www.youtube.com/embed/${youtube_parser(src)}`;
 	if (target.classList.contains('video-rutube')) iframeSrc = `https://rutube.ru/play/embed/${rutube_get_id(src)}/`;
 	if (target.classList.contains('video-local')) iframeSrc = src;
+	if (target.classList.contains('video-vk')) iframeSrc = src;
 
 	if (modalVideo !== null && !modalVideo.classList.contains("active")) {
-		modalVideo.querySelector('iframe').src = iframeSrc;
+		if (target.classList.contains('video-local')) {
+			// let video = modalVideo.querySelector('video');
+			let video = document.createElement('video');
+			video.setAttribute('controls', '');
+			let source = document.createElement('source');
+			source.setAttribute('src', iframeSrc);
+			source.setAttribute('type', 'video/mp4');
+			video.appendChild(source);
+			modalVideo.querySelector('.video').appendChild(video);
+			video.play();
+			// modalVideo.querySelector('video source').src = iframeSrc;
+		} else if (target.classList.contains('video-vk')) {
+			modalVideo.querySelector('.video').insertAdjacentHTML('beforeend', iframeSrc);
+			// modalVideo.querySelector('.video').appendChild(src);
+		} else {
+			modalVideo.querySelector('iframe.iframe-youtube').src = iframeSrc;
+		}
 		fadeIn(modalVideo, 300, "flex");
 		document.body.classList.add("noscroll");
 		document.querySelector(".header").style.paddingRight = wsb + "px";
@@ -406,7 +423,13 @@ videos.forEach(el => {
 
 const closeYoutubeVideo = (e) => {
 	if (e.target.closest('.modal__close') || e.target.classList.contains('modal')) {
-		modalVideo.querySelector('iframe').src = '';
+		if (modalVideo.querySelector('video')) {
+			modalVideo.querySelector('video').remove();
+		} else if (modalVideo.querySelector('iframe:not(.iframe-youtube)')) {
+			modalVideo.querySelector('iframe:not(.iframe-youtube)').remove();
+		} else {
+			modalVideo.querySelector('iframe').src = '';
+		}
 		fadeOut(modalVideo, 300);
 		setTimeout(() => {
 			modalVideo.classList.remove("active");
