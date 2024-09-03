@@ -103,6 +103,51 @@ img
 	+media-breakpoint-up(xl)
 		margin-bottom: 59px
 
+.back-to-top
+	height: 60px
+	width: 60px
+	border-radius: 50%
+	background-color: #000
+	border: 1px solid #606060
+	display: flex
+	align-items: center
+	justify-content: center
+	position: fixed
+	bottom: 15px
+	right: -100%
+	z-index: 100
+	cursor: pointer
+	transition: background-color .25s ease, right .35s ease-in-out
+	+media-breakpoint-up(sm)
+		height: 80px
+		width: 80px
+	&.on
+		right: 15px
+		+media-breakpoint-up(wxp)
+			right: 50px
+	&__block
+		text-align: center
+		margin-top: -10px
+		+media-breakpoint-up(sm)
+			margin-top: 0
+	&__svg
+		fill: #fff
+		height: 16px
+		width: 16px
+		transform: rotate(-180deg)
+		+media-breakpoint-up(sm)
+			height: 20px
+			width: 20px
+	&__text
+		color: #fff
+		font-size: 12px
+		font-weight: 600
+		line-height: 4px
+		text-transform: uppercase
+		+media-breakpoint-up(sm)
+			font-size: 14px
+			line-height: 14px
+
 .breadcrumb
 	margin: 0
 	list-style-type: none
@@ -372,6 +417,7 @@ img
 	&__info-top
 		display: flex
 		justify-content: center
+		align-items: center
 		gap: 10px
 		margin-bottom: 5px
 		+media-breakpoint-up(xl)
@@ -447,7 +493,7 @@ img
 		+media-breakpoint-up(md)
 			max-width: 120px
 		+media-breakpoint-up(xl)
-			max-width: initial
+			max-width: 153px
 	&__img_footer
 		width: 176px
 		max-width: 163px
@@ -458,9 +504,10 @@ img
 
 .phone
 	font-weight: 700
-	font-size: 18px
-	letter-spacing: -1px
+	font-size: 14px
 	color: #fff
+	font-family: "Unbounded", sans-serif
+	margin-bottom: -5px
 	&:hover
 		color: #fff
 

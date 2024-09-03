@@ -198,10 +198,10 @@ const createServiceGallerySlider = () => {
 	}
 }
 
-window.addEventListener("load", () => {
-	createServiceSlider();
-	createServiceGallerySlider();
-});
+// window.addEventListener("load", () => {
+createServiceSlider();
+createServiceGallerySlider();
+// });
 
 window.addEventListener("resize", () => {
 	createServiceSlider();
@@ -238,12 +238,47 @@ const createCertificateSlider = () => {
 };
 createCertificateSlider();
 
+const scrollToTop = (duration) => {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+	// if (document.scrollingElement.scrollTop === 0) return;
+	// const totalScrollDistance = document.scrollingElement.scrollTop;
+	// let scrollY = totalScrollDistance,
+	// 	oldTimestamp = null;
+
+	// function step(newTimestamp) {
+	// 	if (oldTimestamp !== null) {
+	// 		scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / duration;
+	// 		if (scrollY <= 0) return document.scrollingElement.scrollTop = 0;
+	// 		document.scrollingElement.scrollTop = scrollY;
+	// 	}
+	// 	oldTimestamp = newTimestamp;
+	// 	window.requestAnimationFrame(step);
+	// }
+	// window.requestAnimationFrame(step);
+}
+
+const toTop = document.querySelector(".back-to-top");
+let scrollPrev = 0;
+
+window.onscroll = function () {
+	var scrolled = window.pageYOffset;
+
+	if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000 && scrolled > 50) {
+		toTop.classList.add("on");
+	} else {
+		toTop.classList.remove("on");
+	}
+	scrollPrev = scrolled;
+}
+
 const header = document.querySelector(".header");
 const togglemenu = document.querySelector("#toggle-menu");
 const menu = document.querySelector(".menu");
 const overlay = document.querySelector('.header__overlay');
 const menuClose = document.querySelector('.menu__close');
-var scrollPrev = 0;
 togglemenu.addEventListener("click", () => {
 	togglemenu.classList.add("on");
 	menu.classList.add("on");
@@ -371,7 +406,7 @@ wow = new WOW({
 	boxClass: 'wow',
 	animateClass: 'animated',
 	offset: 0,
-	mobile: true,
+	mobile: false,
 	live: true
 })
 wow.init();
