@@ -243,21 +243,6 @@ const scrollToTop = (duration) => {
 		top: 0,
 		behavior: 'smooth',
 	});
-	// if (document.scrollingElement.scrollTop === 0) return;
-	// const totalScrollDistance = document.scrollingElement.scrollTop;
-	// let scrollY = totalScrollDistance,
-	// 	oldTimestamp = null;
-
-	// function step(newTimestamp) {
-	// 	if (oldTimestamp !== null) {
-	// 		scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / duration;
-	// 		if (scrollY <= 0) return document.scrollingElement.scrollTop = 0;
-	// 		document.scrollingElement.scrollTop = scrollY;
-	// 	}
-	// 	oldTimestamp = newTimestamp;
-	// 	window.requestAnimationFrame(step);
-	// }
-	// window.requestAnimationFrame(step);
 }
 
 const toTop = document.querySelector(".back-to-top");
@@ -418,7 +403,7 @@ const openYoutubeVideo = (e) => {
 	let wsb = widthScrollBar();
 	let src = target.dataset.src;
 	let iframeSrc = `https://www.youtube.com/embed/${youtube_parser(src)}`;
-	if (target.classList.contains('video-rutube')) iframeSrc = `https://rutube.ru/play/embed/${rutube_get_id(src)}/`;
+	if (target.classList.contains('video-rutube')) iframeSrc = src;
 	if (target.classList.contains('video-local')) iframeSrc = src;
 	if (target.classList.contains('video-vk')) iframeSrc = src;
 
@@ -437,6 +422,8 @@ const openYoutubeVideo = (e) => {
 		} else if (target.classList.contains('video-vk')) {
 			modalVideo.querySelector('.video').insertAdjacentHTML('beforeend', iframeSrc);
 			// modalVideo.querySelector('.video').appendChild(src);
+		} else if (target.classList.contains('video-rutube')) {
+			modalVideo.querySelector('.video').insertAdjacentHTML('beforeend', iframeSrc);
 		} else {
 			modalVideo.querySelector('iframe.iframe-youtube').src = iframeSrc;
 		}
