@@ -511,6 +511,17 @@ img
 	&:hover
 		color: #fff
 
+.messenger-block
+	display: flex
+	align-items: center
+	gap: 12px
+.messenger
+
+	/* .messenger__svg */
+	&__svg
+		height: 20px
+		width: 20px
+
 .email
 	font-weight: 400
 	font-size: 18px
@@ -688,6 +699,8 @@ img
 		&.open
 			.menu__item-svg
 				transform: rotate(180deg)
+			.menu__link
+				color: $accent
 		+media-breakpoint-up(lg)
 			padding: 20px 0
 			&:not(:last-child)
@@ -715,8 +728,11 @@ img
 		+media-breakpoint-up(xl)
 			font-size: 20px
 		&:hover
-			color: $accent
-			text-decoration: none
+			color: #fff
+		@media (hover: hover)
+			&:hover
+				color: $accent
+				text-decoration: none
 	/* .menu__item-svg-block */
 	&__item-svg-block
 		position: relative
@@ -1094,7 +1110,7 @@ img
 
 .announce
 	margin-bottom: 114px
-	position: relative
+	// position: relative
 	+media-breakpoint-up(sm)
 		margin-bottom: 100px
 	+media-breakpoint-up(lg)
@@ -1109,6 +1125,9 @@ img
 		bottom: -50px
 		+media-breakpoint-up(sm)
 			bottom: -40px
+	/* .announce__slider */
+	&__block
+		position: relative
 	/* .announce__slider */
 	&__slider
 
@@ -1132,7 +1151,7 @@ img
 		+media-breakpoint-up(sm)
 			background-size: cover
 			background-position: center
-			padding: 20px 40px
+			padding: 20px 55px
 		+media-breakpoint-up(lg)
 			padding: 20px 100px
 
@@ -1504,6 +1523,18 @@ img
 		align-items: center
 	/* .slider-btn__item */
 	&__item
+	&__item_announce
+		position: absolute
+		z-index: 3
+		top: calc(50% - 31px)
+		&.slider-btn__item_prev
+			left: 0
+			+media-breakpoint-up(wxpp)
+				left: calc(50% - (1424px / 2) - 70px)
+		&.slider-btn__item_next
+			right: 0
+			+media-breakpoint-up(wxpp)
+				right: calc(50% - (1424px / 2) - 70px)
 
 	 /* .slider-btn__item_prev */
 	&__item_prev
@@ -1520,7 +1551,7 @@ img
 			fill: $accent
 		+media-breakpoint-up(lg)
 			width: 69px
-		height: 60px
+			height: 60px
 
 .reviews
 	padding-top: 20px
@@ -1967,10 +1998,10 @@ img
 		line-height: 135%
 		color: #676767
 		letter-spacing: 1px
-		+media-breakpoint-up(lg)
-			margin-right: 119px
-		+media-breakpoint-up(xl)
-			margin-right: 179px
+		a
+			color: #676767
+			&:hover
+				color: #676767
 	/* .footer__bottom-row */
 	&__bottom-row
 		display: flex
@@ -2098,6 +2129,7 @@ img
 .certificate-slider
 	/* .certificate-slider__slide */
 	&__slide
+		cursor: pointer
 
 .certificate-item
 	background-color: #271e2a
@@ -2270,6 +2302,8 @@ img
 		line-height: 135%
 		color: #c6c6c6
 		margin-bottom: 30px
+		a
+			color: $accent
 		ul
 			padding: 0
 			padding-left: 25px
@@ -2454,6 +2488,14 @@ img
 			flex: 0 0 50%
 		+media-breakpoint-up(md)
 			flex: 0 0 33.333%
+	.gallery__col_25
+		flex: none
+		+media-breakpoint-up(sm)
+			flex: 0 0 50%
+		+media-breakpoint-up(md)
+			flex: 0 0 33.333%
+		+media-breakpoint-up(lg)
+			flex: 0 0 25%
 	&__pagination
 		bottom: -38px!important
 		+media-breakpoint-up(sm)
@@ -2646,6 +2688,10 @@ img
 	justify-content: space-between
 	flex-wrap: wrap
 	gap: 10px
+	&_column
+		flex-direction: column
+		align-items: flex-start
+		gap: 60px
 	/* .intensive-price-block__price */
 	&__price
 		font-weight: 400
@@ -2734,6 +2780,128 @@ img
 		+media-breakpoint-up(sm)
 			min-width: 483px
 
+.intensive-single-content
+	margin-bottom: 60px
+	+media-breakpoint-up(md)
+		margin-bottom: 80px
+
+.intensive-single-study
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+	/* .intensive-single-study__row */
+	&__row
+		+media-breakpoint-up(md)
+			display: flex
+			margin: 0 -15px
+
+	/* .intensive-single-study__left */
+	&__left
+		margin-bottom: 30px
+		+media-breakpoint-up(md)
+			margin-bottom: 0
+			padding: 0 15px
+			flex: 1
+
+	/* .intensive-single-study__right */
+	&__right
+		+media-breakpoint-up(md)
+			padding: 0 15px
+			flex: 0 0 350px
+
+	/* .intensive-single-study__block */
+	&__block
+		background-color: #271e2a
+		padding: 25px
+		margin-bottom: 15px
+	&__block_gradient
+		background: linear-gradient(0deg, rgba(51,47,53,1) 0%, rgba(31,21,37,1) 100%)
+
+.intensive-single-example
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+	/* .intensive-single-example__text */
+	&__text
+		font-weight: 700
+		font-size: 20px
+		line-height: 135%
+		color: #fff
+		margin-bottom: 30px
+		max-width: 700px
+		p
+			&:not(:last-child)
+				margin-bottom: 20px
+		+media-breakpoint-up(sm)
+			margin-bottom: 40px
+			font-size: 22px
+			p
+				&:not(:last-child)
+					margin-bottom: 30px
+		+media-breakpoint-up(xl)
+			margin-bottom: 56px
+			font-size: 24px
+
+.how-slider-block
+	position: relative
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+.work-example-slider-block
+	position: relative
+	z-index: 1
+.work-example-slider
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+	/* .work-example-slider__slide */
+	&__slide
+		cursor: pointer
+
+	/* .work-example-slider__img-block */
+	&__img-block
+		&:hover
+			text-decoration: none
+	/* .work-example-slider__text */
+	&__text
+		color: #fff
+		margin-top: 12px
+
+	/* .work-example-slider__img */
+	&__img
+
+.intensive-single-who
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+	/* .intensive-single-who__row */
+	&__row
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+		row-gap: 30px
+
+	/* .intensive-single-who__col */
+	&__col
+		padding: 0 15px
+		flex: 0 0 100%
+		+media-breakpoint-up(md)
+			flex: 0 0 50%
+
+	/* .intensive-single-who__block */
+	&__block
+		background: linear-gradient(0deg, rgba(51,47,53,1) 0%, rgba(31,21,37,1) 100%)
+		padding: 25px
+		min-height: 90px
+		display: flex
+		align-items: center
+		+media-breakpoint-up(md)
+			min-height: 110px
+.intensive-single-how
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+
 .schedule-single
 	margin-bottom: 60px
 	+media-breakpoint-up(md)
@@ -2820,6 +2988,11 @@ img
 
 .gallery
 	margin-bottom: 16px
+	&_about
+		position: relative
+		margin-bottom: 70px
+		+media-breakpoint-up(sm)
+			margin-bottom: 30px
 	&_teaching-children
 		margin-bottom: 70px
 		position: relative
@@ -2845,6 +3018,12 @@ img
 			flex: 0 0 33.333%
 	&__col_50
 		flex: 0 0 50%
+	&__col_25
+		flex: 0 0 50%
+		+media-breakpoint-up(sm)
+			flex: 0 0 33.333%
+		+media-breakpoint-up(lg)
+			flex: 0 0 25%
 
 .gallery-item
 	position: relative
@@ -3502,7 +3681,7 @@ img
 		transition: border-color .25s ease, color .25s ease, background-color .25s ease
 		border-color: #000
 		border: 1px solid $accent
-		color: #000
+		color: #fff
 		&:hover
 			text-decoration: none
 			border-color: $accent

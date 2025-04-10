@@ -35,6 +35,10 @@ const createAnnounceSlider = () => {
 			el: ".announce__slider-pagination",
 			clickable: true,
 		},
+		navigation: {
+			nextEl: ".announce-slider-next",
+			prevEl: ".announce-slider-prev",
+		},
 	});
 };
 createAnnounceSlider();
@@ -238,6 +242,70 @@ const createCertificateSlider = () => {
 };
 createCertificateSlider();
 
+const workExampleSlider = () => {
+	let slider = new Swiper(".work-example-slider", {
+		slidesPerView: 2,
+		pagination: {
+			el: ".work-example__pagination",
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 6
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.15,
+				spaceBetween: 20,
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+		},
+		navigation: {
+			nextEl: ".work-example-slider-next",
+			prevEl: ".work-example-slider-prev",
+		},
+	});
+};
+workExampleSlider();
+
+const howSlider = () => {
+	let slider = new Swiper(".how-slider", {
+		slidesPerView: 2,
+		spaceBetween: 30,
+		pagination: {
+			el: ".how-slider__pagination",
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 6
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.15,
+
+			},
+			576: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			992: {
+				slidesPerView: 4,
+			},
+		},
+		navigation: {
+			nextEl: ".how-slider-next",
+			prevEl: ".how-slider-prev",
+		},
+	});
+};
+howSlider();
+
 const scrollToTop = (duration) => {
 	window.scrollTo({
 		top: 0,
@@ -287,15 +355,15 @@ window.addEventListener("resize", () => {
 });
 
 const openMenu = (e) => {
-	if (e.currentTarget.parentElement.classList.contains("open")) {
-		e.currentTarget.nextElementSibling.style.maxHeight = "0";
-		e.currentTarget.parentElement.classList.remove("open");
+	if (e.currentTarget.classList.contains("open")) {
+		e.currentTarget.querySelector('.menu__sub').style.maxHeight = "0";
+		e.currentTarget.classList.remove("open");
 	} else {
-		e.currentTarget.nextElementSibling.style.maxHeight = 8 + e.currentTarget.nextElementSibling.scrollHeight + "px";
-		e.currentTarget.parentElement.classList.add("open");
+		e.currentTarget.querySelector('.menu__sub').style.maxHeight = 8 + e.currentTarget.querySelector('.menu__sub').scrollHeight + "px";
+		e.currentTarget.classList.add("open");
 	}
 }
-let menuSubBtns = document.querySelectorAll(".menu__item-svg-block");
+let menuSubBtns = document.querySelectorAll(".menu__item_sub");
 menuSubBtns.forEach((el) => {
 	el.addEventListener("click", openMenu);
 });
@@ -603,3 +671,11 @@ const wrapVideoInContent = () => {
 	})
 }
 document.addEventListener("DOMContentLoaded", wrapVideoInContent);
+
+document.querySelectorAll('.tel').forEach(el => {
+	IMask(
+		el, {
+			mask: '+{7}(000)-000-00-00'
+		}
+	);
+});
