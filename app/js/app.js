@@ -273,6 +273,37 @@ const workExampleSlider = () => {
 };
 workExampleSlider();
 
+const allIntensiveSlider = () => {
+	let slider = new Swiper(".all-intensive-slider", {
+		slidesPerView: 2,
+		pagination: {
+			el: ".all-intensive__pagination",
+			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 6
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.15,
+				spaceBetween: 20,
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			768: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+		},
+		navigation: {
+			nextEl: ".all-intensive-slider-next",
+			prevEl: ".all-intensive-slider-prev",
+		},
+	});
+};
+allIntensiveSlider();
+
 const howSlider = () => {
 	let slider = new Swiper(".how-slider", {
 		slidesPerView: 2,

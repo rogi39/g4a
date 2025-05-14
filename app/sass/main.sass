@@ -1628,19 +1628,33 @@ img
 		&.non-swiper-slide
 			display: none
 
+.video-item-block
+	display: flex
+	gap: 20px
+	flex-direction: column
+	margin-bottom: 40px
+	+media-breakpoint-up(sm)
+		margin-bottom: 80px
+	+media-breakpoint-up(md)
+		margin-bottom: 125px
+	+media-breakpoint-up(lg)
+		flex-direction: row
 .video-item
 	position: relative
 	cursor: pointer
 	+media-breakpoint-up(sm)
 		height: initial
 	&_teaching-children
-		margin-bottom: 40px
+		width: 100%
+		+media-breakpoint-up(lg)
+			width: 50%
+		// margin-bottom: 40px
 		.video-item__img
 			width: 100%
-		+media-breakpoint-up(sm)
-			margin-bottom: 80px
-		+media-breakpoint-up(md)
-			margin-bottom: 125px
+		// +media-breakpoint-up(sm)
+		// 	margin-bottom: 80px
+		// +media-breakpoint-up(md)
+		// 	margin-bottom: 125px
 	/* .video-item__icon */
 	&__icon
 		position: absolute
@@ -2847,6 +2861,15 @@ img
 	margin-bottom: 30px
 	+media-breakpoint-up(sm)
 		margin-bottom: 60px
+
+.all-intensive-slider-block
+	position: relative
+	z-index: 1
+.all-intensive-slider
+	margin-bottom: 30px
+	+media-breakpoint-up(sm)
+		margin-bottom: 60px
+
 .work-example-slider-block
 	position: relative
 	z-index: 1
